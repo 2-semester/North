@@ -5,7 +5,5 @@
         private int a = 2;
 
     }
-      
-
 }
     
