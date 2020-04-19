@@ -5,9 +5,6 @@
     {
         private int a = 2;
         protected string abb2;
-
     }
-      
-
 }
     
