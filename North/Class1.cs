@@ -4,9 +4,8 @@
 
     {
         private int a = 2;
-
+        private string Ok =" ok";
     }
-      
-
+    
 }
     
