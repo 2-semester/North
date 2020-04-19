@@ -4,7 +4,7 @@
 
     {
         private int a = 2;
-        protected string abb;
+        protected string abb2;
 
     }
       
