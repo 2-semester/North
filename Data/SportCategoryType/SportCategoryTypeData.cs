@@ -1,7 +1,8 @@
 ﻿
 namespace North.Data.SportCategoryType
 {
-    public sealed  class SportCategoryTypeData
+    public sealed  class SportCategoryTypeData: DefinedEntityData
     {
+       
     }
 }
