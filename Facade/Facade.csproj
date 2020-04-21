@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AssemblyName>North.Facade</AssemblyName>
+    <RootNamespace>North.Facade</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aids\Aids.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+</Project>
