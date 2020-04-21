@@ -4,5 +4,6 @@
     {
         //võrdlus CommonTermDataga
         //sportlaseId, ürituseId
+        //test
     }
 }
