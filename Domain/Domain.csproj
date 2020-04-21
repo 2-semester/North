@@ -12,12 +12,12 @@
 
   <ItemGroup>
     <Folder Include="Common\" />
-    <Folder Include="SpordialaTüüp\" />
-    <Folder Include="Spordiala\" />
-    <Folder Include="Sportlane\" />
-    <Folder Include="SportlaseÜritus\" />
-    <Folder Include="ÜritusteSari\" />
-    <Folder Include="Üritus\" />
+    <Folder Include="SportCategoryType\" />
+    <Folder Include="SportCategory\" />
+    <Folder Include="Sportman\" />
+    <Folder Include="SportmanEvent\" />
+    <Folder Include="EventList\" />
+    <Folder Include="Event\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -7,17 +7,38 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="SpordialaTüüp\**" />
+    <Compile Remove="Spordiala\**" />
+    <Compile Remove="Sportlane\**" />
+    <Compile Remove="SportlaseÜritus\**" />
+    <Compile Remove="ÜritusteSari\**" />
+    <Compile Remove="Üritus\**" />
+    <EmbeddedResource Remove="SpordialaTüüp\**" />
+    <EmbeddedResource Remove="Spordiala\**" />
+    <EmbeddedResource Remove="Sportlane\**" />
+    <EmbeddedResource Remove="SportlaseÜritus\**" />
+    <EmbeddedResource Remove="ÜritusteSari\**" />
+    <EmbeddedResource Remove="Üritus\**" />
+    <None Remove="SpordialaTüüp\**" />
+    <None Remove="Spordiala\**" />
+    <None Remove="Sportlane\**" />
+    <None Remove="SportlaseÜritus\**" />
+    <None Remove="ÜritusteSari\**" />
+    <None Remove="Üritus\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Aids\Aids.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="SpordialaTüüp\" />
-    <Folder Include="Spordiala\" />
-    <Folder Include="Sportlane\" />
-    <Folder Include="SportlaseÜritus\" />
-    <Folder Include="ÜritusteSari\" />
-    <Folder Include="Üritus\" />
+    <Folder Include="EventList\" />
+    <Folder Include="Event\" />
+    <Folder Include="SportCategoryType\" />
+    <Folder Include="SportCategory\" />
+    <Folder Include="SportmanEvent\" />
+    <Folder Include="Sportman\" />
   </ItemGroup>
 
 </Project>
