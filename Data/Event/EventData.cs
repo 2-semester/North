@@ -8,7 +8,7 @@ namespace North.Data.Event
         public DateTime EventDate { get; set; }
         public string SportCategoryId { get; set; }
         public string TypeId { get; set; }
-        public string OrganisationId { get; set; }
+        public string OrganizationId { get; set; }
         public string EventListId { get; set; }
         public string SportmanEventId { get; set; }
     }
