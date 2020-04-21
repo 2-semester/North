@@ -6,5 +6,6 @@ namespace North.Data.Asukoht
     {
         public string County { get; set; }
         public string City { get; set; }
+
     }
 }
