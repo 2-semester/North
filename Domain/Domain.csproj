@@ -14,8 +14,8 @@
     <Folder Include="Common\" />
     <Folder Include="SportCategoryType\" />
     <Folder Include="SportCategory\" />
-    <Folder Include="Sportman\" />
-    <Folder Include="SportmanEvent\" />
+    <Folder Include="Sportsman\" />
+    <Folder Include="SportsmanEvent\" />
     <Folder Include="EventList\" />
     <Folder Include="Event\" />
   </ItemGroup>

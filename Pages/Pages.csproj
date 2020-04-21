@@ -42,8 +42,8 @@
     <Folder Include="Event\" />
     <Folder Include="SportCategoryType\" />
     <Folder Include="SportCategory\" />
-    <Folder Include="SportmanEvent\" />
-    <Folder Include="Sportman\" />
+    <Folder Include="SportsmanEvent\" />
+    <Folder Include="Sportsman\" />
   </ItemGroup>
 
 </Project>
