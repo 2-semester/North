@@ -2,6 +2,7 @@
 {
     public abstract class SportsmanEventData
     {
+        //võrdlus CommonTermDataga
         //sportlaseId, ürituseId
     }
 }
