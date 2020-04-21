@@ -1,7 +1,7 @@
 ﻿
 using North.Data.Common;
 
-namespace North.Data.SportCategoty
+namespace North.Data.SportCategory
 {
     public sealed class SportCategoryData : NamedEntityData
     {
