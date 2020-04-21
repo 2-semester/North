@@ -1,4 +1,4 @@
-﻿namespace Abc.Aids
+﻿namespace North.Aids
 {
     public static class ForDemo
     {

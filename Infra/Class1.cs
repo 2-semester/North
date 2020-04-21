@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Infra
+﻿namespace North.Infra
 {
     public class Class1
     {

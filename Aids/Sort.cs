@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Abc.Aids {
+namespace North.Aids {
     public static class Sort {
         public static void Upwards<T>(ref T min, ref T max) where T : IComparable {
             if (min.CompareTo(max) <= 0) return;

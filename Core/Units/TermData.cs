@@ -1,4 +1,4 @@
-﻿namespace Abc.Core.Units {
+﻿namespace North.Core.Units {
 
     public class TermData {
 

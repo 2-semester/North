@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Domain
+﻿namespace North.Domain
 {
     public class Class1
     {

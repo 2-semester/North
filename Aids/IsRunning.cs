@@ -1,4 +1,4 @@
-﻿namespace Abc.Aids {
+﻿namespace North.Aids {
     public class IsRunning {
 
         private const string testFramework = "Microsoft.VisualStudio.QualityTools.UnitTestFramework";

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace Abc.Aids {
+namespace North.Aids {
 
 
     public static class CreateNew {

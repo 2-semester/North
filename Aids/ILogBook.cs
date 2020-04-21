@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Abc.Aids {
+namespace North.Aids {
 
     public interface ILogBook {
         void WriteEntry(string message);

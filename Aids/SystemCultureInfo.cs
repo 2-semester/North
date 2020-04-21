@@ -3,7 +3,7 @@
 
 using System.Globalization;
 
-namespace Abc.Aids {
+namespace North.Aids {
 
     public static class SystemCultureInfo {
         public static CultureInfo[] GetSpecificCultures() {

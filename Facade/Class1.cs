@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Facade
+﻿namespace North.Facade
 {
     public class Class1
     {

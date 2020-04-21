@@ -1,4 +1,4 @@
-﻿namespace Abc.Core {
+﻿namespace North.Core {
 
     public enum IsoGender {
 
