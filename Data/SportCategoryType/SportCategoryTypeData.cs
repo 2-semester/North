@@ -1,5 +1,4 @@
-﻿
-using North.Data.Common;
+﻿using North.Data.Common;
 
 namespace North.Data.SportCategoryType
 {
