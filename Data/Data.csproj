@@ -6,15 +6,4 @@
     <RootNamespace>North.Data</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Common\" />
-    <Folder Include="SpordialaTüüp\" />
-    <Folder Include="Spordiala\" />
-    <Folder Include="Sportlane\" />
-    <Folder Include="SportlaseÜritus\" />
-    <Folder Include="Oragnisatsioon\" />
-    <Folder Include="ÜritusteSari\" />
-    <Folder Include="Üritus\" />
-  </ItemGroup>
-
 </Project>
