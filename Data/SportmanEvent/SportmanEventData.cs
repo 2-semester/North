@@ -6,7 +6,5 @@ namespace North.Data.SportmanEvent
     {
         public string SportmanId { get; set; }
         public string EventId { get; set; }
-       // public string
-         
     }
 }
