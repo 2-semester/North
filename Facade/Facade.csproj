@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
@@ -9,6 +9,17 @@
   <ItemGroup>
     <ProjectReference Include="..\Aids\Aids.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Oragnisatsioon\" />
+    <Folder Include="SpordialaTüüp\" />
+    <Folder Include="Spordiala\" />
+    <Folder Include="Sportlane\" />
+    <Folder Include="SportlaseÜritus\" />
+    <Folder Include="ÜritusteSari\" />
+    <Folder Include="Üritus\" />
   </ItemGroup>
 
 </Project>

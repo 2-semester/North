@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
@@ -8,6 +8,24 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Oragnisatsioon\" />
+    <Folder Include="SpordialaTüüp\" />
+    <Folder Include="Spordiala\" />
+    <Folder Include="Sportlane\" />
+    <Folder Include="SportlaseÜritus\" />
+    <Folder Include="ÜritusteSari\" />
+    <Folder Include="Üritus\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

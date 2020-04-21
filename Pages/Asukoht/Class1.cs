@@ -1,4 +1,4 @@
-﻿namespace North.Pages
+﻿namespace North.Pages.Asukoht
 {
     public class Class1
     {

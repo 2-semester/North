@@ -1,4 +1,4 @@
-﻿namespace North.Facade
+﻿namespace North.Infra.Asukoht
 {
     public class Class1
     {
