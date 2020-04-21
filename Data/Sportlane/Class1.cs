@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace North.Data.Sportlane
+﻿namespace North.Data.Sportlane
 {
     class Class1
     {

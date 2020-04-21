@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Oragnisatsioon\" />
     <Folder Include="SpordialaTüüp\" />
     <Folder Include="Spordiala\" />
     <Folder Include="Sportlane\" />

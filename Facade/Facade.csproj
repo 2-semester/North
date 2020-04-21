@@ -12,8 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
-    <Folder Include="Oragnisatsioon\" />
     <Folder Include="SpordialaTüüp\" />
     <Folder Include="Spordiala\" />
     <Folder Include="Sportlane\" />
