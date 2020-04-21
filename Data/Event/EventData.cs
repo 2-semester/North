@@ -1,9 +1,15 @@
-﻿using North.Data.Common;
+﻿using System;
+using North.Data.Common;
 
 namespace North.Data.Event
 {
     public sealed  class EventData: DefinedEntityData
     {
-        public string Date { get; set; }
+        public DateTime EventDate { get; set; }
+        public string SportCategoryId { get; set; }
+        public string TypeId { get; set; }
+        public string OrganisationId { get; set; }
+        public string EventListId { get; set; }
+        public string SportmanEventId { get; set; }
     }
 }
