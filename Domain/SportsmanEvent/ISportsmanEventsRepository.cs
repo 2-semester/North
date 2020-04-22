@@ -2,5 +2,5 @@
 
 namespace North.Domain.SportsmanEvent
 {
-    public interface ISportsmanEventsRepository : IRepository<SportsmanEvent> { }
+    public interface ISportsmanEventsRepository : IRepository<SportsmanEventDomain> { }
 }

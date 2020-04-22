@@ -4,9 +4,9 @@ using North.Domain.Common;
 namespace North.Domain.Event
 {
     //ülesanne on vedada andmeid andmebaasi ja kasutajaliidese "kihi" vahel
-    public sealed class Event: Entity<EventData>
+    public sealed class EventDomain: Entity<EventData>
     {
-        public Event(): this(null) { }
-        public Event(EventData data) : base(data) { }
+        public EventDomain(): this(null) { }
+        public EventDomain(EventData data) : base(data) { }
     }
 }

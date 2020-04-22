@@ -2,5 +2,5 @@
 
 namespace North.Domain.SportCategory
 {
-    public interface ISportCategoriesRepository : IRepository<SportCategory> { }
+    public interface ISportCategoriesRepository : IRepository<SportCategoryDomain> { }
 }

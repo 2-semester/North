@@ -2,5 +2,5 @@
 
 namespace North.Domain.Location
 {
-    public interface ILocationsRepository : IRepository<Location> { }
+    public interface ILocationsRepository : IRepository<LocationDomain> { }
 }

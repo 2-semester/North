@@ -2,5 +2,5 @@
 
 namespace North.Domain.Organization
 {
-    public interface IOrganizationsRepository : IRepository<Organization> { }
+    public interface IOrganizationsRepository : IRepository<OrganizationDomain> { }
 }

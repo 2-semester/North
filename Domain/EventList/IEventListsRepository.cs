@@ -2,5 +2,5 @@
 
 namespace North.Domain.EventList
 {
-    public interface IEventListsRepository : IRepository<EventList> { }
+    public interface IEventListsRepository : IRepository<EventListDomain> { }
 }

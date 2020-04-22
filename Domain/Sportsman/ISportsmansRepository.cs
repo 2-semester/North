@@ -2,5 +2,5 @@
 
 namespace North.Domain.Sportsman
 {
-    public interface ISportsmansRepository : IRepository<Sportsman> { }
+    public interface ISportsmansRepository : IRepository<SportsmanDomain> { }
 }
