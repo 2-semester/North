@@ -3,7 +3,7 @@ using North.Data.Common;
 
 namespace North.Data.Event
 {
-    public sealed  class EventData: DefinedEntityData
+    public sealed class EventData: DefinedEntityData
     {
         public DateTime EventDate { get; set; }
         public string SportCategoryId { get; set; }

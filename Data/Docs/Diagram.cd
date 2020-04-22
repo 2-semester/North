@@ -1,80 +1,80 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="North.Data.Common.UniqueEntityData">
-    <Position X="10.75" Y="0.5" Width="1.5" />
+  <Class Name="North.Data.Event.EventData">
+    <Position X="0.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Common\UniqueEntityData.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAQAABAAAAAQAAAABgAAAAAABAAAA=</HashCode>
+      <FileName>Event\EventData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="North.Data.Common.NamedEntityData">
-    <Position X="7.75" Y="0.5" Width="1.5" />
+  <Class Name="North.Data.EventList.EventListData">
+    <Position X="5.25" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Common\NamedEntityData.cs</FileName>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventList\EventListData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="North.Data.Location.LocationData">
+    <Position X="3" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAIAAAAAAQAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Location\LocationData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="North.Data.Organization.OrganizationData">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Organization\OrganizationData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="North.Data.SportCategory.SportCategoryData">
+    <Position X="3" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SportCategory\SportCategoryData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="North.Data.SportCategoryType.SportCategoryTypeData">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SportCategoryType\SportCategoryTypeData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="North.Data.Sportsman.SportsmanData">
+    <Position X="3" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sportsman\SportsmanData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="North.Data.SportsmanEvent.SportsmanEventData">
+    <Position X="5.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>SportsmanEvent\SportsmanEventData.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="North.Data.Common.DefinedEntityData">
-    <Position X="4.25" Y="0.5" Width="1.5" />
+    <Position X="1.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Common\DefinedEntityData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="North.Data.Organisatsioon.OrganisationData">
-    <Position X="1.75" Y="3.5" Width="1.5" />
+  <Class Name="North.Data.Common.NamedEntityData">
+    <Position X="4" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Organisatsioon\OrganisationData.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\NamedEntityData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="North.Data.Spordiala.SportCategoryData">
-    <Position X="8.25" Y="3.5" Width="1.5" />
+  <Class Name="North.Data.Common.UniqueEntityData">
+    <Position X="6" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Spordiala\SportCategoryData.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="North.Data.SpordialaTüüp.SportCategoryTypeData">
-    <Position X="6.75" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>SpordialaTüüp\SportCategoryTypeData.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="North.Data.SportlaseÜritus.SportmanEventData">
-    <Position X="2" Y="6" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>SportlaseÜritus\SportmanEventData.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="North.Data.Sportlane.SportsmanData">
-    <Position X="6.25" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Sportlane\SportmanData.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="North.Data.Üritus.Event">
-    <Position X="4.25" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Üritus\Event.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="North.Data.ÜritusteSari.EventListData">
-    <Position X="11.75" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ÜritusteSari\EventListData.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="North.Data.Asukoht.LocationData">
-    <Position X="10.25" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAIAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Asukoht\LocationData.cs</FileName>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\UniqueEntityData.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

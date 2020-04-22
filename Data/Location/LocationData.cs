@@ -2,7 +2,7 @@
 
 namespace North.Data.Location
 {
-    public class LocationData:NamedEntityData
+    public sealed class LocationData:NamedEntityData
     {
         public string EventId { get; set; }
         public string EventListId { get; set; }
