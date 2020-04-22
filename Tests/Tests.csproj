@@ -32,7 +32,6 @@
   <ItemGroup>
     <Folder Include="Data\Common\" />
     <Folder Include="Facade\" />
-    <Folder Include="Infra\" />
     <Folder Include="Pages\" />
   </ItemGroup>
 
