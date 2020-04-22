@@ -2,7 +2,7 @@
 
 namespace North.Data.EventList
 {
-    public sealed class EventListData : UniqueEntityData
+    public sealed class EventListData : NamedEntityData
     {
         public string EventId { get; set; } 
     }

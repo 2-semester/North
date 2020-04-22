@@ -2,5 +2,7 @@
 
 namespace North.Facade.EventList
 {
-   public sealed class EventListView:UniqueEntityView { }
+    public sealed class EventListView : NamedView
+    {
+    }
 }

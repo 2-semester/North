@@ -5,7 +5,7 @@ using North.Data.EventList;
 namespace North.Tests.Data.EventList
 {
     [TestClass]
-    public class EventListDataTests : SealedClassTests<EventListData,UniqueEntityData>
+    public class EventListDataTests : SealedClassTests<EventListData,NamedEntityData>
     {
         [TestMethod]
         public void EventIdTest()

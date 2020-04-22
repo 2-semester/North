@@ -7,22 +7,32 @@ namespace North.Facade.Event
 {
     public sealed class EventView : DefinedView
     {
+        [Required]
         [DataType(DataType.Date)]
         [DisplayName("Kuupäev")]
         public DateTime EventDate { get; set; }
+
         [Required]
         [DisplayName("Spordivaldkond")]
-//dropdownlist 5 asjaga
+        //dropdownlist 5 asjaga
         public string SportCategoryId { get; set; }
+
         [Required]
         [DisplayName("Spordiala")]
         public string TypeId { get; set; }
+
         [Required]
         [DisplayName("Korraldaja")]
         public string OrganizationId { get; set; }
-        //[Required]
-        [DisplayName("Ürituste sari")]
+
+        [DisplayName("Ürituste sari")] 
+        //dropdown list 5asja
         public string EventListId { get; set; }
+
+        public string GetId()
+        {
+            return $"{EventListId}.{OrganizationId}.{TypeId}.{SportCategoryId}";
+        }
         //[Required]
         //[DisplayName("Spordiala")]
         //public string SportsmanEventId { get; set; }
