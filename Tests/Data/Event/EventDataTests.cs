@@ -5,7 +5,7 @@ using North.Data.Event;
 namespace North.Tests.Data.Event
 {
     [TestClass]
-    public class EventDataDomainTests: SealedClassTests<EventData,DefinedEntityData>
+    public class EventDataTests: SealedClassTests<EventData,DefinedEntityData>
     {
         [TestMethod]
         public void EventDateTest()
