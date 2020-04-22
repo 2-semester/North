@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Data.Common;
 using North.Data.SportCategory;
 using North.Domain.Common;
 using North.Domain.SportCategory;

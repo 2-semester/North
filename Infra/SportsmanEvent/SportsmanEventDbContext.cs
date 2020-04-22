@@ -4,7 +4,7 @@ using North.Domain.SportsmanEvent;
 
 namespace North.Infra.SportsmanEvent
 {
-    class SportsmanEventDbContext : DbContext
+    public class SportsmanEventDbContext : DbContext
     {
         public DbSet<SportsmanEventData> SportsmanEvents { get; set; }
 
