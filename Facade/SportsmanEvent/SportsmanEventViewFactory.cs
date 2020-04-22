@@ -10,7 +10,7 @@ namespace North.Facade.SportsmanEvent
         {
             var d = new SportsmanEventData();
             Copy.Members(view, d);
-            return new Domain.SportsmanEvent.SportsmanEventDomain(d);
+            return new SportsmanEventDomain(d);
         }
 
 
