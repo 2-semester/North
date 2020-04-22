@@ -7,6 +7,10 @@ namespace North.Tests.Data.EventList
     [TestClass]
     public class EventListDataTests : SealedClassTests<EventListData,UniqueEntityData>
     {
-        //public string EventId { get; set; } 
+        [TestMethod]
+        public void EventIdTest()
+        {
+            isNullableProperty(() => obj.EventId, x => obj.EventId = x);
+        }
     }
 }

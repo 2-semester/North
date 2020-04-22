@@ -6,8 +6,12 @@ using North.Data.Sportsman;
 namespace North.Tests.Data.Sportsman
 {
     [TestClass]
-    public abstract class SportsmanDataTests: SealedClassTests<SportsmanData,NamedEntityData>
+    public class SportsmanDataTests: SealedClassTests<SportsmanData,NamedEntityData>
     {
-        //public DateTime DateOfBirth { get; set; }
+        [TestMethod]
+        public void DateOfBirthTest()
+        {
+            isProperty(() => obj.DateOfBirth, x => obj.DateOfBirth = x);
+        }
     }
 }

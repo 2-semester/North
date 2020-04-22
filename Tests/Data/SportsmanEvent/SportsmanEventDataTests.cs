@@ -7,7 +7,15 @@ namespace North.Tests.Data.SportsmanEvent
     [TestClass]
     public class SportsmanEventDataTests :SealedClassTests<SportsmanEventData,UniqueEntityData>
     {
-        //public string SportsmanId { get; set; }
-        //public string EventId { get; set; }
+        [TestMethod]
+        public void SportsmanIdTest()
+        {
+            isNullableProperty(() => obj.SportsmanId, x => obj.SportsmanId = x);
+        }
+        [TestMethod]
+        public void EventIdTest()
+        {
+            isNullableProperty(() => obj.EventId, x => obj.EventId = x);
+        }
     }
 }

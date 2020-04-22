@@ -17,8 +17,8 @@ namespace North.Tests
         private static string noClassesInNamespace =>
             "No classes found in namespace {0}";
 
-        private static string testAssembly => "Abc.Tests";
-        private static string assembly => "Abc";
+        private static string testAssembly => "North.Tests";
+        private static string assembly => "North";
         private static char genericsChar => '`';
         private static char internalClass => '+';
         private static string displayClass => "<>";

@@ -7,10 +7,25 @@ namespace North.Tests.Data.Location
     [TestClass]
     public class LocationDataTests:SealedClassTests<LocationData,NamedEntityData>
     {
-        //public string EventId { get; set; }
-        //public string EventListId { get; set; }
-        //public string County { get; set; }
-        //public string City { get; set; }
-
+        [TestMethod]
+        public void EventIdTest()
+        {
+            isNullableProperty(() => obj.EventId, x => obj.EventId = x);
+        }
+        [TestMethod]
+        public void EventListIdTest()
+        {
+            isNullableProperty(() => obj.EventListId, x => obj.EventListId = x);
+        }
+        [TestMethod]
+        public void CountyTest()
+        {
+            isNullableProperty(() => obj.County, x => obj.County = x);
+        }
+        [TestMethod]
+        public void CityTest()
+        {
+            isNullableProperty(() => obj.City, x => obj.City = x);
+        }
     }
 }
