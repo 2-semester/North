@@ -14,7 +14,7 @@ namespace North.Facade.SportsmanEvent
         public string EventId { get; set; }
         public string GetId()
         {
-            return $"{SportsmanId }.{EventId}";
+            return $"{SportsmanId}.{EventId}";
         }
     }
 }

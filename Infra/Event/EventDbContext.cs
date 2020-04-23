@@ -18,7 +18,7 @@ namespace North.Infra.Event
         public static void InitializeTables(ModelBuilder builder)
         {
             if (builder is null) return;
-            builder.Entity<EventData>().ToTable(nameof(Events)).HasKey(x => new { x.EventListId, x.OrganizationId, x.TypeId, x.SportCategoryId});
+            builder.Entity<EventData>().ToTable(nameof(Events)).HasKey(x => new {x.SportsmanEventId,x.EventListId, x.OrganizationId, x.TypeId, x.SportCategoryId});
         }
     }
 }

@@ -28,14 +28,14 @@ namespace North.Facade.Event
         [DisplayName("Ürituste sari")] 
         //dropdown list 5asja
         public string EventListId { get; set; }
+        [Required]
+        [DisplayName("Registreerimis number")]
+        public string SportsmanEventId { get; set; }
 
         public string GetId()
         {
-            return $"{EventListId}.{OrganizationId}.{TypeId}.{SportCategoryId}";
+            return $"{SportCategoryId}.{EventListId}.{OrganizationId}.{TypeId}.{SportCategoryId}";
         }
-        //[Required]
-        //[DisplayName("Spordiala")]
-        //public string SportsmanEventId { get; set; }
     }
 
 }

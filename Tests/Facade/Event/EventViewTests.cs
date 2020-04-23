@@ -11,8 +11,7 @@ namespace North.Tests.Facade.Event
         public void EventDateTest() => isProperty(() => obj.EventDate, x => obj.EventDate = x);
 
         [TestMethod]
-        public void SportCategoryIdTest() =>
-            isNullableProperty(() => obj.SportCategoryId, x => obj.SportCategoryId = x);
+        public void SportCategoryIdTest() => isNullableProperty(() => obj.SportCategoryId, x => obj.SportCategoryId = x);
 
         [TestMethod]
         public void TypeIdTest() => isNullableProperty(() => obj.TypeId, x => obj.TypeId = x);
@@ -22,12 +21,14 @@ namespace North.Tests.Facade.Event
 
         [TestMethod]
         public void EventListIdTest() => isProperty(() => obj.EventListId, x => obj.EventListId = x);
+        [TestMethod]
+        public void SportsmanEventIdTest() => isProperty(() => obj.SportsmanEventId, x => obj.SportsmanEventId = x);
 
         [TestMethod]
         public void GetIdTest()
         {
             var actual = obj.GetId();
-            var expected = $"{obj.EventListId}.{obj.OrganizationId}.{obj.TypeId}.{obj.SportCategoryId}";
+            var expected = $"{obj.SportsmanEventId}.{obj.EventListId}.{obj.OrganizationId}.{obj.TypeId}.{obj.SportCategoryId}";
             Assert.AreEqual(expected, actual);
         }
 

@@ -17,6 +17,7 @@ namespace North.Tests.Facade.Event
 
         [TestMethod]
         public void CreateTest() { }
+
         [TestMethod]
         public void CreateObjectTest()
         {
@@ -34,6 +35,5 @@ namespace North.Tests.Facade.Event
 
             testArePropertyValuesEqual(view, data);
         }
-    
     }
 }
