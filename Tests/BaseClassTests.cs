@@ -1,13 +1,17 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
+using North.Data.EventList;
+using North.Domain.EventList;
+using North.Facade.EventList;
+using North.Pages;
+using North.Tests.Pages;
 
 namespace North.Tests
 {
     public abstract class BaseClassTests<TClass, TBaseClass> : BaseTests
     {
         protected TClass obj;
-
         [TestInitialize]
         public virtual void TestInitialize()
         {

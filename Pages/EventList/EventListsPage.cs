@@ -4,7 +4,7 @@ using North.Facade.EventList;
 
 namespace North.Pages.EventList
 {
-    public class EventListsPage : CommonPage<IEventListsRepository, EventListDomain,
+    public abstract class EventListsPage : CommonPage<IEventListsRepository, EventListDomain,
         EventListView, EventListData>
     {
         protected internal EventListsPage(IEventListsRepository r) : base(r)

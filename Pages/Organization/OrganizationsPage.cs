@@ -4,7 +4,7 @@ using North.Facade.Organization;
 
 namespace North.Pages.Organization
 {
-    public class OrganizationsPage : CommonPage<IOrganizationsRepository, OrganizationDomain,
+    public abstract class OrganizationsPage : CommonPage<IOrganizationsRepository, OrganizationDomain,
         OrganizationView, OrganizationData>
     {
         protected internal OrganizationsPage(IOrganizationsRepository r) : base(r)

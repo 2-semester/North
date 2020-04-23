@@ -9,7 +9,7 @@ using North.Facade.SportsmanEvent;
 
 namespace North.Pages.SportsmanEvent
 {
-    public class SportsmanEventsPage : CommonPage<ISportsmanEventsRepository, SportsmanEventDomain,
+    public abstract class SportsmanEventsPage : CommonPage<ISportsmanEventsRepository, SportsmanEventDomain,
         SportsmanEventView, SportsmanEventData>
     {
         protected internal SportsmanEventsPage(ISportsmanEventsRepository r) : base(r)

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace North.Core.Info
+﻿namespace North.Core.Event
 {
     public static class Event
     {
-        public static Data Event = new Data(
+        //public static Data Event = new Data(
             
-            );
+          //  );
     }
 }

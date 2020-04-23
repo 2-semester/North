@@ -1,4 +1,4 @@
-﻿namespace North.Core.Info
+﻿namespace North.Core.Event
 {
     public class Data
     {

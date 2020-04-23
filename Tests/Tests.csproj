@@ -31,7 +31,6 @@
 
   <ItemGroup>
     <Folder Include="Data\Common\" />
-    <Folder Include="Pages\" />
   </ItemGroup>
 
 </Project>

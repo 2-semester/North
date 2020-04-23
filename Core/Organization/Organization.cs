@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using North.Core.Organization;
 
-namespace North.Core.Info
+namespace North.Core.Organization
 {
     public static class Organization
     {

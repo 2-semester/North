@@ -10,10 +10,10 @@ using North.Facade.Event;
 
 namespace North.Pages.Event
 {
-    public class EventsPage : CommonPage<IEventsRepository, EventDomain,
+    public abstract class EventsPage : CommonPage<IEventsRepository, EventDomain,
         EventView, EventData>
     {
-        protected internal EventsPage (IEventsRepository r,IEventsRepository e) : base(r)
+        protected internal EventsPage (IEventsRepository r) : base(r)
         {
             PageTitle = "Üritused";
             //Events = createSelectList<EventDomain, EventData>(e);

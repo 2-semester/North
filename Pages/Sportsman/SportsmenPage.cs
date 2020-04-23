@@ -10,7 +10,7 @@ using North.Facade.Sportsman;
 
 namespace North.Pages.Sportsman
 {
-    public class SportsmenPage : CommonPage<ISportsmenRepository, SportsmanDomain,
+    public abstract class SportsmenPage : CommonPage<ISportsmenRepository, SportsmanDomain,
         SportsmanView, SportsmanData>
     {
         protected internal SportsmenPage(ISportsmenRepository r) : base(r)

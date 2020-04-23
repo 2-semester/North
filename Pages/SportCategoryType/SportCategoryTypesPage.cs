@@ -7,7 +7,7 @@ using North.Facade.SportCategoryType;
 
 namespace North.Pages.SportCategoryType
 {
-    public class SportCategoryTypesPage : CommonPage<ISportCategoryTypesRepository, SportCategoryTypeDomain,
+    public abstract class SportCategoryTypesPage : CommonPage<ISportCategoryTypesRepository, SportCategoryTypeDomain,
         SportCategoryTypeView, SportCategoryTypeData>
     {
         protected internal SportCategoryTypesPage(ISportCategoryTypesRepository r) : base(r)
