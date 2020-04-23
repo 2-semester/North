@@ -17,7 +17,7 @@ namespace North.Pages.SportsmanEvent
             PageTitle = "Sportlase üritused";
         }
 
-        public override string ItemId => Item.Id;
+        public override string ItemId => Item is null ? string.Empty : Item.GetId();
 
         protected internal override string getPageUrl() => "/SportsmanEvent/SportsmanEvents";
 

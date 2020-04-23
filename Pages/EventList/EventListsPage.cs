@@ -12,7 +12,7 @@ namespace North.Pages.EventList
             PageTitle = "Ürituste sarjad";
         }
 
-        public override string ItemId => Item.Id;
+        public override string ItemId => Item?.Id ?? string.Empty;
 
         protected internal override string getPageUrl() => "/EventList/EventLists";
 

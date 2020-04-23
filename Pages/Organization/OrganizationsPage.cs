@@ -12,7 +12,7 @@ namespace North.Pages.Organization
             PageTitle = "Organisatsioonid";
         }
 
-        public override string ItemId => Item.Id;
+        public override string ItemId => Item?.Id ?? string.Empty;
 
         protected internal override string getPageUrl() => "/Organization/Organizations";
 
