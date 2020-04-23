@@ -67,8 +67,7 @@ namespace North.Tests.Infra.Location
             var o = new testClass(options);
             var builder = o.RunOnModelCreating();
             LocationDbContext.InitializeTables(builder);
-            testEntity<LocationData>(builder, x => x.EventId, x => x.EventId);
-            //eventId ja EventListId peaks olema testitud vist
+            testEntity<LocationData>(builder);
         }
 
         [TestMethod]
