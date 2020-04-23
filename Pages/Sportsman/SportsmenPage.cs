@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using North.Data.Event;
+using North.Data.Sportsman;
+using North.Domain.Event;
+using North.Domain.Sportsman;
+using North.Facade.Event;
+using North.Facade.Sportsman;
+
+namespace North.Pages.Sportsman
+{
+    public class SportsmenPage : CommonPage<ISportsmenRepository, SportsmanDomain,
+        SportsmanView, SportsmanData>
+    {
+        protected internal SportsmenPage(ISportsmenRepository r) : base(r)
+        {
+            PageTitle = "Sportlane";
+        }
+
+        public override string ItemId => Item.Id;
+
+        protected internal override string getPageUrl() => "/Sportsman/Sportsmen";
+
+        protected internal override SportsmanDomain toObject(SportsmanView view)
+        {
+            return SportsmanViewFactory.Create(view);
+        }
+
+        protected internal override SportsmanView toView(SportsmanDomain obj)
+        {
+            return SportsmanViewFactory.Create(obj);
+        }
+    }
+}

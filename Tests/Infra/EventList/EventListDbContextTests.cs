@@ -67,8 +67,7 @@ namespace North.Tests.Infra.EventList
             var o = new testClass(options);
             var builder = o.RunOnModelCreating();
             EventListDbContext.InitializeTables(builder);
-            testEntity<EventListData>(builder, x => x.EventId, x => x.EventId);
-            //siin ka jama
+            testEntity<EventListData>(builder);
         }
 
         [TestMethod]
