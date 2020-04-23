@@ -1,10 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using North.Core.Organization;
 
 namespace North.Core.Info
 {
-    class Organization
+    public static class Organization
     {
+        public static OrganizationInfo Organisatsioon = new OrganizationInfo(
+            "Sportland", "Sportland", "Tereteretere");
+
+        public static List<OrganizationInfo> organisatsioooon =>
+            new List<OrganizationInfo> {
+                new OrganizationInfo(
+                    "Candela", "cd", "Candela")
+            };
     }
 }
