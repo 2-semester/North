@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
@@ -69,7 +67,7 @@ namespace North.Tests.Infra.SportCategory
             var o = new testClass(options);
             var builder = o.RunOnModelCreating();
             SportCategoryDbContext.InitializeTables(builder);
-            testEntity<SportCategoryData>(builder, x => x.SportCategoryId, x => x.SportCategoryId);
+            testEntity<SportCategoryData>(builder);
         }
 
         [TestMethod]

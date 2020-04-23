@@ -3,7 +3,7 @@ using North.Domain.SportsmanEvent;
 
 namespace North.Infra.SportsmanEvent
 {
-    class SportsmanEventsRepository : UniqueEntityRepository<SportsmanEventDomain, SportsmanEventData>, ISportsmanEventsRepository
+    public sealed class SportsmanEventsRepository : UniqueEntityRepository<SportsmanEventDomain, SportsmanEventData>, ISportsmanEventsRepository
     {
         public SportsmanEventsRepository(SportsmanEventDbContext c) : base(c, c.SportsmanEvents) { }
 
