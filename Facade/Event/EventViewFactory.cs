@@ -16,7 +16,8 @@ namespace North.Facade.Event
         public static EventView Create(EventDomain obj)
         {
             var v = new EventView();
-            Copy.Members(obj.Data, v);
+            if (!(obj?.Data is null))
+                Copy.Members(obj.Data, v);
             return v;
         }
     }
