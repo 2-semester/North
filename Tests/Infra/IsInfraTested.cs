@@ -9,7 +9,6 @@ namespace North.Tests.Infra
 
         protected override string Namespace(string name) { return $"{assembly}.{name}"; }
 
-        [TestMethod] public void IsCommonTested() { isAllTested(assembly, Namespace("Common")); }
         [TestMethod] public void IsEventTested() { isAllTested(assembly, Namespace("Event")); }
         [TestMethod] public void IsEventListTested() { isAllTested(assembly, Namespace("EventList")); }
         [TestMethod] public void IsLocationTested() { isAllTested(assembly, Namespace("Location")); }

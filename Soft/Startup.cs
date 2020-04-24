@@ -13,6 +13,7 @@ using North.Domain.SportCategory;
 using North.Domain.SportCategoryType;
 using North.Domain.Sportsman;
 using North.Domain.SportsmanEvent;
+using North.Infra;
 using North.Infra.Event;
 using North.Infra.EventList;
 using North.Infra.Location;
@@ -40,9 +41,11 @@ namespace North.Soft
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<NorthDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddRazorPages();
 
             services.AddScoped<IEventsRepository, EventsRepository>();
             services.AddScoped<IEventListsRepository, EventListsRepository>();
@@ -52,6 +55,8 @@ namespace North.Soft
             services.AddScoped<ISportCategoryTypesRepository, SportCategoryTypesRepository>();
             services.AddScoped<ISportsmenRepository, SportsmenRepository>();
             services.AddScoped<ISportsmanEventsRepository, SportsmanEventsRepository>();
+            services.AddRazorPages();
+            services.AddServerSideBlazor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
