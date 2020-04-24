@@ -75,18 +75,45 @@ namespace North.Tests.Infra
             var builder = o.RunOnModelCreating();
             NorthDbContext.InitializeTables(builder);
             testEntity<EventData>(builder, x => x.TypeId, x => x.TypeId);
-            testEntity<EventListData>(builder, x => x.EventId);
+            testEntity<EventListData>(builder);
             testEntity<LocationData>(builder);
             testEntity<OrganizationData>(builder);
             testEntity<SportCategoryData>(builder);
             testEntity<SportCategoryTypeData>(builder);
             testEntity<SportsmanData>(builder);
             testEntity<SportsmanEventData>(builder, x => x.SportsmanId, x => x.SportsmanId);
-
         }
 
         [TestMethod]
         public void EventsTest() =>
             isNullableProperty(obj, nameof(obj.Events), typeof(DbSet<EventData>));
+
+        [TestMethod]
+        public void EventListsTest() =>
+            isNullableProperty(obj, nameof(obj.EventLists), typeof(DbSet<EventListData>));
+
+        [TestMethod]
+        public void LocationsTest() =>
+            isNullableProperty(obj, nameof(obj.Locations), typeof(DbSet<LocationData>));
+
+        [TestMethod]
+        public void OrganizationsTest() =>
+            isNullableProperty(obj, nameof(obj.Organizations), typeof(DbSet<OrganizationData>));
+
+        [TestMethod]
+        public void SportCategoriesTest() =>
+            isNullableProperty(obj, nameof(obj.SportCategories), typeof(DbSet<SportCategoryData>));
+
+        [TestMethod]
+        public void SportCategoryTypesTest() =>
+            isNullableProperty(obj, nameof(obj.SportCategoryTypes), typeof(DbSet<SportCategoryTypeData>));
+
+        [TestMethod]
+        public void SportsmenTest() =>
+            isNullableProperty(obj, nameof(obj.Sportsmen), typeof(DbSet<SportsmanData>));
+
+        [TestMethod]
+        public void SportsmanEventsTest() =>
+            isNullableProperty(obj, nameof(obj.SportsmanEvents), typeof(DbSet<SportsmanEventData>));
     }
 }
