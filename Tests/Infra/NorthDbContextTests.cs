@@ -75,7 +75,7 @@ namespace North.Tests.Infra
             var builder = o.RunOnModelCreating();
             NorthDbContext.InitializeTables(builder);
             testEntity<EventData>(builder, x => x.TypeId, x => x.TypeId);
-            testEntity<EventListData>(builder);
+            testEntity<EventListData>(builder, x => x.EventId);
             testEntity<LocationData>(builder);
             testEntity<OrganizationData>(builder);
             testEntity<SportCategoryData>(builder);

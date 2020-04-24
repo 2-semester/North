@@ -4,7 +4,7 @@ using System.Text;
 
 namespace North.Infra
 {
-    class NorthDbInitializer
+    public static class NorthDbInitializer
     {
     }
 }
