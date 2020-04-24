@@ -14,12 +14,12 @@ namespace North.Tests.Infra.SportCategory
         [TestInitialize]
         public override void TestInitialize()
         {
-            var options = new DbContextOptionsBuilder<SportCategoryDbContext>()
+            var options = new DbContextOptionsBuilder<NorthDbContext>()
                 .UseInMemoryDatabase("TestDb")
                 .Options;
-            db = new SportCategoryDbContext(options);
-            dbSet = ((SportCategoryDbContext)db).SportCategories;
-            obj = new SportCategoriesRepository((SportCategoryDbContext)db);
+            db = new NorthDbContext(options);
+            dbSet = ((NorthDbContext)db).SportCategories;
+            obj = new SportCategoriesRepository((NorthDbContext)db);
             base.TestInitialize();
         }
 

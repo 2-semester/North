@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace North.Infra.Sportsman
+namespace North.Infra
 {
-    public static class SportsmanDbInitializer
+    class NorthDbInitializer
     {
     }
 }

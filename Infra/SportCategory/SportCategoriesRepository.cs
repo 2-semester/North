@@ -5,7 +5,7 @@ namespace North.Infra.SportCategory
 {
     public sealed class SportCategoriesRepository : UniqueEntityRepository<SportCategoryDomain, SportCategoryData>, ISportCategoriesRepository
     {
-        public SportCategoriesRepository(SportCategoryDbContext c) : base(c, c.SportCategories) { }
+        public SportCategoriesRepository(NorthDbContext c) : base(c, c.SportCategories) { }
 
         protected internal override SportCategoryDomain toDomainObject(SportCategoryData d) => new SportCategoryDomain(d);
     }

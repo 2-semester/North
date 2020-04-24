@@ -16,12 +16,12 @@ namespace North.Tests.Infra.EventList
         [TestInitialize]
         public override void TestInitialize()
         {
-            var options = new DbContextOptionsBuilder<EventListDbContext>()
+            var options = new DbContextOptionsBuilder<NorthDbContext>()
                 .UseInMemoryDatabase("TestDb") //loob mälus andmebaasi
                 .Options;
-            db = new EventListDbContext(options);
-            dbSet = ((EventListDbContext)db).EventLists;
-            obj = new EventListsRepository((EventListDbContext)db);
+            db = new NorthDbContext(options);
+            dbSet = ((NorthDbContext)db).EventLists;
+            obj = new EventListsRepository((NorthDbContext)db);
             base.TestInitialize();
         }
 

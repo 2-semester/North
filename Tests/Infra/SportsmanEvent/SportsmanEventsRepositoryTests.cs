@@ -14,12 +14,12 @@ namespace North.Tests.Infra.SportsmanEvent
         [TestInitialize]
         public override void TestInitialize()
         {
-            var options = new DbContextOptionsBuilder<SportsmanEventDbContext>()
+            var options = new DbContextOptionsBuilder<NorthDbContext>()
                 .UseInMemoryDatabase("TestDb")
                 .Options;
-            db = new SportsmanEventDbContext(options);
-            dbSet = ((SportsmanEventDbContext)db).SportsmanEvents;
-            obj = new SportsmanEventsRepository((SportsmanEventDbContext)db);
+            db = new NorthDbContext(options);
+            dbSet = ((NorthDbContext)db).SportsmanEvents;
+            obj = new SportsmanEventsRepository((NorthDbContext)db);
             base.TestInitialize();
         }
 

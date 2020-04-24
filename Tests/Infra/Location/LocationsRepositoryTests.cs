@@ -14,12 +14,12 @@ namespace North.Tests.Infra.Location
         [TestInitialize]
         public override void TestInitialize()
         {
-            var options = new DbContextOptionsBuilder<LocationDbContext>()
+            var options = new DbContextOptionsBuilder<NorthDbContext>()
                 .UseInMemoryDatabase("TestDb")
                 .Options;
-            db = new LocationDbContext(options);
-            dbSet = ((LocationDbContext)db).Locations;
-            obj = new LocationsRepository((LocationDbContext)db);
+            db = new NorthDbContext(options);
+            dbSet = ((NorthDbContext)db).Locations;
+            obj = new LocationsRepository((NorthDbContext)db);
             base.TestInitialize();
         }
 

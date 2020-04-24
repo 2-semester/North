@@ -4,7 +4,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
 using North.Domain.Event;
 using North.Infra;
-using North.Infra.Event;
 using North.Data.Event;
 
 namespace North.Tests.Infra
@@ -33,10 +32,10 @@ namespace North.Tests.Infra
         {
             base.TestInitialize();
 
-            var options = new DbContextOptionsBuilder<EventDbContext>()
+            var options = new DbContextOptionsBuilder<NorthDbContext>()
                 .UseInMemoryDatabase("TestDb")//loob mälus andmebaasi
                 .Options;
-            var c = new EventDbContext(options);
+            var c = new NorthDbContext(options);
             obj = new testClass(c, c.Events);
             data = GetRandom.Object<EventData>();
         }

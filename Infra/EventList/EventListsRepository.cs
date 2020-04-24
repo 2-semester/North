@@ -5,7 +5,7 @@ namespace North.Infra.EventList
 {
     public sealed class EventListsRepository : UniqueEntityRepository<EventListDomain, EventListData>, IEventListsRepository
     {
-        public EventListsRepository(EventListDbContext c) : base(c, c.EventLists) { }
+        public EventListsRepository(NorthDbContext c) : base(c, c.EventLists) { }
 
         protected internal override EventListDomain toDomainObject(EventListData d) => new EventListDomain(d);
     }

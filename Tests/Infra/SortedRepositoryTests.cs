@@ -38,8 +38,8 @@ namespace North.Tests.Infra
         public override void TestInitialize()
         {
             base.TestInitialize();
-            var options = new DbContextOptionsBuilder<EventDbContext>().UseInMemoryDatabase("TestDb").Options;
-            var c = new EventDbContext(options);
+            var options = new DbContextOptionsBuilder<NorthDbContext>().UseInMemoryDatabase("TestDb").Options;
+            var c = new NorthDbContext(options);
             obj = new testClass(c, c.Events);
         }
 

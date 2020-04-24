@@ -8,19 +8,27 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
 using North.Infra.Event;
 using North.Data.Event;
+using North.Data.EventList;
+using North.Data.Location;
+using North.Data.Organization;
+using North.Data.SportCategory;
+using North.Data.SportCategoryType;
+using North.Data.Sportsman;
+using North.Data.SportsmanEvent;
+using North.Infra;
 
 namespace North.Tests.Infra.Event
 {
     [TestClass]
-    public class EventDbContextTests : BaseClassTests<EventDbContext, DbContext>
+    public class NorthDbContextTests : BaseClassTests<NorthDbContext, DbContext>
     {
 
-        private DbContextOptions<EventDbContext> options;
+        private DbContextOptions<NorthDbContext> options;
 
-        private class testClass : EventDbContext
+        private class testClass : NorthDbContext
         {
 
-            public testClass(DbContextOptions<EventDbContext> o) : base(o) { }
+            public testClass(DbContextOptions<NorthDbContext> o) : base(o) { }
 
             public ModelBuilder RunOnModelCreating()
             {
@@ -35,8 +43,8 @@ namespace North.Tests.Infra.Event
         public override void TestInitialize()
         {
             base.TestInitialize();
-            options = new DbContextOptionsBuilder<EventDbContext>().UseInMemoryDatabase("TestDb").Options;
-            obj = new EventDbContext(options);
+            options = new DbContextOptionsBuilder<NorthDbContext>().UseInMemoryDatabase("TestDb").Options;
+            obj = new NorthDbContext(options);
         }
 
         [TestMethod]
@@ -63,14 +71,19 @@ namespace North.Tests.Infra.Event
                 testKey(entity, values);
             }
 
-            EventDbContext.InitializeTables(null);
+            NorthDbContext.InitializeTables(null);
             var o = new testClass(options);
             var builder = o.RunOnModelCreating();
-            EventDbContext.InitializeTables(builder);
+            NorthDbContext.InitializeTables(builder);
             testEntity<EventData>(builder, x => x.TypeId, x => x.TypeId);
-            //testEntity<EventData>(builder, x => x.EventListId, x => x.EventListId);
-            //testEntity<EventData>(builder, x => x.SportsmanEventId, x => x.SportsmanEventId);
-            //nii ei toimi, aga vaa on testida kolme id-d ikkagi vist
+            testEntity<EventListData>(builder);
+            testEntity<LocationData>(builder);
+            testEntity<OrganizationData>(builder);
+            testEntity<SportCategoryData>(builder);
+            testEntity<SportCategoryTypeData>(builder);
+            testEntity<SportsmanData>(builder);
+            testEntity<SportsmanEventData>(builder, x => x.SportsmanId, x => x.SportsmanId);
+
         }
 
         [TestMethod]

@@ -32,10 +32,10 @@ namespace North.Tests.Infra
         {
             base.TestInitialize();
 
-            var options = new DbContextOptionsBuilder<EventDbContext>()
+            var options = new DbContextOptionsBuilder<NorthDbContext>()
                 .UseInMemoryDatabase("TestDb")
                 .Options;
-            var c = new EventDbContext(options);
+            var c = new NorthDbContext(options);
             obj = new testClass(c, c.Events);
             count = GetRandom.UInt8(20, 40);
             foreach (var p in c.Events)

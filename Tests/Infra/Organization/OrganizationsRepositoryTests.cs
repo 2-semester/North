@@ -14,12 +14,12 @@ namespace North.Tests.Infra.Organization
         [TestInitialize]
         public override void TestInitialize()
         {
-            var options = new DbContextOptionsBuilder<OrganizationDbContext>()
+            var options = new DbContextOptionsBuilder<NorthDbContext>()
                 .UseInMemoryDatabase("TestDb")
                 .Options;
-            db = new OrganizationDbContext(options);
-            dbSet = ((OrganizationDbContext)db).Organizations;
-            obj = new OrganizationsRepository((OrganizationDbContext)db);
+            db = new NorthDbContext(options);
+            dbSet = ((NorthDbContext)db).Organizations;
+            obj = new OrganizationsRepository((NorthDbContext)db);
             base.TestInitialize();
         }
 
