@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
-using North.Infra.Event;
 using North.Data.Event;
 using North.Data.EventList;
 using North.Data.Location;
@@ -17,7 +16,7 @@ using North.Data.Sportsman;
 using North.Data.SportsmanEvent;
 using North.Infra;
 
-namespace North.Tests.Infra.Event
+namespace North.Tests.Infra
 {
     [TestClass]
     public class NorthDbContextTests : BaseClassTests<NorthDbContext, DbContext>
