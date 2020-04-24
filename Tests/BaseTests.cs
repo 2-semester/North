@@ -6,6 +6,7 @@ using North.Aids;
 
 namespace North.Tests
 {
+    [TestClass]
     public class BaseTests
     {
         private const string notTested = "<{0}> is not tested";

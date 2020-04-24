@@ -10,8 +10,8 @@ using North.Soft.Data;
 namespace North.Soft.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200424094609_initial")]
-    partial class initial
+    [Migration("20200424095208_initialize")]
+    partial class initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
