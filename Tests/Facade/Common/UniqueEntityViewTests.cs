@@ -4,7 +4,7 @@ using North.Facade.Common;
 namespace North.Tests.Facade.Common
 {
     [TestClass]
-    public class UniqueEntityViewTests : AbstractClassTests<UniqueEntityView, object>
+    public class UniqueEntityViewTests : AbstractClassTests<UniqueEntityView, PeriodView>
     {
         private class testClass : UniqueEntityView { }
 

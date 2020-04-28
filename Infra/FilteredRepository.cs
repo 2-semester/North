@@ -8,7 +8,7 @@ using North.Domain.Common;
 namespace North.Infra
 {
     public abstract class FilteredRepository<TDomain, TData> : SortedRepository<TDomain, TData>, IFiltering
-        where TData : UniqueEntityData, new()
+        where TData : PeriodData, new()
         where TDomain : Entity<TData>, new()
     {
         public string SearchString { get; set; }

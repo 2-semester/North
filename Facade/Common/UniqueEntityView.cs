@@ -2,7 +2,7 @@
 
 namespace North.Facade.Common
 {
-    public abstract class UniqueEntityView
+    public abstract class UniqueEntityView :PeriodView
     {
         [Required]
         public string Id { get; set; }

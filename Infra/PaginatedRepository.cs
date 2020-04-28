@@ -7,7 +7,7 @@ using North.Domain.Common;
 namespace North.Infra
 {
     public abstract class PaginatedRepository<TDomain, TData>:FilteredRepository<TDomain, TData>,IPaging
-        where TData : UniqueEntityData, new()
+        where TData : PeriodData, new()
         where TDomain : Entity<TData>, new()
     {
         public int PageIndex { get; set; }

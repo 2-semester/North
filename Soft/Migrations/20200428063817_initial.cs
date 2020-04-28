@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace North.Soft.Migrations
 {
-    public partial class initialize : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -51,6 +51,8 @@ namespace North.Soft.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
+                    ValidFrom = table.Column<DateTime>(nullable: true),
+                    ValidTo = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(nullable: false),
                     EventId = table.Column<string>(nullable: true)
                 },
@@ -68,6 +70,8 @@ namespace North.Soft.Migrations
                     OrganizationId = table.Column<string>(nullable: false),
                     EventListId = table.Column<string>(nullable: false),
                     SportsmanEventId = table.Column<string>(nullable: false),
+                    ValidFrom = table.Column<DateTime>(nullable: true),
+                    ValidTo = table.Column<DateTime>(nullable: true),
                     Id = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: false),
                     Definition = table.Column<string>(nullable: false),
@@ -83,6 +87,8 @@ namespace North.Soft.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
+                    ValidFrom = table.Column<DateTime>(nullable: true),
+                    ValidTo = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(nullable: false),
                     EventId = table.Column<string>(nullable: true),
                     EventListId = table.Column<string>(nullable: true),
@@ -99,6 +105,8 @@ namespace North.Soft.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
+                    ValidFrom = table.Column<DateTime>(nullable: true),
+                    ValidTo = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(nullable: false),
                     Definition = table.Column<string>(nullable: false)
                 },
@@ -112,6 +120,8 @@ namespace North.Soft.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
+                    ValidFrom = table.Column<DateTime>(nullable: true),
+                    ValidTo = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(nullable: false),
                     SportCategoryId = table.Column<string>(nullable: true)
                 },
@@ -125,6 +135,8 @@ namespace North.Soft.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
+                    ValidFrom = table.Column<DateTime>(nullable: true),
+                    ValidTo = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(nullable: false),
                     Definition = table.Column<string>(nullable: false)
                 },
@@ -139,6 +151,8 @@ namespace North.Soft.Migrations
                 {
                     SportsmanId = table.Column<string>(nullable: false),
                     EventId = table.Column<string>(nullable: false),
+                    ValidFrom = table.Column<DateTime>(nullable: true),
+                    ValidTo = table.Column<DateTime>(nullable: true),
                     Id = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -151,6 +165,8 @@ namespace North.Soft.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
+                    ValidFrom = table.Column<DateTime>(nullable: true),
+                    ValidTo = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(nullable: false),
                     DateOfBirth = table.Column<DateTime>(nullable: false)
                 },

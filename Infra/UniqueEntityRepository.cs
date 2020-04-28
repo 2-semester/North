@@ -6,7 +6,7 @@ using North.Domain.Common;
 namespace North.Infra
 {
     public abstract class UniqueEntityRepository<TDomain, TData> : PaginatedRepository<TDomain, TData>
-        where TData : UniqueEntityData, new()
+        where TData :UniqueEntityData, new()
         where TDomain : Entity<TData>, new()
     {
 
