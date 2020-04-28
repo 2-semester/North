@@ -27,4 +27,14 @@
     <ProjectReference Include="..\Pages\Pages.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="Areas\EventList\Pages\EventLists\" />
+    <Folder Include="Areas\Event\" />
+    <Folder Include="Areas\SportsmanEvent\" />
+    <Folder Include="Areas\Sportsman\" />
+    <Folder Include="Areas\SportCategoryType\" />
+    <Folder Include="Areas\Organization\" />
+  </ItemGroup>
+
 </Project>

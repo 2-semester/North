@@ -17,7 +17,7 @@ namespace North.Pages.SportCategoryType
 
         public override string ItemId => Item?.Id ?? string.Empty;
 
-        protected internal override string getPageUrl() => "/SportCategoryType/SportCategoryTypes";
+        protected internal override string getPageUrl() => "/SportCategoryType";
 
         protected internal override SportCategoryTypeDomain toObject(SportCategoryTypeView view)
         {
