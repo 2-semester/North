@@ -1,0 +1,19 @@
+﻿@page
+@using North.Pages.Extensions
+@model North.Soft.Areas.Event.Pages.Events.CreateModel
+
+@{
+    Layout = "_Create";
+}
+    <body>
+        @Html.EditControlsFor(model => model.Item.Id)
+        @Html.EditControlsFor(model => model.Item.Name)
+        @Html.EditControlsFor(model => model.Item.EventDate)
+        @Html.EditControlsFor(model => model.Item.SportCategoryId)
+        @Html.EditControlsFor(model => model.Item.TypeId)
+        @Html.EditControlsFor(model => model.Item.OrganizationId)
+        @Html.EditControlsFor(model => model.Item.EventListId)
+        @Html.EditControlsFor(model => model.Item.ValidFrom)
+        @Html.EditControlsFor(model => model.Item.ValidTo)
+        @Html.DisplayControlsFor(model => model.Item.SportsmanEventId)
+    </body>

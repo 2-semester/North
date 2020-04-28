@@ -23,8 +23,14 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
-                        @Html.DropDownNavigationMenuFor("valikud",
-                        new Link("Ürituste sarjad", "/EventList/EventLists"))
+                        @Html.DropDownNavigationMenuFor("Valikud",
+                            new Link("Üritused", "/Event/Events"),
+                            new Link("Ürituste sarjad", "/EventList/EventLists"),
+                                new Link("Organisatsioonid", "/Organization/Organizations")
+                            )
+                    @Html.DropDownNavigationMenuFor("Spordialad",
+                        new Link("Jooks", ""))
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>

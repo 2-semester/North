@@ -76,7 +76,6 @@ namespace North.Pages.Extensions
             s += $"&pageIndex={pageIndex}";
 
             list.Add(new HtmlString("<td>"));
-            list.Add(new HtmlString($"<a href=\"{page}/Index{s}\">{Constants.SelectLinkTitle}</a>"));
             list.Add(" | ");
             list.Add(new HtmlString($"<a href=\"{page}/Edit{s}\">{Constants.EditLinkTitle}</a>"));
             list.Add(" | ");
@@ -103,7 +102,6 @@ namespace North.Pages.Extensions
             var list = new List<object>();
             foreach (var value in values) addValue(list, value);
             list.Add(new HtmlString("<td>"));
-            list.Add(new HtmlString($"<a href=\"{page}/Select?id={index}&fixedFilter={fixedFilter}&fixedValue={fixedValue}\">{Constants.SelectLinkTitle}</a>"));
             list.Add(" | ");
             list.Add(new HtmlString($"<a href=\"{page}/Edit?id={index}&fixedFilter={fixedFilter}&fixedValue={fixedValue}\">{Constants.EditLinkTitle}</a>"));
             list.Add(" | ");
