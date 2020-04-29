@@ -29,8 +29,11 @@
                                 new Link("Organisatsioonid", "/Organization/Organizations")
                             )
                     @Html.DropDownNavigationMenuFor("Spordialad",
-                        new Link("Jooks", ""))
-
+                        new Link("Jooksmine", "/Event/Events?FixedFilter=&FixedValue=&SearchString=Jooksmine"),
+                        new Link("Surfamine", "/Event/Events?FixedFilter=&FixedValue=&SearchString=Surfamine"),
+                        new Link("Ujumine", "/Event/Events?FixedFilter=&FixedValue=&SearchString=Ujumine"),
+                        new Link("Jalgrattasõit", "/Event/Events?FixedFilter=&FixedValue=&SearchString=Jalgrattasõit"),
+                        new Link("Discgolf", "/Event/Events?FixedFilter=&FixedValue=&SearchString=Discgolf"))
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>

@@ -4,7 +4,9 @@ using System.Text;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using North.Aids;
 using North.Data.Event;
+using North.Data.SportCategory;
 using North.Domain.Event;
+using North.Domain.SportCategory;
 using North.Facade.Common;
 using North.Facade.Event;
 
@@ -13,25 +15,26 @@ namespace North.Pages.Event
     public abstract class EventsPage : CommonPage<IEventsRepository, EventDomain,
         EventView, EventData>
     {
-        protected internal EventsPage (IEventsRepository r) : base(r)
+        protected internal EventsPage (IEventsRepository r,ISportCategoriesRepository m):base(r)
         {
             PageTitle = "Üritused";
-            //Events = createSelectList<EventDomain, EventData>(e);
+            SportCategories = createSelectList<SportCategoryDomain, SportCategoryData>(m);
         }
         public override string ItemId => Item is null ? string.Empty : Item.GetId();
-        //protected internal override string getPageSubTitle()
+        //protected internal override string getPageSubTitle(
         //{
         //    return FixedValue is null
         //        ? base.getPageSubTitle()
         //        : $"For {GetEventListName(FixedValue)}";
         //}
-        //public string GetEventName(string eventId)
-        //{
-        //    foreach (var m in Events)
-        //        if (m.Value == eventId)
-        //            return m.Text;
-        //    return "Unspecified";
-        //}
+        public IEnumerable<SelectListItem> SportCategories { get; }
+        public string GetSportCategoryName(string sportCategoryId)
+        {
+            foreach (var m in SportCategories)
+                if (m.Value == sportCategoryId)
+                    return m.Text;
+            return "Unspecified";
+        }
 
         protected internal override string getPageUrl() => "/Event/Events";
 

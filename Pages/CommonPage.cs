@@ -32,13 +32,14 @@ namespace North.Pages {
 
         protected internal string getIndexUrl() => $"{PageUrl}/Index?FixedFilter={FixedFilter}&FixedValue={FixedValue}";
 
-        //protected static IEnumerable<SelectListItem> createSelectList<TTDomain, TTData>(IRepository<TTDomain> r)
-        //    where TTDomain : Entity<TTData>
-        //    where TTData : NamedEntityData, new() {
-        //    var items = r.Get().GetAwaiter().GetResult();
+        protected static IEnumerable<SelectListItem> createSelectList<TTDomain, TTData>(IRepository<TTDomain> r)
+            where TTDomain : Entity<TTData>
+            where TTData : NamedEntityData, new()
+        {
+            var items = r.Get().GetAwaiter().GetResult();
 
-        //    return items.Select(m => new SelectListItem(m.Data.Name, m.Data.Id)).ToList();
-        //}
+            return items.Select(m => new SelectListItem(m.Data.Name, m.Data.Id)).ToList();
+        }
 
     }
 
