@@ -14,7 +14,6 @@ namespace North.Facade.Event
 
         [Required]
         [DisplayName("Spordivaldkond")]
-        //dropdownlist 5 asjaga
         public string SportCategoryId { get; set; }
 
         [Required]
@@ -30,12 +29,11 @@ namespace North.Facade.Event
         public string EventListId { get; set; }
 
         //[Required]
-        [DisplayName("Registreerimisnumber")]
         public string SportsmanEventId { get; set; }
 
         public string GetId()
         {
-            return $"{SportCategoryId}.{EventListId}.{OrganizationId}.{TypeId}.{SportCategoryId}";
+            return $"{SportsmanEventId}.{EventListId}.{OrganizationId}.{TypeId}.{SportCategoryId}";
         }
     }
 

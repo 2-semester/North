@@ -9,7 +9,7 @@ namespace North.Infra
     {
         internal static SportCategoryData jooksmine = new SportCategoryData
         {
-            Id = Guid.NewGuid().ToString(), Name = "Jooksmine", SportCategoryId = "Jooksmine"
+            Id ="Jooksmine" , Name = "Jooksmine", SportCategoryId = "Jooksmine"
         };
 
         internal static SportCategoryData ujumine = new SportCategoryData
