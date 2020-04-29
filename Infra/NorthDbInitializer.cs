@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using North.Data.SportCategory;
 
 namespace North.Infra
@@ -10,30 +9,30 @@ namespace North.Infra
     {
         internal static SportCategoryData jooksmine = new SportCategoryData
         {
-            Id = "Jooksmine", Name = "Jooksmine", SportCategoryId = "Jooksmine"
+            Id = Guid.NewGuid().ToString(), Name = "Jooksmine", SportCategoryId = "Jooksmine"
         };
 
         internal static SportCategoryData ujumine = new SportCategoryData
         {
-            Id = "Ujumine", Name = "Ujumine",
+            Id = Guid.NewGuid().ToString(), Name = "Ujumine",
             SportCategoryId = "Ujumine"
         };
 
         internal static SportCategoryData surfamine = new SportCategoryData
         {
-            Id = "Surfamine", Name = "Surfamine",
+            Id = Guid.NewGuid().ToString(), Name = "Surfamine",
             SportCategoryId = "Surfamine"
         };
 
         internal static SportCategoryData discgolf = new SportCategoryData
         {
-            Id = "Discgolf", Name = "Discgolf",
+            Id = Guid.NewGuid().ToString(), Name = "Discgolf",
             SportCategoryId = "Discgolf"
         };
 
         internal static SportCategoryData jalgrattasõit = new SportCategoryData
         {
-            Id = "Jalgrattasõit", Name = "Jalgrattasõit",
+            Id = Guid.NewGuid().ToString(), Name = "Jalgrattasõit",
             SportCategoryId = "Jalgrattasõit"
         };
         
