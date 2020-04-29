@@ -12,6 +12,9 @@ namespace North.Infra
 {
     public class NorthDbContext: DbContext
     {
+        public NorthDbContext(DbContextOptions<NorthDbContext> options)
+            : base(options) { }
+
         public DbSet<EventData> Events { get; set; }
         public DbSet<EventListData> EventLists { get; set; }
         public DbSet<LocationData> Locations { get; set; }
@@ -21,9 +24,6 @@ namespace North.Infra
         public DbSet<SportsmanData> Sportsmen { get; set; }
         public DbSet<SportsmanEventData> SportsmanEvents { get; set; }
 
-
-        public NorthDbContext(DbContextOptions<NorthDbContext> options)
-            : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

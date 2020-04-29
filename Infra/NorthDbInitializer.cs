@@ -37,21 +37,21 @@ namespace North.Infra
             SportCategoryId = "Jalgrattasõit"
         };
         
-        internal static List<SportCategoryData> sportcategories => new List<SportCategoryData>
+        internal static List<SportCategoryData> sportCategories => new List<SportCategoryData>
         {
             jooksmine, ujumine, surfamine, jalgrattasõit, discgolf
         };
 
-        private static void initializeSportCategories(NorthDbContext db)
+        private static void InitializeSportCategories(NorthDbContext db)
         {
             if (db.SportCategories.Count() != 0) return;
-            db.SportCategories.AddRange(sportcategories);
+            db.SportCategories.AddRange(sportCategories);
             db.SaveChanges();
         }
 
         public static void Initialize(NorthDbContext db) 
         {
-            initializeSportCategories(db);
+            InitializeSportCategories(db);
         }
     }
 }
