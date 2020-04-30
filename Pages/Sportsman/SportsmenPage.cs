@@ -13,7 +13,7 @@ namespace North.Pages.Sportsman
     public abstract class SportsmenPage : CommonPage<ISportsmenRepository, SportsmanDomain,
         SportsmanView, SportsmanData>
     {
-        protected internal SportsmenPage(ISportsmenRepository r) : base(r)
+        protected internal SportsmenPage(ISportsmenRepository r): base(r)
         {
             PageTitle = "Sportlane";
         }

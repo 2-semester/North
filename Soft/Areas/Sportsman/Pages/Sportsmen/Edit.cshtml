@@ -1,0 +1,15 @@
+﻿@page
+@using North.Pages.Extensions
+@model North.Soft.Areas.Event.Pages.Events.EditModel
+
+@{
+    Layout = "_Edit";
+}
+
+    <body>
+        <input type ="hidden"asp-for="Item.Id"/>
+    @Html.EditControlsFor(model => model.Item.Name)
+    @Html.EditControlsFor(model => model.Item.ValidFrom)
+        @Html.EditControlsFor(model => model.Item.ValidTo)
+
+    </body>
