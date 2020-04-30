@@ -1,13 +1,14 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
-using North.Data.EventList;
+using North.Data.Event;
+using North.Data.Sportsman;
 using North.Data.SportsmanEvent;
-using North.Domain.EventList;
+using North.Domain.Event;
+using North.Domain.Sportsman;
 using North.Domain.SportsmanEvent;
-using North.Facade.EventList;
 using North.Facade.SportsmanEvent;
 using North.Pages;
-using North.Pages.EventList;
 using North.Pages.SportsmanEvent;
 
 namespace North.Tests.Pages.SportsmanEvent
@@ -18,19 +19,36 @@ namespace North.Tests.Pages.SportsmanEvent
     {
         private class testClass : SportsmanEventsPage
         {
-            internal testClass(ISportsmanEventsRepository r) : base(r)
+            internal testClass(ISportsmanEventsRepository r, ISportsmenRepository m, IEventsRepository e)  : base(r,m,e)
             {
             }
         }
+        private class testSportmanRepository : baseTestRepositoryForUniqueEntity<SportsmanDomain, SportsmanData>, ISportsmenRepository { }
+        private class testEventRepository : baseTestRepositoryForUniqueEntity<EventDomain, EventData>, IEventsRepository { }
+        private class testRepository : baseTestRepositoryForPeriodEntity<SportsmanEventDomain, SportsmanEventData>, ISportsmanEventsRepository {
+            protected override bool isThis(SportsmanEventDomain entity, string id)
+            {
+                return true;
+            }
 
-        private class testRepository : baseTestRepositoryForUniqueEntity<SportsmanEventDomain, SportsmanEventData>, ISportsmanEventsRepository { }
+            protected override string getId(SportsmanEventDomain entity)
+            {
+                return string.Empty;
+            }
+        }
+
+        private testSportmanRepository sportsman;
+        private testEventRepository events;
+        private testRepository sportsmanEvent;
 
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
-            var r = new testRepository();
-            obj = new testClass(r);
+            sportsmanEvent = new testRepository();
+            sportsman = new testSportmanRepository();
+            events = new testEventRepository();
+            obj = new testClass(sportsmanEvent,sportsman,events);
         }
 
         [TestMethod]
@@ -63,6 +81,18 @@ namespace North.Tests.Pages.SportsmanEvent
             var data = GetRandom.Object<SportsmanEventData>();
             var view = obj.toView(new SportsmanEventDomain(data));
             testArePropertyValuesEqual(view, data);
+        }
+        [TestMethod]
+        public void SportsmenTest()
+        {
+            var list = sportsman.Get().GetAwaiter().GetResult();
+            Assert.AreEqual(list.Count, obj.Sportsmen.Count());
+        }
+        [TestMethod]
+        public void EventsTest()
+        {
+            var list = events.Get().GetAwaiter().GetResult();
+            Assert.AreEqual(list.Count, obj.Events.Count());
         }
     }
 }

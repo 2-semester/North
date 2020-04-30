@@ -5,7 +5,7 @@ using North.Data.SportsmanEvent;
 namespace North.Tests.Data.SportsmanEvent
 {
     [TestClass]
-    public class SportsmanEventDataTests :SealedClassTests<SportsmanEventData,UniqueEntityData>
+    public class SportsmanEventDataTests :SealedClassTests<SportsmanEventData,PeriodData>
     {
         [TestMethod]
         public void SportsmanIdTest()

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using North.Data.Common;
-using North.Data.EventList;
 using North.Domain.Common;
-using North.Domain.EventList;
-using North.Facade.EventList;
 
 namespace North.Pages {
 

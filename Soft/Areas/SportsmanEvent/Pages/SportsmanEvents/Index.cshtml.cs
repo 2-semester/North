@@ -1,10 +1,7 @@
 ﻿using System.Threading.Tasks;
 using North.Domain.Event;
-using North.Domain.SportCategory;
 using North.Domain.Sportsman;
 using North.Domain.SportsmanEvent;
-using North.Pages.Event;
-using North.Pages.Sportsman;
 using North.Pages.SportsmanEvent;
 
 namespace North.Soft.Areas.SportsmanEvent.Pages.SportsmanEvents

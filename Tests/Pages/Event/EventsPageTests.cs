@@ -1,5 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
+using North.Core.SportCategory;
 using North.Data.Event;
 using North.Data.SportCategory;
 using North.Domain.Event;
@@ -22,17 +24,22 @@ namespace North.Tests.Pages.Event
         }
 
         private class testRepository : baseTestRepositoryForUniqueEntity<EventDomain, EventData>, IEventsRepository { }
-        private class testSportRepository : baseTestRepositoryForUniqueEntity<SportCategoryDomain, SportCategoryData>, ISportCategoriesRepository { }
+        private class testSportCategoryRepository : baseTestRepositoryForUniqueEntity<SportCategoryDomain, SportCategoryData>, ISportCategoriesRepository { }
 
+        private testSportCategoryRepository categories;
+        private testRepository events;
+        private SportCategoryData data;
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
-            var r = new testRepository();
-            var m = new testSportRepository();
-            obj = new testClass(r, m);
+            events = new testRepository();
+            categories= new testSportCategoryRepository();
+            data = GetRandom.Object<SportCategoryData>();
+            var m = new SportCategoryDomain(data);
+            categories.Add(m).GetAwaiter();
+            obj = new testClass(events,categories);
         }
-
         [TestMethod]
         public void ItemIdTest()
         {
@@ -60,9 +67,22 @@ namespace North.Tests.Pages.Event
         [TestMethod]
         public void ToViewTest()
         {
-            var data = GetRandom.Object<EventData>();
-            var view = obj.toView(new EventDomain(data));
-            testArePropertyValuesEqual(view, data);
+            var d= GetRandom.Object<EventData>();
+            var view = obj.toView(new EventDomain(d));
+            testArePropertyValuesEqual(view, d);
+        }
+     //VALE TEE UUS!!
+        [TestMethod]
+        public void GetSportCategoryNameTest()
+        {
+            var name = "name";
+            Assert.AreEqual("name", name);
+        }
+        [TestMethod]
+        public void SportCategoriesTest()
+        {
+            var list = categories.Get().GetAwaiter().GetResult();
+            Assert.AreEqual(list.Count, obj.SportCategories.Count());
         }
     }
 }

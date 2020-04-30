@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using North.Data.Event;
 using North.Data.Sportsman;
@@ -8,9 +6,7 @@ using North.Data.SportsmanEvent;
 using North.Domain.Event;
 using North.Domain.Sportsman;
 using North.Domain.SportsmanEvent;
-using North.Facade.Event;
 using North.Facade.SportsmanEvent;
-using North.Pages.Sportsman;
 
 namespace North.Pages.SportsmanEvent
 {

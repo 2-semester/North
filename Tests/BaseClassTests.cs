@@ -1,11 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
-using North.Data.EventList;
-using North.Domain.EventList;
-using North.Facade.EventList;
-using North.Pages;
-using North.Tests.Pages;
 
 namespace North.Tests
 {

@@ -24,7 +24,7 @@
                 <tr>
                     @Html.TableRowFor(
                         page,
-                        item.Id,
+                        item.GetId(),
                         Html.DisplayFor(modelItem => item.SportsmanId),
                         Html.DisplayFor(modelItem => item.EventId)
                         )

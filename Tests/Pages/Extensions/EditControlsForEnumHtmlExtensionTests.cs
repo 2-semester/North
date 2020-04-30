@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Html;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Facade.Common;
-using North.Pages.Extensions;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace North.Tests.Pages.Extensions
 {

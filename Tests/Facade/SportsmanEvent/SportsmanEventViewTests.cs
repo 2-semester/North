@@ -5,7 +5,7 @@ using North.Facade.SportsmanEvent;
 namespace North.Tests.Facade.SportsmanEvent
 {
     [TestClass]
-    public class SportsmanEventViewTests:SealedClassTests<SportsmanEventView, UniqueEntityView>
+    public class SportsmanEventViewTests:SealedClassTests<SportsmanEventView, PeriodView>
     {
         [TestMethod]
         public void SportsmanIdTest() => isNullableProperty(() => obj.SportsmanId, x => obj.SportsmanId = x);

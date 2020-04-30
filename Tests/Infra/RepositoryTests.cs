@@ -12,7 +12,7 @@ namespace North.Tests.Infra
         BaseTests
         where TRepository : IRepository<TObject>
         where TObject : Entity<TData>
-        where TData : UniqueEntityData, new()
+        where TData : PeriodData, new()
     {
         protected TData data;
         protected TRepository obj;

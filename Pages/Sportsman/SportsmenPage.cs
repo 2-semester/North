@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using North.Data.Event;
-using North.Data.Sportsman;
-using North.Domain.Event;
+﻿using North.Data.Sportsman;
 using North.Domain.Sportsman;
-using North.Facade.Event;
 using North.Facade.Sportsman;
 
 namespace North.Pages.Sportsman

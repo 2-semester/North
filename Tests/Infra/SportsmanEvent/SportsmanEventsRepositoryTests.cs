@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using North.Aids;
 using North.Data.SportsmanEvent;
 using North.Domain.SportsmanEvent;
 using North.Infra;
@@ -25,13 +26,19 @@ namespace North.Tests.Infra.SportsmanEvent
 
         protected override Type getBaseType()
         {
-            return typeof(UniqueEntityRepository<SportsmanEventDomain, SportsmanEventData>);
+            return typeof(PaginatedRepository<SportsmanEventDomain, SportsmanEventData>);
         }
 
-        protected override string getId(SportsmanEventData d) => d.Id;
+        protected override string getId(SportsmanEventData d) => $"{d.SportsmanId}.{d.EventId}";
 
         protected override SportsmanEventDomain getObject(SportsmanEventData d) => new SportsmanEventDomain(d);
 
-        protected override void setId(SportsmanEventData d, string id) => d.Id = id;
+        protected override void setId(SportsmanEventData d, string id)
+        {
+            var sportsmanId = GetString.Head(id);
+            var eventId = GetString.Tail(id);
+            d.SportsmanId = sportsmanId;
+            d.EventId = eventId;
+        }
     }
 }

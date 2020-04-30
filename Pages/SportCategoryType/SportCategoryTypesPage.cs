@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using North.Data.SportCategoryType;
+﻿using North.Data.SportCategoryType;
 using North.Domain.SportCategoryType;
 using North.Facade.SportCategoryType;
 
@@ -17,7 +14,7 @@ namespace North.Pages.SportCategoryType
 
         public override string ItemId => Item?.Id ?? string.Empty;
 
-        protected internal override string getPageUrl() => "/SportCategoryType";
+        protected internal override string getPageUrl() => "/SportCategoryType/SportCategoryTypes";
 
         protected internal override SportCategoryTypeDomain toObject(SportCategoryTypeView view)
         {

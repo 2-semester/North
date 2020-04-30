@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using North.Data.Common;
+﻿using North.Data.Common;
 
 namespace North.Facade.SportCategory
 {
-    public sealed class SportCategoryView : UniqueEntityData { }
+    public sealed class SportCategoryView : NamedEntityData { }
 }

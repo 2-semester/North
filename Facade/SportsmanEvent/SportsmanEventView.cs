@@ -4,7 +4,7 @@ using North.Facade.Common;
 
 namespace North.Facade.SportsmanEvent
 {
-    public sealed class SportsmanEventView : UniqueEntityView
+    public sealed class SportsmanEventView : PeriodView
     {
         [Required]
         [DisplayName("Osaleja")]

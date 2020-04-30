@@ -1,8 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using North.Domain.EventList;
 using North.Domain.Organization;
-using North.Pages.EventList;
 using North.Pages.Organization;
 
 namespace North.Soft.Areas.Organization.Pages.Organizations

@@ -5,7 +5,6 @@ using North.Aids;
 using North.Domain.Event;
 using North.Infra;
 using North.Data.Event;
-using North.Infra.Event;
 
 namespace North.Tests.Infra
 {

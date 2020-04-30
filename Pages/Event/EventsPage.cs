@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using North.Aids;
 using North.Data.Event;
 using North.Data.SportCategory;
 using North.Domain.Event;
 using North.Domain.SportCategory;
-using North.Facade.Common;
 using North.Facade.Event;
 
 namespace North.Pages.Event

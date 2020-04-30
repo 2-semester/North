@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using North.Aids;
+﻿using North.Aids;
 using North.Data.SportCategory;
 using North.Domain.SportCategory;
 

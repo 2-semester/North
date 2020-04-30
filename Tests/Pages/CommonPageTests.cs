@@ -3,7 +3,6 @@ using North.Aids;
 using North.Data.Event;
 using North.Domain.Event;
 using North.Facade.Event;
-using North.Facade.EventList;
 using North.Pages;
 
 namespace North.Tests.Pages {

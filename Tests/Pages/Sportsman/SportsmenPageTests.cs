@@ -1,13 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
-using North.Data.EventList;
 using North.Data.Sportsman;
-using North.Domain.EventList;
 using North.Domain.Sportsman;
-using North.Facade.EventList;
 using North.Facade.Sportsman;
 using North.Pages;
-using North.Pages.EventList;
 using North.Pages.Sportsman;
 
 namespace North.Tests.Pages.Sportsman

@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using North.Domain.Event;
 using North.Domain.Sportsman;
 using North.Domain.SportsmanEvent;
-using North.Pages.Sportsman;
 using North.Pages.SportsmanEvent;
 
 namespace North.Soft.Areas.SportsmanEvent.Pages.SportsmanEvents
