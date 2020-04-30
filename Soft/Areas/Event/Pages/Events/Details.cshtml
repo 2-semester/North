@@ -24,4 +24,6 @@
 @section Details {
     @Html.HypertextLinkFor(string.Empty, new Link("Näita üritusi",
         $"{eventLists}/Index?FixedFilter={eventId}&FixedValue={Model.Item.Id}"))
+    @Html.HypertextLinkFor(string.Empty, new Link("Registreeru!",
+        $"{sportsmen}/Index?FixedFilter={eventId2}&FixedValue={Model.Item.Id}"))
 }
