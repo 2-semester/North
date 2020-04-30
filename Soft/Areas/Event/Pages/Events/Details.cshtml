@@ -11,7 +11,7 @@
     const string eventLists = "/EventList/EventLists";
     var eventId = GetMember.Name<EventListData>(x => x.EventId);
 
-    const string sportsmen = "/Sportman/Sportsmen";
+    const string sportsmen = "/Sportsman/Sportsmen/Create?fixedFilter=&fixedValue=";
     var eventId2 = GetMember.Name<SportsmanData>(x => x.Id);
 }
 <body>
@@ -24,4 +24,6 @@
 @section Details {
     @Html.HypertextLinkFor(string.Empty, new Link("Näita üritusi",
         $"{eventLists}/Index?FixedFilter={eventId}&FixedValue={Model.Item.Id}"))
+    @Html.HypertextLinkFor(string.Empty, new Link("Registreeru!",
+        $"{sportsmen}/Index?FixedFilter={eventId2}&FixedValue={Model.Item.Id}"))
 }
