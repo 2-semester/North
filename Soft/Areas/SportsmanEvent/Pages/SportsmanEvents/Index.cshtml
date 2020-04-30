@@ -1,0 +1,35 @@
+﻿@page
+@using North.Pages.Extensions
+@model North.Soft.Areas.SportsmanEvent.Pages.SportsmanEvents.IndexModel
+
+@{
+    Layout = "_Index";
+    var page = Model.PageUrl;
+}
+
+@section Create{
+    @Html.HypertextLinkFor(string.Empty, new Link(Constants.CreateNewLinkTitle, $"{page}/Create?fixedFilter={Model.FixedFilter}&fixedValue={Model.FixedValue}"))
+}
+<body>
+    <table class="table">
+        <thead>
+            @Html.TableHeaderFor(
+                new Link(Html.DisplayNameFor(m => m.Item.SportsmanId), Model.GetSortString(m => m.SportsmanId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.EventId), Model.GetSortString(m => m.EventId, page))
+                )
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    @Html.TableRowFor(
+                        page,
+                        item.Id,
+                        Html.DisplayFor(modelItem => item.SportsmanId),
+                        Html.DisplayFor(modelItem => item.EventId)
+                        )
+                </tr>
+            }
+        </tbody>
+    </table>
+</body> 

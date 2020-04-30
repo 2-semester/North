@@ -1,0 +1,13 @@
+﻿@page
+@using North.Pages.Extensions
+@model North.Soft.Areas.SportsmanEvent.Pages.SportsmanEvents.CreateModel
+
+@{
+    Layout = "_Create";
+}
+    <body>
+
+        @Html.EditControlsForDropDown(model => model.Item.SportsmanId, Model.Sportsmen)
+    @Html.EditControlsForDropDown(model => model.Item.EventId, Model.Events)
+
+    </body>
