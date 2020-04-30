@@ -1,14 +1,16 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using North.Domain.Event;
-using North.Domain.SportCategory;
-using North.Pages.Event;
+using North.Domain.Sportsman;
+using North.Domain.SportsmanEvent;
+using North.Pages.Sportsman;
+using North.Pages.SportsmanEvent;
 
-namespace North.Soft.Areas.Sportsman.Pages.Sportsmen
+namespace North.Soft.Areas.SportsmanEvent.Pages.SportsmanEvents
 {
-    public class DeleteModel : EventsPage
+    public class DeleteModel : SportsmanEventsPage
     {
-        public DeleteModel(IEventsRepository r, ISportCategoriesRepository m) : base(r, m) { }
+        public DeleteModel(ISportsmanEventsRepository r, ISportsmenRepository m, IEventsRepository e) : base(r, m, e) { }
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
             await getObject(id, fixedFilter,fixedValue);

@@ -3,14 +3,16 @@ using Microsoft.AspNetCore.Mvc;
 using North.Domain.Event;
 using North.Domain.SportCategory;
 using North.Domain.Sportsman;
+using North.Domain.SportsmanEvent;
 using North.Pages.Event;
 using North.Pages.Sportsman;
+using North.Pages.SportsmanEvent;
 
-namespace North.Soft.Areas.Sportsman.Pages.Sportsmen
+namespace North.Soft.Areas.SportsmanEvent.Pages.SportsmanEvents
 {
-    public class CreateModel : SportsmenPage
+    public class CreateModel : SportsmanEventsPage
     {
-        public CreateModel(ISportsmenRepository r) : base(r) {}
+        public CreateModel(ISportsmanEventsRepository r,ISportsmenRepository m, IEventsRepository e) : base(r, m,e) {}
         public IActionResult OnGet(string fixedFilter, string fixedValue)
         {
             FixedFilter = fixedFilter;

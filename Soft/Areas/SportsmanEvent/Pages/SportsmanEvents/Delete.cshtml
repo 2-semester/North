@@ -1,0 +1,13 @@
+﻿@page
+@using North.Pages.Extensions
+@model North.Soft.Areas.SportsmanEvent.Pages.SportsmanEvents.DeleteModel
+
+@{
+    Layout = "_Delete";
+}
+    <body>
+
+    @Html.DisplayControlsFor(model => model.Item.SportsmanId)
+        @Html.DisplayControlsFor(model => model.Item.EventId)
+
+    </body>

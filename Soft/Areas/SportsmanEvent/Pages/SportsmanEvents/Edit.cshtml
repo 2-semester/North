@@ -1,0 +1,13 @@
+﻿@page
+@using North.Pages.Extensions
+@model North.Soft.Areas.SportsmanEvent.Pages.SportsmanEvents.EditModel
+
+@{
+    Layout = "_Edit";
+}
+
+    <body>
+        <input type="hidden" asp-for="Item.Id" />
+    @Html.EditControlsFor(model => model.Item.SportsmanId)
+    @Html.EditControlsFor(model => model.Item.EventId)
+    </body>
