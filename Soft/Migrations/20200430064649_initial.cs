@@ -122,8 +122,7 @@ namespace North.Soft.Migrations
                     Id = table.Column<string>(nullable: false),
                     ValidFrom = table.Column<DateTime>(nullable: true),
                     ValidTo = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(nullable: false),
-                    SportCategoryId = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {

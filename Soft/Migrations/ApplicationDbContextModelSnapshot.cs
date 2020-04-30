@@ -349,9 +349,6 @@ namespace North.Soft.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SportCategoryId")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime?>("ValidFrom")
                         .HasColumnType("datetime2");
 

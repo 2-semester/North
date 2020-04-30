@@ -9,31 +9,29 @@ namespace North.Infra
     {
         internal static SportCategoryData jooksmine = new SportCategoryData
         {
-            Id ="Jooksmine" , Name = "Jooksmine", SportCategoryId = "Jooksmine"
+            Id = "Jooksmine", Name = "Jooksmine", 
         };
 
         internal static SportCategoryData ujumine = new SportCategoryData
         {
-            Id = Guid.NewGuid().ToString(), Name = "Ujumine",
-            SportCategoryId = "Ujumine"
+            Id = "Ujumine", Name = "Ujumine",
+            
         };
 
         internal static SportCategoryData surfamine = new SportCategoryData
         {
-            Id = Guid.NewGuid().ToString(), Name = "Surfamine",
-            SportCategoryId = "Surfamine"
+            Id = "Surfamine", Name = "Surfamine",
         };
 
         internal static SportCategoryData discgolf = new SportCategoryData
         {
-            Id = Guid.NewGuid().ToString(), Name = "Discgolf",
-            SportCategoryId = "Discgolf"
+            Id = "Discgolf", Name = "Discgolf",
+            
         };
 
         internal static SportCategoryData jalgrattasõit = new SportCategoryData
         {
-            Id = Guid.NewGuid().ToString(), Name = "Jalgrattasõit",
-            SportCategoryId = "Jalgrattasõit"
+            Id = "Jalgrattasõit", Name = "Jalgrattasõit",
         };
         
         internal static List<SportCategoryData> sportCategories => new List<SportCategoryData>
