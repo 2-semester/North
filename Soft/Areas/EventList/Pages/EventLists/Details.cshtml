@@ -1,17 +1,21 @@
 ﻿@page
+@using North.Aids
+@using North.Data.Event
 @using North.Pages.Extensions
 @model North.Soft.Areas.EventList.Pages.EventLists.DetailsModel
 
 @{
     Layout = "_Details";
-   
+    const string events = "/Event/Events";
+    var eventListId = GetMember.Name<EventData>(x => x.EventListId);
 }
 <body>
 
     @Html.DisplayControlsFor(model => model.Item.Name)
-@Html.DisplayControlsFor(model => model.Item.ValidFrom)
+    @Html.DisplayControlsFor(model => model.Item.ValidFrom)
     @Html.DisplayControlsFor(model => model.Item.ValidTo)
 </body>
 @section Details {
-    
+    @Html.HypertextLinkFor(string.Empty, new Link("Näita üritusi",
+        $"{events}/Index?FixedFilter={eventListId}&FixedValue={Model.Item.Id}"))
 }

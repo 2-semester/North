@@ -17,7 +17,6 @@ namespace North.Soft.Areas.EventList.Pages.EventLists
 
         public async Task<IActionResult> OnPostAsync(string id, string fixedFilter, string fixedValue)
         {
-
             await deleteObject(id,fixedFilter,fixedValue);
             return Redirect(IndexUrl);
         }
