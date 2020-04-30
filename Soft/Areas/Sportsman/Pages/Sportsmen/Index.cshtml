@@ -1,4 +1,6 @@
 ﻿@page
+@using System.Security.Cryptography.X509Certificates
+@using North.Facade.SportCategoryType
 @using North.Pages.Extensions
 @model North.Soft.Areas.Event.Pages.Events.IndexModel
 
@@ -34,7 +36,6 @@
                         Html.DisplayFor(modelItem => item.Id),
                         Html.DisplayFor(modelItem => item.Name),
                         Html.DisplayFor(modelItem => item.EventDate),
-                        Html.DisplayFor(modelItem => item.SportCategoryId),
                         Html.DisplayFor(modelItem => item.TypeId),
                         Html.DisplayFor(modelItem => item.OrganizationId),
                         Html.DisplayFor(modelItem => item.EventListId),
