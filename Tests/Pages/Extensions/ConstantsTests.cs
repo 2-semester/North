@@ -12,10 +12,10 @@ namespace North.Tests.Pages.Extensions
             type = typeof(Constants);
         }
 
-        [TestMethod] public void UnspecifiedTest()=> Assert.AreEqual("Unspecified",Constants.Unspecified);
-        [TestMethod] public void CreateNewLinkTitleTest() => Assert.AreEqual("Create New", Constants.CreateNewLinkTitle);
-        [TestMethod] public void EditLinkTitleTest() => Assert.AreEqual("Edit", Constants.EditLinkTitle);
-        [TestMethod] public void DetailsLinkTitleTest() => Assert.AreEqual("Details", Constants.DetailsLinkTitle);
-        [TestMethod] public void DeleteLinkTitleTest() => Assert.AreEqual("Delete", Constants.DeleteLinkTitle);
+        [TestMethod] public void UnspecifiedTest()=> Assert.AreEqual("Määramata", Constants.Unspecified);
+        [TestMethod] public void CreateNewLinkTitleTest() => Assert.AreEqual("Loo uus", Constants.CreateNewLinkTitle);
+        [TestMethod] public void EditLinkTitleTest() => Assert.AreEqual("Muuda", Constants.EditLinkTitle);
+        [TestMethod] public void DetailsLinkTitleTest() => Assert.AreEqual("Lisainfo", Constants.DetailsLinkTitle);
+        [TestMethod] public void DeleteLinkTitleTest() => Assert.AreEqual("Kustuta", Constants.DeleteLinkTitle);
     }
 }

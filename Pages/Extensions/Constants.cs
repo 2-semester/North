@@ -2,10 +2,10 @@
 {
     public class Constants
     {
-        public const string Unspecified = "Unspecified";
-        public const string CreateNewLinkTitle = "Create New";
-        public const string EditLinkTitle = "Edit";
-        public const string DetailsLinkTitle = "Details";
-        public const string DeleteLinkTitle = "Delete";
+        public const string Unspecified = "Määramata";
+        public const string CreateNewLinkTitle = "Loo uus";
+        public const string EditLinkTitle = "Muuda";
+        public const string DetailsLinkTitle = "Lisainfo";
+        public const string DeleteLinkTitle = "Kustuta";
     }
 }
