@@ -71,12 +71,11 @@ namespace North.Tests.Pages.Event
             var view = obj.toView(new EventDomain(d));
             testArePropertyValuesEqual(view, d);
         }
-     //VALE TEE UUS!!
         [TestMethod]
         public void GetSportCategoryNameTest()
         {
-            var name = "name";
-            Assert.AreEqual("name", name);
+            var name = obj.GetSportCategoryName(data.Id);
+            Assert.AreEqual(data.Name, name);
         }
         [TestMethod]
         public void SportCategoriesTest()
