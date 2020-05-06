@@ -8,6 +8,9 @@
     <body>
         @Html.EditControlsFor(model => model.Item.Id)
         @Html.EditControlsFor(model => model.Item.Name)
-        @Html.EditControlsFor(model => model.Item.ValidFrom)
+    @Html.EditControlsFor(model => model.Item.ValidFrom)
+        <p style="color:#FF0000" ;>Pole kohustuslik</p>
         @Html.EditControlsFor(model => model.Item.ValidTo)
+    <p style="color:#FF0000" ;>Pole kohustuslik</p>
+        
     </body>

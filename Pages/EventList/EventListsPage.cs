@@ -9,7 +9,7 @@ namespace North.Pages.EventList
     {
         protected internal EventListsPage(IEventListsRepository r) : base(r)
         {
-            PageTitle = "Ürituste sarjad";
+            PageTitle = "Üritustesarjad";
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;
