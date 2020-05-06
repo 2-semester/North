@@ -1,0 +1,12 @@
+﻿@page
+@using North.Pages.Extensions
+@model North.Soft.Areas.Sportsman.Pages.Sportsmen.CreateModel
+
+@{
+    Layout = "_Create";
+}
+    <body>
+        @Html.EditControlsFor(model => model.Item.Id)
+        @Html.EditControlsFor(model => model.Item.Name)
+        @Html.EditControlsFor(model => model.Item.DateOfBirth)
+    </body>
