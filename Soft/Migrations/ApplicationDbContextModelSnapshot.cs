@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using North.Soft.Data;
 
 namespace North.Soft.Migrations
@@ -220,9 +221,6 @@ namespace North.Soft.Migrations
 
             modelBuilder.Entity("North.Data.Event.EventData", b =>
                 {
-                    b.Property<string>("SportsmanEventId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("EventListId")
                         .HasColumnType("nvarchar(450)");
 
@@ -255,7 +253,7 @@ namespace North.Soft.Migrations
                     b.Property<DateTime?>("ValidTo")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("SportsmanEventId", "EventListId", "OrganizationId", "TypeId", "SportCategoryId");
+                    b.HasKey("EventListId", "OrganizationId", "TypeId", "SportCategoryId");
 
                     b.ToTable("Events");
                 });
@@ -413,9 +411,6 @@ namespace North.Soft.Migrations
 
                     b.Property<string>("EventId")
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ValidFrom")
                         .HasColumnType("datetime2");
