@@ -28,12 +28,9 @@ namespace North.Facade.Event
         //dropdown list 5asja
         public string EventListId { get; set; }
 
-        //[Required]
-        public string SportsmanEventId { get; set; }
-
         public string GetId()
         {
-            return $"{SportsmanEventId}.{EventListId}.{OrganizationId}.{TypeId}.{SportCategoryId}";
+            return $"{EventListId}.{OrganizationId}.{TypeId}.{SportCategoryId}";
         }
     }
 

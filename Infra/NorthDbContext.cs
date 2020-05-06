@@ -33,7 +33,7 @@ namespace North.Infra
         public static void InitializeTables(ModelBuilder builder)
         {
             if (builder is null) return;
-            builder.Entity<EventData>().ToTable(nameof(Events)).HasKey(x => new {x.SportsmanEventId,x.EventListId, x.OrganizationId, x.TypeId, x.SportCategoryId});
+            builder.Entity<EventData>().ToTable(nameof(Events)).HasKey(x => new {x.EventListId, x.OrganizationId, x.TypeId, x.SportCategoryId});
             builder.Entity<EventListData>().ToTable(nameof(EventLists));
             builder.Entity<LocationData>().ToTable(nameof(Locations));
             builder.Entity<OrganizationData>().ToTable(nameof(Organizations));

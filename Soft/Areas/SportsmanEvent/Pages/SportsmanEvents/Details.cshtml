@@ -1,6 +1,7 @@
 ﻿@page
 @using North.Aids
 @using North.Data.Event
+@using North.Data.Sportsman
 @using North.Pages.Extensions
 @model North.Soft.Areas.SportsmanEvent.Pages.SportsmanEvents.DetailsModel
 
@@ -8,17 +9,15 @@
     Layout = "_Details";
 
     const string eventLists = "/Event/Events";
-    var eventId = GetMember.Name<EventData>(x => x.SportsmanEventId);
+    var eventId = GetMember.Name<EventData>(x => x.Name);
 
-    //const string sportsmen = "/Sportman/Sportsmen";
-    //var eventId2 = GetMember.Name<SportsmanData>(x => x.Id);
+    const string sportsMen = "/Sportsman/Sportsmen";
+    var sportsManId = GetMember.Name<SportsmanData>(x => x.Name);
 }
-    <body>
-
+<body>
     @Html.DisplayControlsFor(model => model.Item.SportsmanId)
     @Html.DisplayControlsFor(model => model.Item.EventId)
-
-    </body>
+</body>
 @section Details {
     @Html.HypertextLinkFor(string.Empty, new Link("Näita üritusi",
         $"{eventLists}/Index?FixedFilter={eventId}&FixedValue={Model.Item.EventId}"))
