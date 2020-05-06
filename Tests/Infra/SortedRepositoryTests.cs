@@ -96,7 +96,6 @@ namespace North.Tests.Infra
             testCreateExpression(GetMember.Name<EventData>(x => x.TypeId));
             testCreateExpression(GetMember.Name<EventData>(x => x.OrganizationId));
             testCreateExpression(GetMember.Name<EventData>(x => x.EventListId));
-            testCreateExpression(GetMember.Name<EventData>(x => x.SportsmanEventId));
 
             testCreateExpression(s = GetMember.Name<EventData>(x => x.Id), s + obj.DescendingString);
             testCreateExpression(s = GetMember.Name<EventData>(x => x.Name), s + obj.DescendingString);
@@ -106,7 +105,6 @@ namespace North.Tests.Infra
             testCreateExpression(s = GetMember.Name<EventData>(x => x.TypeId), s + obj.DescendingString);
             testCreateExpression(s = GetMember.Name<EventData>(x => x.OrganizationId), s + obj.DescendingString);
             testCreateExpression(s = GetMember.Name<EventData>(x => x.EventListId), s + obj.DescendingString);
-            testCreateExpression(s = GetMember.Name<EventData>(x => x.SportsmanEventId), s + obj.DescendingString);
             testNullExpression(GetRandom.String());
             testNullExpression(string.Empty);
             testNullExpression(null);
@@ -160,8 +158,7 @@ namespace North.Tests.Infra
             test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.Id)), s);
             test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.OrganizationId)), s);
             test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.EventListId)), s);
-            test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.SportsmanEventId)), s);
-            
+
             test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.Name)),
                 s + obj.DescendingString);
             test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.EventDate)),
@@ -177,8 +174,6 @@ namespace North.Tests.Infra
             test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.OrganizationId)),
                 s + obj.DescendingString);
             test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.EventListId)),
-                s + obj.DescendingString);
-            test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.SportsmanEventId)),
                 s + obj.DescendingString);
         }
 
@@ -224,8 +219,7 @@ namespace North.Tests.Infra
             test(data, x => x.SportCategoryId, "x => x.SportCategoryId");
             test(data, x => x.TypeId, "x => x.TypeId");
             test(data, x => x.OrganizationId, "x => x.OrganizationId");
-            test(data, x => x.EventListId, "x => x.EventListId");
-            test(data, x => x.SportsmanEventId, "x => x.SportsmanEventId");
+            test(data, x => x.EventListId, "x => x.EventListId"); 
         }
         [TestMethod]
         public void IsDescendingTest()

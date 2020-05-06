@@ -25,7 +25,7 @@
     @Html.DisplayControlsFor(model => model.Item.Definition)
 </body>
 @section Details {
-    @Html.HypertextLinkFor(string.Empty, new Link("Näita ürituste sarju",
+    @Html.HypertextLinkFor(string.Empty, new Link("Näita ürituse sarja",
         $"{eventLists}/Index?FixedFilter={eventId}&FixedValue={Model.Item.Id}"))
     @Html.HypertextLinkFor(string.Empty, new Link("Registreeru!",
         $"{sportsmen}"))

@@ -25,7 +25,7 @@ namespace North.Tests.Pages.Extensions
         {
             var expected = new List<string> { "<dt", "DisplayNameFor", "</dt>", "<dd", "DisplayFor", "</dd>" };
             var actual =
-                DisplayControlsForHtmlExtension.htmlStrings(new htmlHelperMock<EventView>(), x => x.SportsmanEventId);
+                DisplayControlsForHtmlExtension.htmlStrings(new htmlHelperMock<EventView>(), x => x.Id);
             TestHtml.Strings(actual, expected);
         }
     }

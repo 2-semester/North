@@ -6,8 +6,6 @@ namespace North.Facade.EventList
 {
     public sealed class EventListView : NamedView
     {
-        [Required]
-        [DisplayName("Ürituse nimi")]
         public string EventId { get; set; }
     }
 }

@@ -32,10 +32,5 @@ namespace North.Tests.Data.Event
         {
             isNullableProperty(() => obj.EventListId, x => obj.EventListId = x);
         }
-        [TestMethod]
-        public void SportsmanEventIdTest()
-        {
-            isNullableProperty(() => obj.SportsmanEventId, x => obj.SportsmanEventId = x);
-        }
     }
 }

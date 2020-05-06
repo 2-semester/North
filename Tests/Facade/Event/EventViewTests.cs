@@ -21,14 +21,12 @@ namespace North.Tests.Facade.Event
 
         [TestMethod]
         public void EventListIdTest() => isProperty(() => obj.EventListId, x => obj.EventListId = x);
-        [TestMethod]
-        public void SportsmanEventIdTest() => isProperty(() => obj.SportsmanEventId, x => obj.SportsmanEventId = x);
 
         [TestMethod]
         public void GetIdTest()
         {
             var actual = obj.GetId();
-            var expected = $"{obj.SportsmanEventId}.{obj.EventListId}.{obj.OrganizationId}.{obj.TypeId}.{obj.SportCategoryId}";
+            var expected = $"{obj.EventListId}.{obj.OrganizationId}.{obj.TypeId}.{obj.SportCategoryId}";
             Assert.AreEqual(expected, actual);
         }
 
