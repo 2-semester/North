@@ -6,10 +6,12 @@
     Layout = "_Edit";
 }
 
-<body>
-    <input type="hidden" asp-for="Item.Id" />
-    @Html.EditControlsFor(model => model.Item.Id)
-    @Html.EditControlsFor(model => model.Item.Name)
-    @Html.EditControlsFor(model => model.Item.DateOfBirth)
+    <body>
+        <input type="hidden" asp-for="Item.Id" />
+        @Html.EditControlsFor(model => model.Item.Id)
+        @Html.EditControlsFor(model => model.Item.Name)
+        @Html.EditControlsFor(model => model.Item.DateOfBirth)
+    @Html.DisplayControlsFor(model => model.Item.ValidFrom)
+    @Html.DisplayControlsFor(model => model.Item.ValidTo)
 
-</body>
+    </body>

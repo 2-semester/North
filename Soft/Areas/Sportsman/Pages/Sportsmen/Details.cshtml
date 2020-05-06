@@ -1,8 +1,6 @@
 ﻿@page
 @using North.Aids
 @using North.Data.Event
-@using North.Data.EventList
-@using North.Data.Sportsman
 @using North.Data.SportsmanEvent
 @using North.Pages.Extensions
 @model North.Soft.Areas.Sportsman.Pages.Sportsmen.DetailsModel
@@ -15,12 +13,14 @@
     const string events = "/Event/Events";
     var organizationId = GetMember.Name<EventData>(x => x.OrganizationId);
 }
-<body>
-    @Html.DisplayControlsFor(model => model.Item.Id)
-    @Html.DisplayControlsFor(model => model.Item.Name)
-    @Html.DisplayControlsFor(model => model.Item.DateOfBirth)
+    <body>
+        @Html.DisplayControlsFor(model => model.Item.Id)
+        @Html.DisplayControlsFor(model => model.Item.Name)
+        @Html.DisplayControlsFor(model => model.Item.DateOfBirth)
+    @Html.DisplayControlsFor(model => model.Item.ValidFrom)
+    @Html.DisplayControlsFor(model => model.Item.ValidTo)
 
-</body>
+    </body>
 
 @section Details {
     @Html.HypertextLinkFor(string.Empty, new Link("Registreeri end üritusele",

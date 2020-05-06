@@ -15,7 +15,7 @@ namespace North.Pages.SportsmanEvent
     {
         protected internal SportsmanEventsPage(ISportsmanEventsRepository r, ISportsmenRepository m, IEventsRepository e) : base(r)
         {
-            PageTitle = "Sportlase üritused";
+            PageTitle = "Registreeringud";
             Sportsmen = createSelectList<SportsmanDomain, SportsmanData>(m);
             Events = createSelectList<EventDomain, EventData>(e);
         }
