@@ -23,7 +23,7 @@
 
 @section Details {
     @Html.HypertextLinkFor(string.Empty, new Link("Registreeri üritusele",
-        $"{sportsmanEvent}/Index?FixedFilter={sportsmanEventId}&FixedValue={Model.Item.Id}"))
+        $"{sportsmanEvent}/Create?FixedFilter={sportsmanEventId}&FixedValue={Model.Item.Id}"))
     @Html.HypertextLinkFor(string.Empty, new Link("Näita üritusi",
         $"{events}/Index?FixedFilter={organizationId}&FixedValue={Model.Item.Id}"))
 }
