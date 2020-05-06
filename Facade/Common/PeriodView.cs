@@ -8,10 +8,10 @@ namespace North.Facade.Common
     {
 
         [DataType(DataType.Date)]
-        [DisplayName("Valid From")]
+        [DisplayName("Alguskuupäev")]
         public DateTime? ValidFrom { get; set; }
         [DataType(DataType.Date)]
-        [DisplayName("Valid To")]
+        [DisplayName("Lõppkuupäev")]
         public DateTime? ValidTo { get; set; }
     }
 }

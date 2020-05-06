@@ -5,13 +5,13 @@
 @{
     Layout = "_Create";
 }
-<body>
-    @Html.EditControlsForDropDown(model => model.Item.SportCategoryId, Model.SportCategories)
-    @Html.EditControlsFor(model => model.Item.TypeId)
-    @Html.EditControlsFor(model => model.Item.OrganizationId)
-    @Html.EditControlsFor(model => model.Item.EventListId)
-    @Html.EditControlsFor(model => model.Item.Id)
-    @Html.EditControlsFor(model => model.Item.Name)
-    @Html.EditControlsFor(model => model.Item.EventDate)
-    @Html.EditControlsFor(model => model.Item.Definition)
-</body>
+    <body>
+        @Html.EditControlsForDropDown(model => model.Item.SportCategoryId, Model.SportCategories)
+        @Html.EditControlsFor(model => model.Item.TypeId)
+        @Html.EditControlsForDropDown(model => model.Item.OrganizationId, Model.Organizations)
+        @Html.EditControlsForDropDown(model => model.Item.EventListId, Model.EventLists)
+        @Html.EditControlsFor(model => model.Item.Name)
+        @Html.EditControlsFor(model => model.Item.Id)
+        @Html.EditControlsFor(model => model.Item.EventDate)
+        @Html.EditControlsFor(model => model.Item.Definition)
+    </body>
