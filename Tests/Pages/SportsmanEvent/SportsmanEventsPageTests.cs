@@ -62,7 +62,7 @@ namespace North.Tests.Pages.SportsmanEvent
         }
 
         [TestMethod]
-        public void PageTitleTest() => Assert.AreEqual("Sportlase üritused", obj.PageTitle);
+        public void PageTitleTest() => Assert.AreEqual("Registreeringud", obj.PageTitle);
 
         [TestMethod]
         public void PageUrlTest() => Assert.AreEqual("/SportsmanEvent/SportsmanEvents", obj.PageUrl);

@@ -233,6 +233,9 @@ namespace North.Soft.Migrations
                     b.Property<string>("SportCategoryId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("LocationId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Definition")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -253,7 +256,7 @@ namespace North.Soft.Migrations
                     b.Property<DateTime?>("ValidTo")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("EventListId", "OrganizationId", "TypeId", "SportCategoryId");
+                    b.HasKey("EventListId", "OrganizationId", "TypeId", "SportCategoryId", "LocationId");
 
                     b.ToTable("Events");
                 });

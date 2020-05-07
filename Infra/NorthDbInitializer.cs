@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Extensions.Logging;
 using North.Data.SportCategory;
 using North.Data.Event;
 using North.Data.Location;
@@ -45,9 +44,10 @@ namespace North.Infra
             Name = "Heateo Jooks",
             EventDate = Convert.ToDateTime("07/05/20"),
             SportCategoryId="Jooksmine",
-            TypeId="rahvajooks",
-            EventListId = "puudub",
+            TypeId="Rahvajooks",
+            EventListId = "Puudub",
             OrganizationId = "Sportland",
+            LocationId = "Jõgeva maakond",
             Definition="Heategevusjooksu eesmärgiks on koguda raha Vähiliidule. Raja pikkus on 5 km, tule osale kogu perega!"
         };
 
@@ -57,9 +57,10 @@ namespace North.Infra
             Name = "ITB Pärnu Open 2020",
             EventDate = Convert.ToDateTime("12/08/20"),
             SportCategoryId = "Discgolf",
-            TypeId = "karikasari",
-            EventListId = "puudub",
-            OrganizationId = "puudub",
+            TypeId = "Karikasari",
+            EventListId = "Puudub",
+            OrganizationId = "Puudub",
+            LocationId = "Pärnu maakond",
             Definition="Karikasarja avalöök 2020"
         };
         internal static EventData ristnaSoit = new EventData
@@ -68,9 +69,10 @@ namespace North.Infra
             Name = "Ristna öösõit",
             EventDate = Convert.ToDateTime("06/06/21"),
             SportCategoryId = "Jalgrattasõit",
-            TypeId = "maastikusõit",
-            EventListId="puudub",
+            TypeId = "Maastikusõit",
+            EventListId="Puudub",
            OrganizationId = "SEB",
+           LocationId = "Hiiu maakond",
            Definition = "Rada kulgeb sarnases kohas, kus eelmisel aastal toimus Kaugeima neeme sõit," +
                         "kuid piiratud nähtavuse tõttu on sealt välja jäetud tehnilised singlid ja" +
                         "suurt tähelepanu nõudvad laskumised. Mägirattakrossi raja valgustamiseks " +
@@ -273,9 +275,6 @@ namespace North.Infra
             InitializeOrganizations(db);
             InitializeLocations(db);
         }
-
-    
-
     }
 }
 

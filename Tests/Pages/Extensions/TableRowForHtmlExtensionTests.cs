@@ -22,5 +22,11 @@ namespace North.Tests.Pages.Extensions
         {
             Assert.Inconclusive();
         }
+
+        [TestMethod]
+        public void TableRowWithOutEditForTest()
+        {
+            Assert.Inconclusive();
+        }
     }
 }

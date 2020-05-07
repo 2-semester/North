@@ -26,7 +26,6 @@ namespace North.Tests.Infra
 
         private class testClass : NorthDbContext
         {
-
             public testClass(DbContextOptions<NorthDbContext> o) : base(o) { }
 
             public ModelBuilder RunOnModelCreating()

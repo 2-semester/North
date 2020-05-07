@@ -10,5 +10,6 @@ namespace North.Data.Event
         public string TypeId { get; set; }
         public string OrganizationId { get; set; }
         public string EventListId { get; set; }
+        public string LocationId { get; set; }
     }
 }

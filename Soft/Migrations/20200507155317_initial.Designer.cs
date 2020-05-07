@@ -10,7 +10,7 @@ using North.Soft.Data;
 namespace North.Soft.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200507093601_initial")]
+    [Migration("20200507155317_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -235,6 +235,9 @@ namespace North.Soft.Migrations
                     b.Property<string>("SportCategoryId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("LocationId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Definition")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -255,7 +258,7 @@ namespace North.Soft.Migrations
                     b.Property<DateTime?>("ValidTo")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("EventListId", "OrganizationId", "TypeId", "SportCategoryId");
+                    b.HasKey("EventListId", "OrganizationId", "TypeId", "SportCategoryId", "LocationId");
 
                     b.ToTable("Events");
                 });
