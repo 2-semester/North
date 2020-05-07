@@ -16,6 +16,6 @@
         @Html.DisplayControlsFor(model => model.Item.ValidTo)
     </body>
 @section Details {
-    @Html.HypertextLinkFor(string.Empty, new Link("Näita selle üritusesarja üritusi",
+    @Html.HypertextLinkFor(string.Empty, new Link("Vaata sarja kuuluvaid üritusi!",
         $"{events}/Index?FixedFilter={eventListId}&FixedValue={Model.Item.Id}"))
 }

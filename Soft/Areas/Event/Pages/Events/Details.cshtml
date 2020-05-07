@@ -1,5 +1,6 @@
 ﻿@page
 @using North.Aids
+@using North.Data.Event
 @using North.Data.EventList
 @using North.Data.Sportsman
 @using North.Pages.Extensions
@@ -8,11 +9,7 @@
 @{
     Layout = "_Details";
 
-    const string eventLists = "/EventList/EventLists";
-    var eventId = GetMember.Name<EventListData>(x => x.EventId);
-
-    const string sportsmen = "/SportsmanEvent/SportsmanEvents/Create?fixedFilter=&fixedValue=";
-    var eventId2 = GetMember.Name<SportsmanData>(x => x.Id);
+    const string sportsmen = "/SportsmanEvent/SportsmanEvents";
 }
 <body>
     @Html.DisplayControlsFor(model => model.Item.SportCategoryId)
@@ -25,8 +22,6 @@
     @Html.DisplayControlsFor(model => model.Item.Definition)
 </body>
 @section Details {
-    @Html.HypertextLinkFor(string.Empty, new Link("Näita ürituse sarja",
-        $"{eventLists}/Index?FixedFilter={eventId}&FixedValue={Model.Item.Id}"))
     @Html.HypertextLinkFor(string.Empty, new Link("Registreeru!",
-        $"{sportsmen}"))
+        $"{sportsmen}/Create?fixedFilter=&fixedValue="))
 }

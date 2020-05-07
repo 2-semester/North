@@ -8,22 +8,19 @@
 @{
     Layout = "_Details";
     const string sportsmanEvent = "/SportsmanEvent/SportsmanEvents";
-    var sportsmanEventId = GetMember.Name<SportsmanEventData>(x => x.SportsmanId);
-
+  
     const string events = "/Event/Events";
-    var organizationId = GetMember.Name<EventData>(x => x.OrganizationId);
 }
     <body>
-        @Html.DisplayControlsFor(model => model.Item.Id)
+        
         @Html.DisplayControlsFor(model => model.Item.Name)
         @Html.DisplayControlsFor(model => model.Item.DateOfBirth)
-
 
     </body>
 
 @section Details {
     @Html.HypertextLinkFor(string.Empty, new Link("Registreeri üritusele",
-        $"{sportsmanEvent}/Create?FixedFilter={sportsmanEventId}&FixedValue={Model.Item.Id}"))
+        $"{sportsmanEvent}/Create?FixedFilter=&FixedValue="))
     @Html.HypertextLinkFor(string.Empty, new Link("Näita üritusi",
-        $"{events}/Index?FixedFilter={organizationId}&FixedValue={Model.Item.Id}"))
+        $"{events}"))
 }
