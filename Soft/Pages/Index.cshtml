@@ -5,12 +5,30 @@
 }
 
 
-<body background="css/sport.png">
-    <div class="text-center" style="background:HighlightText" >
-        <h1 class="display-1">SPORDIÜRITUSTELE REGISTREERIMINE</h1>
-        <p>
-            <h2 class="display-4"> REGISTREERI END SPORTLASEKS <a href="https://localhost:44375/Sportsman/Sportsmen/Create">SIIN</a> </h2>
-        </p>
-    </div>
-</body>
+    <body background="css/sport.png">
+        <div class="text-center" style="background:HighlightText">
+            <h1 class="display-1">SPORDIÜRITUSTELE REGISTREERIMINE</h1>
+            <p>
+                <h2 class="display-4"> REGISTREERI END SPORTLASEKS <a href="https://localhost:44375/Sportsman/Sportsmen/Create">SIIN</a> </h2>
+            <p>
+
+        </div>
+    
+
+    @*Mulle tundub, et ta omistab küll mingi fixedValue/Filter väärtuse, aga see pole piisav et midagi teha*@
+    
+
+    <form id="FixedFilter" class="table" method="get" action="/Event/Events" />
+        <input class="search2" id="name" type="text" name="search" size="10" maxlength="255" />
+    <button type="submit" class="button btn-01">Otsi</button>
+
+        <script type="text/javascript">
+            document.getElementById("FixedFilter").onsubmit = function () {
+                window.location = "https://localhost:44375/Event/Events/?fixedFilter=" + document.getElementById("name").value;
+                return false;
+            }
+        </script>
+    </body>
+
+
 
