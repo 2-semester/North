@@ -22,12 +22,11 @@
             @foreach (var item in Model.Items)
             {
                 <tr>
-                    @Html.TableRowFor(
+                    @Html.TableRowWithoutEditFor(
                         page,
                         item.GetId(),
-                        Html.DisplayFor(modelItem =>item.SportsmanId)),
-                        Html.DisplayFor(modelItem => item.EventId)
-                        )
+                        Html.Raw(Model.GetSportsmanIdName(item.SportsmanId)),
+                        Html.DisplayFor(modelItem => item.EventId))
                 </tr>
             }
         </tbody>

@@ -35,21 +35,6 @@ namespace North.Pages.Event
                     return m.Text;
             return "Unspecified";
         }
-        public string GetOrganizationName(string organizationId)
-        {
-            foreach (var m in Organizations)
-                if (m.Value == organizationId)
-                    return m.Text;
-            return "Unspecified";
-        }
-        public string GetEventListName(string eventListId)
-        {
-            foreach (var m in EventLists)
-                if (m.Value == eventListId)
-                    return m.Text;
-            return "Unspecified";
-        }
-
         protected internal override string getPageUrl() => "/Event/Events";
 
         protected internal override EventDomain toObject(EventView view)
