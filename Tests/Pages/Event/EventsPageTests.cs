@@ -48,6 +48,8 @@ namespace North.Tests.Pages.Event
             events = new testRepository();
             categories= new testSportCategoryRepository();
             locations = new testLocationsRepository(); //kas see on siin vajalik? ilma selleta oli ka probleem
+            organizations =new testOrganizationsRepository();
+            eventLists =new testEventListsRepository();
             data = GetRandom.Object<SportCategoryData>();
             var m = new SportCategoryDomain(data);
             categories.Add(m).GetAwaiter();
@@ -96,12 +98,24 @@ namespace North.Tests.Pages.Event
             var list = categories.Get().GetAwaiter().GetResult();
             Assert.AreEqual(list.Count, obj.SportCategories.Count());
         }
-
-        //[TestMethod] //sellest saab veel ühe läbi kukkuva testi :)
-        //public void LocationsTest()
-        //{
-        //    var list = categories.Get().GetAwaiter().GetResult();
-        //    Assert.AreEqual(list.Count, obj.Locations.Count());
-        //}
+        [TestMethod] 
+        public void LocationsTest()
+        {
+            var list = locations.Get().GetAwaiter().GetResult();
+            Assert.AreEqual(list.Count, obj.Locations.Count());
+        }
+        [TestMethod] 
+        public void OrganizationsTest()
+        {
+            var list = organizations.Get().GetAwaiter().GetResult();
+            Assert.AreEqual(list.Count, obj.Organizations.Count());
+        }
+        [TestMethod]
+        public void EventListsTest()
+        {
+            var list = eventLists.Get().GetAwaiter().GetResult();
+            Assert.AreEqual(list.Count, obj.EventLists.Count());
+        }
     }
 }
+

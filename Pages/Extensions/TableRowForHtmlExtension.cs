@@ -59,11 +59,11 @@ namespace North.Pages.Extensions
 
             params IHtmlContent[] values)
         {
-            var s = htmlStringsWithoutEditFor(page, index, values);
+            var s = htmlStringsWithoutEdit(page, index, values);
             return new HtmlContentBuilder(s);
         }
 
-        private static List<object> htmlStringsWithoutEditFor(string page, object index, IHtmlContent[] values)
+        private static List<object> htmlStringsWithoutEdit(string page, object index, IHtmlContent[] values)
         {
             var list = new List<object>();
             foreach (var value in values) addValue(list, value);
@@ -77,7 +77,7 @@ namespace North.Pages.Extensions
             return list;
         }
 
-        public static IHtmlContent TableRowWithOutEdit(
+        public static IHtmlContent TableRowWithoutEditFor(
             this IHtmlHelper htmlHelper, string page, object index,
             string fixedFilter, string fixedValue,
 

@@ -17,14 +17,9 @@ namespace North.Tests.Pages.Extensions
         {
             Assert.Inconclusive();
         }
-        [TestMethod]
-        public void TableRowWithSelectForTest()
-        {
-            Assert.Inconclusive();
-        }
 
         [TestMethod]
-        public void TableRowWithOutEditForTest()
+        public void TableRowWithoutEditForTest()
         {
             Assert.Inconclusive();
         }
