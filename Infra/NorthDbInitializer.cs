@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Extensions.Logging;
 using North.Data.SportCategory;
 using North.Data.Event;
+using North.Data.Location;
 using North.Data.Organization;
 
 namespace North.Infra
 {
     public static class NorthDbInitializer
     {
-        
-
         internal static SportCategoryData jooksmine = new SportCategoryData
         {
             Id = "Jooksmine", Name = "Jooksmine", 
@@ -91,6 +91,144 @@ namespace North.Infra
             Definition = "Muuta noorte inimeste elu huvitavamaks, paremaks ja emotsionaalsemaks läbi pakutavate toodete ning teenuste."
         };
 
+        internal static OrganizationData puudub = new OrganizationData
+        {
+            Id = "Puudub",
+            Name = "Puudub",
+            Definition = ""
+        };
+        internal static LocationData Harju = new LocationData()
+        {
+            Id = "Harju maakond",
+            Name = "Harju maakond",
+            EventId = "",
+            EventListId = "",
+            County = "",
+            City = ""
+        };
+        internal static LocationData Lääne = new LocationData()
+        {
+            Id = "Lääne maakond",
+            Name = "Lääne maakond",
+            EventId = "",
+            EventListId = "",
+            County = "",
+            City = ""
+        }; internal static LocationData Põlva = new LocationData()
+        {
+            Id = "Põlva maakond",
+            Name = "Põlva maakond",
+            EventId = "",
+            EventListId = "",
+            County = "",
+            City = ""
+        }; internal static LocationData Hiiu = new LocationData()
+        {
+            Id = "Hiiu maakond",
+            Name = "Hiiu maakond",
+            EventId = "",
+            EventListId = "",
+            County = "",
+            City = ""
+        }; internal static LocationData Saare = new LocationData()
+        {
+            Id = "Saare maakond",
+            Name = "Saare maakond",
+            EventId = "",
+            EventListId = "",
+            County = "",
+            City = ""
+        }; internal static LocationData Pärnu = new LocationData()
+        {
+            Id = "Pärnu maakond",
+            Name = "Pärnu maakond",
+            EventId = "",
+            EventListId = "",
+            County = "",
+            City = ""
+        }; internal static LocationData LääneViru = new LocationData()
+        {
+            Id = "Lääne-Viru maakond",
+            Name = "Lääne-Viru maakond",
+            EventId = "",
+            EventListId = "",
+            County = "",
+            City = ""
+        }; internal static LocationData IdaViru = new LocationData()
+        {
+            Id = "Ida-Viru maakond",
+            Name = "Ida-Viru maakond",
+            EventId = "",
+            EventListId = "",
+            County = "",
+            City = ""
+        }; internal static LocationData Rapla = new LocationData()
+        {
+            Id = "Rapla maakond",
+            Name = "Rapla maakond",
+            EventId = "",
+            EventListId = "",
+            County = "",
+            City = ""
+        };
+        internal static LocationData Järva = new LocationData()
+        {
+            Id = "Järva maakond",
+            Name = "Järva maakond",
+            EventId = "",
+            EventListId = "",
+            County = "",
+            City = ""
+        };
+        internal static LocationData Jõgeva = new LocationData()
+        {
+            Id = "Jõgeva maakond",
+            Name = "Jõgeva maakond",
+            EventId = "",
+            EventListId = "",
+            County = "",
+            City = ""
+        };
+        internal static LocationData Viljandi = new LocationData()
+        {
+            Id = "Viljandi maakond",
+            Name = "Viljandi maakond",
+            EventId = "",
+            EventListId = "",
+            County = "",
+            City = ""
+        };
+        internal static LocationData Tartu = new LocationData()
+        {
+            Id = "Tartu maakond",
+            Name = "Tartu maakond",
+            EventId = "",
+            EventListId = "",
+            County = "",
+            City = ""
+        };
+        internal static LocationData Valga = new LocationData()
+        {
+            Id = "Valga maakond",
+            Name = "Valga maakond",
+            EventId = "",
+            EventListId = "",
+            County = "",
+            City = ""
+        };
+        internal static LocationData Võru = new LocationData()
+        {
+            Id = "Võru maakond",
+            Name = "Võru maakond",
+            EventId = "",
+            EventListId = "",
+            County = "",
+            City = ""
+        };
+        internal static List<LocationData> counties => new List<LocationData>
+        {
+            Harju,IdaViru, LääneViru, Lääne, Rapla, Jõgeva, Järva, Hiiu, Saare, Pärnu, Viljandi, Tartu, Põlva, Võru
+        };
         internal static List<SportCategoryData> sportCategories => new List<SportCategoryData>
         {
             jooksmine, ujumine, surfamine, jalgrattasõit, discgolf
@@ -101,8 +239,14 @@ namespace North.Infra
         };
         internal static List<OrganizationData> organizations => new List<OrganizationData>
         {
-            SEB, sportland
+            SEB, sportland, puudub
         };
+        private static void InitializeLocations(NorthDbContext db)
+        {
+            if (db.Locations.Count() != 0) return;
+            db.Locations.AddRange(counties);
+            db.SaveChanges();
+        }
         private static void InitializeOrganizations(NorthDbContext db)
         {
             if (db.Organizations.Count() != 0) return;
@@ -127,7 +271,10 @@ namespace North.Infra
             InitializeSportCategories(db);
             InitializeEvents(db);
             InitializeOrganizations(db);
+            InitializeLocations(db);
         }
+
+    
 
     }
 }
