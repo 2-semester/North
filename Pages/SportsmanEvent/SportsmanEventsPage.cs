@@ -23,6 +23,13 @@ namespace North.Pages.SportsmanEvent
         public override string ItemId => Item is null ? string.Empty : Item.GetId();
         public IEnumerable<SelectListItem> Sportsmen { get; }
         public IEnumerable<SelectListItem> Events { get; }
+        public string GetSportsmanIdName(string sportsmanId)
+        {
+            foreach (var m in Sportsmen)
+                if (m.Value == sportsmanId)
+                    return m.Text;
+            return "Unspecified";
+        }
 
         protected internal override string getPageUrl() => "/SportsmanEvent/SportsmanEvents";
 

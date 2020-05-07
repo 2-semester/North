@@ -3,8 +3,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
 using North.Core.SportCategory;
 using North.Data.Event;
+using North.Data.EventList;
+using North.Data.Organization;
 using North.Data.SportCategory;
 using North.Domain.Event;
+using North.Domain.EventList;
+using North.Domain.Organization;
 using North.Domain.SportCategory;
 using North.Facade.Event;
 using North.Pages;
@@ -18,17 +22,21 @@ namespace North.Tests.Pages.Event
     {
         private class testClass : EventsPage
         {
-            internal testClass(IEventsRepository r, ISportCategoriesRepository m) : base(r, m)
+            internal testClass(IEventsRepository r, ISportCategoriesRepository m, IOrganizationsRepository o, IEventListsRepository e) : base(r, m,o,e)
             {
             }
         }
 
         private class testRepository : baseTestRepositoryForUniqueEntity<EventDomain, EventData>, IEventsRepository { }
         private class testSportCategoryRepository : baseTestRepositoryForUniqueEntity<SportCategoryDomain, SportCategoryData>, ISportCategoriesRepository { }
+        private class testOrganizationsRepository : baseTestRepositoryForUniqueEntity<OrganizationDomain, OrganizationData>, IOrganizationsRepository { }
+        private class testEventListsRepository : baseTestRepositoryForUniqueEntity<EventListDomain, EventListData>, IEventListsRepository { }
 
         private testSportCategoryRepository categories;
         private testRepository events;
         private SportCategoryData data;
+        private testOrganizationsRepository organizations;
+        private testEventListsRepository eventLists;
         [TestInitialize]
         public override void TestInitialize()
         {
@@ -38,7 +46,7 @@ namespace North.Tests.Pages.Event
             data = GetRandom.Object<SportCategoryData>();
             var m = new SportCategoryDomain(data);
             categories.Add(m).GetAwaiter();
-            obj = new testClass(events,categories);
+            obj = new testClass(events,categories, organizations,eventLists);
         }
         [TestMethod]
         public void ItemIdTest()
