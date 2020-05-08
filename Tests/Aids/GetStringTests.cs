@@ -1,18 +1,29 @@
-﻿
-namespace North.Tests.Aids {
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using North.Aids;
 
-    public static class GetStringTests {
-        public static string Head(string s, char seperator = '.') {
-            if (string.IsNullOrWhiteSpace(s)) return string.Empty;
-            var i = s.IndexOf(seperator);
-            return i < 0 ? s : s.Substring(0, i);
+namespace North.Tests.Aids 
+{
+    [TestClass]
+    public  class GetStringTests : BaseTests
+    {
+        [TestMethod]
+        public void HeadTest()
+        {
+            static string str() => GetRandom.String();
+            var x = GetRandom.String();
+            Assert.AreEqual(x, (x + '.' + str() + '.' + str()).GetHead());
+            Assert.AreEqual(string.Empty, ((string)null).GetHead());
         }
 
-        public static string Tail(string s, char seperator = '.') {
-            if (string.IsNullOrWhiteSpace(s)) return string.Empty;
-            var i = s.IndexOf(seperator);
-            return i < 0 ? s : s.Substring(i + 1);
+        [TestMethod]
+        public void TailTest()
+        {
+            static string str() => GetRandom.String();
+            var x = str() + '.' + str() + '.' + str();
+            Assert.AreEqual(x, (str() + '.' + x).GetTail());
+            Assert.AreEqual(string.Empty, ((string)null).GetTail());
         }
+       
     }
 
 }

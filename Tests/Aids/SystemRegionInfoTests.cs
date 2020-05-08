@@ -1,35 +1,39 @@
-﻿using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
+﻿using System.Globalization;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using North.Aids;
 
-namespace North.Tests.Aids {
-
-    public static class SystemRegionInfoTests {
-
-        public static bool IsCountry(RegionInfo r) {
-            return SafeTests.Run(() => SystemStringTests.StartsWithLetter(r.ThreeLetterISORegionName), false);
-        }
-
-        public static List<RegionInfo> GetRegionsList() {
-            return SafeTests.Run(() => {
-                var cultures = SystemCultureInfoTests.GetSpecificCultures();
-                var regions = SystemEnumerableTests.Convert(cultures, SystemCultureInfoTests.ToRegionInfo);
-                regions = SystemEnumerableTests.Distinct(regions);
-                var list = regions.ToList();
-                removeNotCountries(list);
-                regions = SystemEnumerableTests.OrderBy(list.ToArray(), p => p.EnglishName);
-                return regions.ToList();
-            }, new List<RegionInfo>());
-        }
-
-        private static void removeNotCountries(List<RegionInfo> cultures)
+namespace North.Tests.Aids
+{
+    [TestClass]
+    public  class SystemRegionInfoTests : BaseTests
+    {
+        [TestInitialize]
+        public void TestInitialize()
         {
-            for(var i = cultures.Count; i > 0; i--)
-            {
-                var c = cultures[i - 1];
-                if (c!= null && c.EnglishName != null) continue;
-                cultures.RemoveAt(i - 1);
-            }
+            type = typeof(SystemRegionInfo);
+        }
+        [TestMethod]
+        public void IsCountryTest()
+        {
+            Assert.IsFalse(SystemRegionInfo.IsCountry(null));
+            testEstonia();
+            testWorld();
+        }
+
+        private static void testEstonia()
+        {
+            var r = new RegionInfo("et-EE");
+            Assert.IsNotNull(r);
+            Assert.IsTrue(SystemRegionInfo.IsCountry(r));
+            Assert.AreEqual("Estonia", r.EnglishName);
+        }
+
+        private static void testWorld()
+        {
+            var r = new RegionInfo("001");
+            Assert.IsNotNull(r);
+            Assert.IsFalse(SystemRegionInfo.IsCountry(r));
+            Assert.AreEqual("World", r.EnglishName);
         }
     }
 }
