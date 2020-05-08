@@ -39,7 +39,6 @@ namespace North.Infra
             Id = "Jalgrattasõit", Name = "Jalgrattasõit"
         };
 
-
         internal static EventData heaTeoJooks = new EventData
         {
             Id = "Heateo Jooks",
@@ -84,7 +83,6 @@ namespace North.Infra
 
         internal static OrganizationData SEB = new OrganizationData
         {
-
             Id = "SEB",
             Name = "SEB",
             Definition = "Eesti innovatiivseim pank"
@@ -95,7 +93,6 @@ namespace North.Infra
             Name = "Sportland",
             Definition = "Muuta noorte inimeste elu huvitavamaks, paremaks ja emotsionaalsemaks läbi pakutavate toodete ning teenuste."
         };
-
         internal static OrganizationData puudub = new OrganizationData
         {
             Id = "Puudub",
@@ -194,7 +191,24 @@ namespace North.Infra
             Name = "Liisa Kivi",
             DateOfBirth = Convert.ToDateTime("12.12.1995")
         };
-
+        internal static SportsmanData john = new SportsmanData()
+        {
+            Id = "37108232309",
+            Name = "John Parker",
+            DateOfBirth = Convert.ToDateTime("23.08.1971")
+        };
+        internal static SportsmanData mihkel = new SportsmanData()
+        {
+            Id = "50703041254",
+            Name = "Mihkel Laid",
+            DateOfBirth = Convert.ToDateTime("04.03.2007")
+        };
+        internal static SportsmanData elisa = new SportsmanData()
+        {
+            Id = "60007261917",
+            Name = "Elisa Smith",
+            DateOfBirth = Convert.ToDateTime("26.07.2000")
+        };
         internal static List<LocationData>locations => new List<LocationData>
         {
             Harju,IdaViru, LääneViru, Lääne, Rapla, Jõgeva, Järva, Hiiu, Saare, Pärnu, Viljandi, Tartu, Põlva, Võru, Valga
@@ -217,7 +231,7 @@ namespace North.Infra
         }; 
         internal static List<SportsmanData> sportsmen => new List<SportsmanData>
         {
-            
+            liisa, kalle, elisa, mihkel, john
         };
         private static void InitializeSportsmen(NorthDbContext db)
         {
