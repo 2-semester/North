@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using North.Data.SportCategory;
 using North.Data.Event;
+using North.Data.EventList;
 using North.Data.Location;
 using North.Data.Organization;
+using North.Data.Sportsman;
 
 namespace North.Infra
 {
@@ -167,6 +169,31 @@ namespace North.Infra
             Id = "Võru maakond",
             Name = "Võru maakond"
         };
+        internal static EventListData rattamaraton = new EventListData
+        {
+            Id = "Hawaii Express Estonian Cup",
+            Name = "Hawaii Express Estonian Cup",
+            EventId="Ristna öösõit"
+        };
+        internal static EventListData surfsari = new EventListData
+        {
+            Id = "Fun Surf",
+            Name = "Fun Surf",
+            EventId =""
+        };
+        internal static SportsmanData kalle = new SportsmanData()
+        {
+            Id = "37903041234",
+            Name = "Kalle Karu",
+            DateOfBirth =Convert.ToDateTime("04.03.1979") 
+        };
+        internal static SportsmanData liisa = new SportsmanData()
+        {
+            Id = "49512122034",
+            Name = "Liisa Kivi",
+            DateOfBirth = Convert.ToDateTime("12.12.1995")
+        };
+
         internal static List<LocationData>locations => new List<LocationData>
         {
             Harju,IdaViru, LääneViru, Lääne, Rapla, Jõgeva, Järva, Hiiu, Saare, Pärnu, Viljandi, Tartu, Põlva, Võru, Valga
@@ -182,7 +209,27 @@ namespace North.Infra
         internal static List<OrganizationData> organizations => new List<OrganizationData>
         {
             SEB, sportland, puudub
+        }; 
+        internal static List<EventListData> eventLists => new List<EventListData>
+        {
+            surfsari, rattamaraton
+        }; 
+        internal static List<SportsmanData> sportsmen => new List<SportsmanData>
+        {
+            
         };
+        private static void InitializeSportsmen(NorthDbContext db)
+        {
+            if (db.Sportsmen.Count() != 0) return;
+            db.Sportsmen.AddRange(sportsmen);
+            db.SaveChanges();
+        }
+        private static void InitializeEventLists(NorthDbContext db)
+        {
+            if (db.EventLists.Count() != 0) return;
+            db.EventLists.AddRange(eventLists);
+            db.SaveChanges();
+        }
         private static void InitializeLocations(NorthDbContext db)
         {
             if (db.Locations.Count() != 0) return;
@@ -213,6 +260,8 @@ namespace North.Infra
             InitializeEvents(db);
             InitializeOrganizations(db);
             InitializeLocations(db);
+            InitializeEventLists(db);
+            InitializeSportsmen(db);
         }
     }
 }
