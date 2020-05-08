@@ -4,6 +4,7 @@ using North.Data.Event;
 using North.Domain.Event;
 using North.Facade.Event;
 using North.Pages;
+using North.Tests.Aids;
 
 namespace North.Tests.Pages {
 
@@ -20,7 +21,7 @@ namespace North.Tests.Pages {
         }
 
         [TestMethod] public void ItemIdTest() {
-            obj.Item = GetRandom.Object<EventView>();
+            obj.Item = GetRandomTests.Object<EventView>();
             Assert.AreEqual(obj.Item.GetId(), obj.ItemId);
         }
 

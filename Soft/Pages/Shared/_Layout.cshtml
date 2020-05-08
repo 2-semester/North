@@ -1,4 +1,7 @@
 ﻿@using North.Pages.Extensions
+@{
+    const string eventSearch = "/Event/Events?FixedFilter=&FixedValue=&SearchString=";
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,12 +32,28 @@
                                 new Link("Organisatsioonid", "/Organization/Organizations"),
                             new Link("Sportlased", "/Sportsman/Sportsmen")
                             )
-                    @Html.DropDownNavigationMenuFor("Spordivaldkonnad",
-                        new Link("Jooksmine", "/Event/Events?FixedFilter=&FixedValue=&SearchString=Jooksmine"),
-                        new Link("Surfamine", "/Event/Events?FixedFilter=&FixedValue=&SearchString=Surfamine"),
-                        new Link("Ujumine", "/Event/Events?FixedFilter=&FixedValue=&SearchString=Ujumine"),
-                        new Link("Jalgrattasõit", "/Event/Events?FixedFilter=&FixedValue=&SearchString=Jalgrattasõit"),
-                        new Link("Discgolf", "/Event/Events?FixedFilter=&FixedValue=&SearchString=Discgolf"))
+                        @Html.DropDownNavigationMenuFor("Spordivaldkonnad",
+                            new Link("Jooksmine", $"{eventSearch}Jooksmine"),
+                            new Link("Surfamine", $"{eventSearch}Surfamine"),
+                            new Link("Ujumine", $"{eventSearch}Ujumine"),
+                            new Link("Jalgrattasõit", $"{eventSearch}Jalgrattasõit"),
+                            new Link("Discgolf", $"{eventSearch}Discgolf"))
+                        @Html.DropDownNavigationMenuFor("Maakonnad",
+                            new Link("Harju maakond", $"{eventSearch}Harju maakond"),
+                            new Link("Lääne maakond", $"{eventSearch}Lääne maakond"),
+                            new Link("Põlva maakond", $"{eventSearch}Põlva maakond"),
+                            new Link("Hiiu maakond", $"{eventSearch}Hiiu maakond"),
+                            new Link("Saare maakond", $"{eventSearch}Saare maakond"),
+                            new Link("Pärnu maakond", $"{eventSearch}Pärnu maakond"),
+                            new Link("Lääne-Viru maakond", $"{eventSearch}Lääne-Viru maakond"),
+                            new Link("Ida-Viru maakond", $"{eventSearch}Ida-Viru maakond"),
+                            new Link("Rapla maakond", $"{eventSearch}Rapla maakond"),
+                            new Link("Järva maakond", $"{eventSearch}Järva maakond"),
+                            new Link("Jõgeva maakond", $"{eventSearch}Jõgeva maakond"),
+                            new Link("Viljandi maakond", $"{eventSearch}Viljandi maakond"),
+                            new Link("Tartu maakond", $"{eventSearch}Tartu maakond"),
+                            new Link("Valga maakond", $"{eventSearch}Valga maakond"),
+                            new Link("Võru maakond", $"{eventSearch}Võru maakond"))
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Kontakt</a>
                         </li>
@@ -49,7 +68,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted" style="background: HighlightText">
         <div class="container">
             &copy; 2020 - North - <a asp-area="" asp-page="/Privacy">Kontakt</a>
         </div>

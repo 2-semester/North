@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Extensions.Logging;
 using North.Data.SportCategory;
 using North.Data.Event;
-using North.Data.EventList;
 using North.Data.Location;
 using North.Data.Organization;
 
@@ -14,29 +12,29 @@ namespace North.Infra
     {
         internal static SportCategoryData jooksmine = new SportCategoryData
         {
-            Id = "Jooksmine", Name = "Jooksmine", 
+            Id = "Jooksmine", Name = "Jooksmine"
         };
 
         internal static SportCategoryData ujumine = new SportCategoryData
         {
-            Id = "Ujumine", Name = "Ujumine",
+            Id = "Ujumine", Name = "Ujumine"
             
         };
 
         internal static SportCategoryData surfamine = new SportCategoryData
         {
-            Id = "Surfamine", Name = "Surfamine",
+            Id = "Surfamine", Name = "Surfamine"
         };
 
         internal static SportCategoryData discgolf = new SportCategoryData
         {
-            Id = "Discgolf", Name = "Discgolf",
+            Id = "Discgolf", Name = "Discgolf"
             
         };
 
         internal static SportCategoryData jalgrattasõit = new SportCategoryData
         {
-            Id = "Jalgrattasõit", Name = "Jalgrattasõit",
+            Id = "Jalgrattasõit", Name = "Jalgrattasõit"
         };
 
 
@@ -46,9 +44,10 @@ namespace North.Infra
             Name = "Heateo Jooks",
             EventDate = Convert.ToDateTime("07/05/20"),
             SportCategoryId="Jooksmine",
-            TypeId="rahvajooks",
-            EventListId = "puudub",
+            TypeId="Rahvajooks",
+            EventListId = "Puudub",
             OrganizationId = "Sportland",
+            LocationId = "Jõgeva maakond",
             Definition="Heategevusjooksu eesmärgiks on koguda raha Vähiliidule. Raja pikkus on 5 km, tule osale kogu perega!"
         };
 
@@ -58,9 +57,10 @@ namespace North.Infra
             Name = "ITB Pärnu Open 2020",
             EventDate = Convert.ToDateTime("12/08/20"),
             SportCategoryId = "Discgolf",
-            TypeId = "karikasari",
-            EventListId = "puudub",
-            OrganizationId = "puudub",
+            TypeId = "Karikasari",
+            EventListId = "Puudub",
+            OrganizationId = "Puudub",
+            LocationId = "Pärnu maakond",
             Definition="Karikasarja avalöök 2020"
         };
         internal static EventData ristnaSoit = new EventData
@@ -69,9 +69,10 @@ namespace North.Infra
             Name = "Ristna öösõit",
             EventDate = Convert.ToDateTime("06/06/21"),
             SportCategoryId = "Jalgrattasõit",
-            TypeId = "maastikusõit",
-            EventListId="puudub",
+            TypeId = "Maastikusõit",
+            EventListId="Puudub",
            OrganizationId = "SEB",
+           LocationId = "Hiiu maakond",
            Definition = "Rada kulgeb sarnases kohas, kus eelmisel aastal toimus Kaugeima neeme sõit," +
                         "kuid piiratud nähtavuse tõttu on sealt välja jäetud tehnilised singlid ja" +
                         "suurt tähelepanu nõudvad laskumised. Mägirattakrossi raja valgustamiseks " +
@@ -101,158 +102,80 @@ namespace North.Infra
         internal static LocationData Harju = new LocationData()
         {
             Id = "Harju maakond",
-            Name = "Harju maakond",
-            EventId = "",
-            EventListId = "",
-            County = "",
-            City = ""
+            Name= "Harju maakond"
         };
         internal static LocationData Lääne = new LocationData()
         {
             Id = "Lääne maakond",
-            Name = "Lääne maakond",
-            EventId = "",
-            EventListId = "",
-            County = "",
-            City = ""
+            Name = "Lääne maakond"
         }; internal static LocationData Põlva = new LocationData()
         {
             Id = "Põlva maakond",
-            Name = "Põlva maakond",
-            EventId = "",
-            EventListId = "",
-            County = "",
-            City = ""
+            Name = "Põlva maakond"
         }; internal static LocationData Hiiu = new LocationData()
         {
             Id = "Hiiu maakond",
-            Name = "Hiiu maakond",
-            EventId = "",
-            EventListId = "",
-            County = "",
-            City = ""
+            Name = "Hiiu maakond"
         }; internal static LocationData Saare = new LocationData()
         {
             Id = "Saare maakond",
-            Name = "Saare maakond",
-            EventId = "",
-            EventListId = "",
-            County = "",
-            City = ""
+            Name = "Saare maakond"
         }; internal static LocationData Pärnu = new LocationData()
         {
             Id = "Pärnu maakond",
-            Name = "Pärnu maakond",
-            EventId = "",
-            EventListId = "",
-            County = "",
-            City = ""
+            Name = "Pärnu maakond"
         }; internal static LocationData LääneViru = new LocationData()
         {
             Id = "Lääne-Viru maakond",
-            Name = "Lääne-Viru maakond",
-            EventId = "",
-            EventListId = "",
-            County = "",
-            City = ""
+            Name = "Lääne-Viru maakond"
         }; internal static LocationData IdaViru = new LocationData()
         {
             Id = "Ida-Viru maakond",
-            Name = "Ida-Viru maakond",
-            EventId = "",
-            EventListId = "",
-            County = "",
-            City = ""
+            Name = "Ida-Viru maakond"
         }; internal static LocationData Rapla = new LocationData()
         {
             Id = "Rapla maakond",
-            Name = "Rapla maakond",
-            EventId = "",
-            EventListId = "",
-            County = "",
-            City = ""
+            Name = "Rapla maakond"
         };
         internal static LocationData Järva = new LocationData()
         {
             Id = "Järva maakond",
-            Name = "Järva maakond",
-            EventId = "",
-            EventListId = "",
-            County = "",
-            City = ""
+            Name = "Järva maakond"
         };
         internal static LocationData Jõgeva = new LocationData()
         {
             Id = "Jõgeva maakond",
-            Name = "Jõgeva maakond",
-            EventId = "",
-            EventListId = "",
-            County = "",
-            City = ""
+            Name = "Jõgeva maakond"
         };
         internal static LocationData Viljandi = new LocationData()
         {
             Id = "Viljandi maakond",
-            Name = "Viljandi maakond",
-            EventId = "",
-            EventListId = "",
-            County = "",
-            City = ""
+            Name = "Viljandi maakond"
         };
         internal static LocationData Tartu = new LocationData()
         {
             Id = "Tartu maakond",
-            Name = "Tartu maakond",
-            EventId = "",
-            EventListId = "",
-            County = "",
-            City = ""
+            Name = "Tartu maakond"
         };
         internal static LocationData Valga = new LocationData()
         {
             Id = "Valga maakond",
-            Name = "Valga maakond",
-            EventId = "",
-            EventListId = "",
-            County = "",
-            City = ""
+            Name = "Valga maakond"
         };
         internal static LocationData Võru = new LocationData()
         {
             Id = "Võru maakond",
-            Name = "Võru maakond",
-            EventId = "",
-            EventListId = "",
-            County = "",
-            City = ""
+            Name = "Võru maakond"
         };
-        internal static EventListData rattamaraton = new EventListData
+        internal static List<LocationData>locations => new List<LocationData>
         {
-            Id = "Hawaii Express Estonian Cup",
-            Name = "Hawaii Express Estonian Cup",
-            EventId = "Ristna öösõit",
-          
-        };
-        internal static EventListData surfisari = new EventListData
-        {
-            Id = "Fun sari",
-            Name = "Fun sari",
-            EventId = "",
-
-        };
-        internal static List<EventListData> eventLists => new List<EventListData>
-        {
-         rattamaraton, surfisari
-        };
-        internal static List<LocationData> counties => new List<LocationData>
-        {
-            Harju, IdaViru, LääneViru, Lääne, Rapla, Jõgeva, Järva, Hiiu, Saare, Pärnu, Viljandi, Tartu, Põlva, Võru
+            Harju,IdaViru, LääneViru, Lääne, Rapla, Jõgeva, Järva, Hiiu, Saare, Pärnu, Viljandi, Tartu, Põlva, Võru, Valga
         };
         internal static List<SportCategoryData> sportCategories => new List<SportCategoryData>
         {
             jooksmine, ujumine, surfamine, jalgrattasõit, discgolf
         };
-        internal static List<EventData> eventsList => new List<EventData>
+        internal static List<EventData> events => new List<EventData>
         {
             heaTeoJooks, parnuOpen, ristnaSoit
         };
@@ -260,16 +183,10 @@ namespace North.Infra
         {
             SEB, sportland, puudub
         };
-        private static void InitializeEventLists(NorthDbContext db)
-        {
-            if (db.EventLists.Count() != 0) return;
-            db.EventLists.AddRange(eventLists);
-            db.SaveChanges();
-        }
         private static void InitializeLocations(NorthDbContext db)
         {
             if (db.Locations.Count() != 0) return;
-            db.Locations.AddRange(counties);
+            db.Locations.AddRange(locations);
             db.SaveChanges();
         }
         private static void InitializeOrganizations(NorthDbContext db)
@@ -287,21 +204,16 @@ namespace North.Infra
         private static void InitializeEvents(NorthDbContext db)
         {
             if (db.Events.Count() != 0) return;
-            db.Events.AddRange(eventsList);
+            db.Events.AddRange(events);
             db.SaveChanges();
         }
-
         public static void Initialize(NorthDbContext db)
         {
             InitializeSportCategories(db);
             InitializeEvents(db);
             InitializeOrganizations(db);
             InitializeLocations(db);
-            InitializeEventLists(db);
         }
-
-    
-
     }
 }
 

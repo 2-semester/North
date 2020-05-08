@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Security.Cryptography.X509Certificates;
+using Microsoft.EntityFrameworkCore;
 using North.Data.Event;
 using North.Data.EventList;
 using North.Data.Location;
@@ -33,7 +34,7 @@ namespace North.Infra
         public static void InitializeTables(ModelBuilder builder)
         {
             if (builder is null) return;
-            builder.Entity<EventData>().ToTable(nameof(Events)).HasKey(x => new {x.EventListId, x.OrganizationId, x.TypeId, x.SportCategoryId});
+            builder.Entity<EventData>().ToTable(nameof(Events)).HasKey(x => new {x.EventListId, x.OrganizationId, x.TypeId, x.SportCategoryId, x.LocationId});
             builder.Entity<EventListData>().ToTable(nameof(EventLists));
             builder.Entity<LocationData>().ToTable(nameof(Locations));
             builder.Entity<OrganizationData>().ToTable(nameof(Organizations));

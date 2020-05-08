@@ -3,6 +3,7 @@ using North.Aids;
 using North.Data.EventList;
 using North.Domain.EventList;
 using North.Facade.EventList;
+using North.Tests.Aids;
 
 namespace North.Tests.Facade.EventList
 {
@@ -22,7 +23,7 @@ public class EventListViewFactoryTests : BaseTests
         [TestMethod]
         public void CreateObjectTest()
         {
-            var view = GetRandom.Object<EventListView>();
+            var view = GetRandomTests.Object<EventListView>();
             var data = EventListViewFactory.Create(view).Data;
 
             testArePropertyValuesEqual(view, data);
@@ -30,7 +31,7 @@ public class EventListViewFactoryTests : BaseTests
         [TestMethod]
         public void CreateViewTest()
         {
-            var data = GetRandom.Object<EventListData>();
+            var data = GetRandomTests.Object<EventListData>();
             var view = EventListViewFactory.Create(new EventListDomain(data));
 
             testArePropertyValuesEqual(view, data);

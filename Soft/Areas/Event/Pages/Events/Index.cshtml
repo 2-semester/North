@@ -17,20 +17,23 @@
                 new Link(Html.DisplayNameFor(m => m.Item.Name), Model.GetSortString(m => m.Name, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.EventDate), Model.GetSortString(m => m.EventDate, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.SportCategoryId), Model.GetSortString(m => m.SportCategoryId, page)),
-                new Link(Html.DisplayNameFor(m => m.Item.TypeId), Model.GetSortString(m => m.TypeId, page)))
-             </thead>
+                new Link(Html.DisplayNameFor(m => m.Item.TypeId), Model.GetSortString(m => m.TypeId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.LocationId), Model.GetSortString(m => m.LocationId, page)))
+                
+        </thead>
         <tbody>
             @foreach (var item in Model.Items)
             {
-                <tr>
-                    @Html.TableRowFor(
-                        page,
-                        item.Id,
-                        Html.DisplayFor(modelItem => item.Name),
-                        Html.DisplayFor(modelItem => item.EventDate),
-                        Html.DisplayFor(modelItem => item.SportCategoryId),
-                        Html.DisplayFor(modelItem => item.TypeId))
-                </tr>
+            <tr>
+                @Html.TableRowFor(
+                    page,
+                    item.Id,
+                    Html.DisplayFor(modelItem => item.Name),
+                    Html.DisplayFor(modelItem => item.EventDate),
+                    Html.DisplayFor(modelItem => item.SportCategoryId),
+                    Html.DisplayFor(modelItem => item.TypeId),
+                    Html.DisplayFor(modelItem => item.LocationId))
+            </tr>
             }
         </tbody>
     </table>

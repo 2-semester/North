@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
+using North.Tests.Aids;
 
 namespace North.Tests
 {
@@ -58,7 +59,7 @@ namespace North.Tests
 
         private static List<Type> getAssemblyClasses(string assemblyName)
         {
-            var l = GetSolution.TypesForAssembly(assemblyName);
+            var l = GetSolutionTests.TypesForAssembly(assemblyName);
             if (l.Count == 0) report(noClassesInAssembly, assemblyName);
 
             return l;
@@ -121,7 +122,7 @@ namespace North.Tests
         private List<string> getTestClasses()
         {
             var l = new List<string>();
-            var tests = GetSolution.TypeNamesForAssembly(testAssembly);
+            var tests = GetSolutionTests.TypeNamesForAssembly(testAssembly);
 
             foreach (var t in tests)
             {

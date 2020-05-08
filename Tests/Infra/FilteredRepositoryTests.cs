@@ -5,6 +5,7 @@ using North.Aids;
 using North.Domain.Event;
 using North.Infra;
 using North.Data.Event;
+using North.Tests.Aids;
 
 namespace North.Tests.Infra
 {
@@ -62,9 +63,9 @@ namespace North.Tests.Infra
         public void AddFixedFilteringTest()
         {
             var sql = obj.createSqlQuery();
-            var fixedFilter = GetMember.Name<EventData>(x => x.Definition);
+            var fixedFilter = GetMemberTests.Name<EventData>(x => x.Definition);
             obj.FixedFilter = fixedFilter;
-            var fixedValue = GetRandom.String();
+            var fixedValue = GetRandomTests.String();
             obj.FixedValue = fixedValue;
             var sqlNew = obj.addFixedFiltering(sql);
             Assert.IsNotNull(sqlNew);
@@ -74,10 +75,10 @@ namespace North.Tests.Infra
         public void CreateFixedWhereExpressionTest()
         {
             var properties = typeof(EventData).GetProperties();
-            var idx = GetRandom.Int32(0, properties.Length);
+            var idx = GetRandomTests.Int32(0, properties.Length);
             var p = properties[idx];
             obj.FixedFilter = p.Name;
-            var fixedValue = GetRandom.String();
+            var fixedValue = GetRandomTests.String();
             obj.FixedValue = fixedValue;
             var e = obj.createFixedWhereExpression();
             Assert.IsNotNull(e);
@@ -94,8 +95,8 @@ namespace North.Tests.Infra
         public void CreateFixedWhereExpressionOnFixedFilterNullTest()
         {
             Assert.IsNull(obj.createFixedWhereExpression());
-            obj.FixedValue = GetRandom.String();
-            obj.FixedFilter = GetRandom.String();
+            obj.FixedValue = GetRandomTests.String();
+            obj.FixedFilter = GetRandomTests.String();
             Assert.IsNull(obj.createFixedWhereExpression());
         }
 
@@ -103,7 +104,7 @@ namespace North.Tests.Infra
         public void AddFilteringTest()
         {
             var sql = obj.createSqlQuery();
-            var searchString = GetRandom.String();
+            var searchString = GetRandomTests.String();
             obj.SearchString = searchString;
             var sqlNew = obj.addFiltering(sql);
             Assert.IsNotNull(sqlNew);
@@ -112,7 +113,7 @@ namespace North.Tests.Infra
         [TestMethod]
         public void CreateWhereExpressionTest()
         {
-            var searchString = GetRandom.String();
+            var searchString = GetRandomTests.String();
             obj.SearchString = searchString;
             var e = obj.createWhereExpression();
             Assert.IsNotNull(e);

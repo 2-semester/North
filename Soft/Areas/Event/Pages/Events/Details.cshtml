@@ -11,16 +11,17 @@
 
     const string sportsmen = "/SportsmanEvent/SportsmanEvents";
 }
-<body>
-    @Html.DisplayControlsFor(model => model.Item.SportCategoryId)
-    @Html.DisplayControlsFor(model => model.Item.TypeId)
-    @Html.DisplayControlsFor(model => model.Item.OrganizationId)
-    @Html.DisplayControlsFor(model => model.Item.EventListId)
-    @Html.DisplayControlsFor(model => model.Item.Id)
-    @Html.DisplayControlsFor(model => model.Item.Name)
-    @Html.DisplayControlsFor(model => model.Item.SportCategoryId)
-    @Html.DisplayControlsFor(model => model.Item.Definition)
-</body>
+    <body>
+        @Html.DisplayControlsFor(model => model.Item.SportCategoryId)
+        @Html.DisplayControlsFor(model => model.Item.TypeId)
+        @Html.DisplayControlsFor(model => model.Item.OrganizationId)
+        @Html.DisplayControlsFor(model => model.Item.EventListId)
+        @Html.DisplayControlsFor(model => model.Item.LocationId)
+        @Html.DisplayControlsFor(model => model.Item.Id)
+        @Html.DisplayControlsFor(model => model.Item.Name)
+        @Html.DisplayControlsFor(model => model.Item.SportCategoryId)
+        @Html.DisplayControlsFor(model => model.Item.Definition)
+    </body>
 @section Details {
     @Html.HypertextLinkFor(string.Empty, new Link("Registreeru!",
         $"{sportsmen}/Create?fixedFilter=&fixedValue="))

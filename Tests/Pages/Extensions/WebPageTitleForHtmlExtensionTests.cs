@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
 using North.Facade.EventList;
 using North.Pages.Extensions;
+using North.Tests.Aids;
 
 namespace North.Tests.Pages.Extensions
 {
@@ -17,14 +18,14 @@ namespace North.Tests.Pages.Extensions
         [TestMethod]
         public void WebPageTitleForTest()
         {
-            var obj = new htmlHelperMock<EventListView>().WebPageTitleFor(GetRandom.String());
+            var obj = new htmlHelperMock<EventListView>().WebPageTitleFor(GetRandomTests.String());
             Assert.IsInstanceOfType(obj, typeof(HtmlContentBuilder));
         }
 
         [TestMethod]
         public void HtmlStringsTest()
         {
-            var expected = new List<string> { "<h1>", GetRandom.String(), "</h1>" };
+            var expected = new List<string> { "<h1>", GetRandomTests.String(), "</h1>" };
             var actual = WebPageTitleForHtmlExtension.htmlStrings(expected[1]);
             TestHtml.Strings(actual, expected);
         }

@@ -2,14 +2,17 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
 using North.Data.Event;
+using North.Data.SportCategory;
 using North.Data.Sportsman;
 using North.Data.SportsmanEvent;
 using North.Domain.Event;
+using North.Domain.SportCategory;
 using North.Domain.Sportsman;
 using North.Domain.SportsmanEvent;
 using North.Facade.SportsmanEvent;
 using North.Pages;
 using North.Pages.SportsmanEvent;
+using North.Tests.Aids;
 
 namespace North.Tests.Pages.SportsmanEvent
 {
@@ -23,9 +26,9 @@ namespace North.Tests.Pages.SportsmanEvent
             {
             }
         }
-        private class testSportmanRepository : baseTestRepositoryForUniqueEntity<SportsmanDomain, SportsmanData>, ISportsmenRepository { }
+        private class testSportmenRepository : baseTestRepositoryForUniqueEntity<SportsmanDomain, SportsmanData>, ISportsmenRepository { }
         private class testEventRepository : baseTestRepositoryForUniqueEntity<EventDomain, EventData>, IEventsRepository { }
-        private class testRepository : baseTestRepositoryForPeriodEntity<SportsmanEventDomain, SportsmanEventData>, ISportsmanEventsRepository {
+        private class testSportsmanEventsRepository : baseTestRepositoryForPeriodEntity<SportsmanEventDomain, SportsmanEventData>, ISportsmanEventsRepository {
             protected override bool isThis(SportsmanEventDomain entity, string id)
             {
                 return true;
@@ -37,24 +40,28 @@ namespace North.Tests.Pages.SportsmanEvent
             }
         }
 
-        private testSportmanRepository sportsman;
+        private testSportmenRepository sportsmen;
         private testEventRepository events;
-        private testRepository sportsmanEvent;
+        private testSportsmanEventsRepository sportsmanEvents;
+        private SportsmanData data;
 
         [TestInitialize]
         public override void TestInitialize()
         {
             base.TestInitialize();
-            sportsmanEvent = new testRepository();
-            sportsman = new testSportmanRepository();
+            sportsmanEvents = new testSportsmanEventsRepository();
+            sportsmen = new testSportmenRepository();
             events = new testEventRepository();
-            obj = new testClass(sportsmanEvent,sportsman,events);
+            data = GetRandomTests.Object<SportsmanData>();
+            var m = new SportsmanDomain(data);
+            sportsmen.Add(m).GetAwaiter();
+            obj = new testClass(sportsmanEvents,sportsmen,events);
         }
 
         [TestMethod]
         public void ItemIdTest()
         {
-            var item = GetRandom.Object<SportsmanEventView>();
+            var item = GetRandomTests.Object<SportsmanEventView>();
             obj.Item = item;
             Assert.AreEqual(item.GetId(), obj.ItemId);
             obj.Item = null;
@@ -62,7 +69,7 @@ namespace North.Tests.Pages.SportsmanEvent
         }
 
         [TestMethod]
-        public void PageTitleTest() => Assert.AreEqual("Sportlase üritused", obj.PageTitle);
+        public void PageTitleTest() => Assert.AreEqual("Registreeringud", obj.PageTitle);
 
         [TestMethod]
         public void PageUrlTest() => Assert.AreEqual("/SportsmanEvent/SportsmanEvents", obj.PageUrl);
@@ -70,7 +77,7 @@ namespace North.Tests.Pages.SportsmanEvent
         [TestMethod]
         public void ToObjectTest()
         {
-            var view = GetRandom.Object<SportsmanEventView>();
+            var view = GetRandomTests.Object<SportsmanEventView>();
             var o = obj.toObject(view);
             testArePropertyValuesEqual(view, o.Data);
         }
@@ -78,14 +85,14 @@ namespace North.Tests.Pages.SportsmanEvent
         [TestMethod]
         public void ToViewTest()
         {
-            var data = GetRandom.Object<SportsmanEventData>();
-            var view = obj.toView(new SportsmanEventDomain(data));
-            testArePropertyValuesEqual(view, data);
+            var d = GetRandomTests.Object<SportsmanEventData>();
+            var v = obj.toView(new SportsmanEventDomain(d));
+            testArePropertyValuesEqual(v, d);
         }
         [TestMethod]
         public void SportsmenTest()
         {
-            var list = sportsman.Get().GetAwaiter().GetResult();
+            var list = sportsmen.Get().GetAwaiter().GetResult();
             Assert.AreEqual(list.Count, obj.Sportsmen.Count());
         }
         [TestMethod]
@@ -93,6 +100,12 @@ namespace North.Tests.Pages.SportsmanEvent
         {
             var list = events.Get().GetAwaiter().GetResult();
             Assert.AreEqual(list.Count, obj.Events.Count());
+        }
+        [TestMethod]
+        public void GetSportsmanIdNameTest()
+        {
+            var name = obj.GetSportsmanIdName(data.Id);
+            Assert.AreEqual(data.Name, name);
         }
     }
 }

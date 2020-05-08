@@ -69,6 +69,7 @@ namespace North.Soft.Migrations
                     TypeId = table.Column<string>(nullable: false),
                     OrganizationId = table.Column<string>(nullable: false),
                     EventListId = table.Column<string>(nullable: false),
+                    LocationId = table.Column<string>(nullable: false),
                     ValidFrom = table.Column<DateTime>(nullable: true),
                     ValidTo = table.Column<DateTime>(nullable: true),
                     Id = table.Column<string>(nullable: true),
@@ -78,7 +79,7 @@ namespace North.Soft.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Events", x => new { x.EventListId, x.OrganizationId, x.TypeId, x.SportCategoryId });
+                    table.PrimaryKey("PK_Events", x => new { x.EventListId, x.OrganizationId, x.TypeId, x.SportCategoryId, x.LocationId });
                 });
 
             migrationBuilder.CreateTable(
@@ -88,11 +89,7 @@ namespace North.Soft.Migrations
                     Id = table.Column<string>(nullable: false),
                     ValidFrom = table.Column<DateTime>(nullable: true),
                     ValidTo = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(nullable: false),
-                    EventId = table.Column<string>(nullable: true),
-                    EventListId = table.Column<string>(nullable: true),
-                    County = table.Column<string>(nullable: true),
-                    City = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {

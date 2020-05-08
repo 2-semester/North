@@ -6,6 +6,7 @@ using North.Data.SportsmanEvent;
 using North.Domain.SportsmanEvent;
 using North.Infra;
 using North.Infra.SportsmanEvent;
+using North.Tests.Aids;
 
 namespace North.Tests.Infra.SportsmanEvent
 {
@@ -35,8 +36,8 @@ namespace North.Tests.Infra.SportsmanEvent
 
         protected override void setId(SportsmanEventData d, string id)
         {
-            var sportsmanId = GetString.Head(id);
-            var eventId = GetString.Tail(id);
+            var sportsmanId = GetStringTests.Head(id);
+            var eventId = GetStringTests.Tail(id);
             d.SportsmanId = sportsmanId;
             d.EventId = eventId;
         }

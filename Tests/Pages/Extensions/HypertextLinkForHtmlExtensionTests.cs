@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
 using North.Facade.EventList;
 using North.Pages.Extensions;
+using North.Tests.Aids;
 
 namespace North.Tests.Pages.Extensions
 {
@@ -16,7 +17,7 @@ namespace North.Tests.Pages.Extensions
         [TestMethod]
         public void HypertextLinkForTest()
         {
-            var s = GetRandom.String();
+            var s = GetRandomTests.String();
             var items = new[] { new Link("AA", "AAA"), new Link("BB", "BBB") };
             var obj = new htmlHelperMock<EventListView>().HypertextLinkFor(s, items);
             Assert.IsInstanceOfType(obj, typeof(HtmlContentBuilder));
@@ -25,7 +26,7 @@ namespace North.Tests.Pages.Extensions
         [TestMethod]
         public void HtmlStringsTest()
         {
-            var s = GetRandom.String();
+            var s = GetRandomTests.String();
             var items = new[] { new Link("AA", "AAA"), new Link("BB", "BBB") };
             var expected = new List<string> {
                 "<p>", $"<a>{s}</a>", $"<a> </a><a href=\"AAA\">AA</a>",

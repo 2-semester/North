@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -34,8 +35,7 @@ namespace North.Pages.Extensions
             htmlStrings.Add(new HtmlString("</li>"));
         }
 
-        public static IHtmlContent
-            DropDownNavigationMenuFor(this IHtmlHelper helper, string name, params Link[] items)
+        public static IHtmlContent DropDownNavigationMenuFor(this IHtmlHelper helper, string name, params Link[] items)
         {
             var strings = htmlStrings(name, items);
 
@@ -51,7 +51,6 @@ namespace North.Pages.Extensions
 
             return list;
         }
-
     }
 
 }

@@ -4,12 +4,15 @@
     {
         public static void Members(object from, object to)
         {
+            if (from is null) return;
+            if (to is null) return;
             foreach (var property in from.GetType().GetProperties())
             {
+                if (!property.CanWrite) continue;
                 var name = property.Name;
                 var p = to.GetType().GetProperty(name);
                 var v = property.GetValue(from);
-                p.SetValue(to, v);
+                Safe.Run(() => p?.SetValue(to, v));
             }
 
         }

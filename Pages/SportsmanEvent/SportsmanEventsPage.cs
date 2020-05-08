@@ -42,6 +42,5 @@ namespace North.Pages.SportsmanEvent
         {
             return SportsmanEventViewFactory.Create(obj);
         }
-
     }
 }

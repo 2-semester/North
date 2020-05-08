@@ -19,6 +19,5 @@ namespace North.Pages.Extensions {
                 new HtmlString("</h1>")
             };
         }
-
     }
 }

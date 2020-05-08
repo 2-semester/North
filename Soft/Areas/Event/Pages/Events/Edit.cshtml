@@ -12,7 +12,8 @@
         @Html.EditControlsFor(model => model.Item.TypeId)
         @Html.EditControlsForDropDown(model => model.Item.OrganizationId, Model.Organizations)
         @Html.EditControlsForDropDown(model => model.Item.EventListId, Model.EventLists)
-    @Html.EditControlsFor(model => model.Item.Name)
+        @Html.EditControlsForDropDown(model => model.Item.LocationId, Model.Locations)
+        @Html.EditControlsFor(model => model.Item.Name)
         @Html.EditControlsFor(model => model.Item.EventDate)
         @Html.EditControlsFor(model => model.Item.Definition)
     </body>

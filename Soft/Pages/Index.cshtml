@@ -6,28 +6,25 @@
 
 
     <body background="css/sport.png">
-        <div class="text-center" style="background:HighlightText">
-            <h1 class="display-1">SPORDIÜRITUSTELE REGISTREERIMINE</h1>
-            <p>
-                <h2 class="display-4"> REGISTREERI END SPORTLASEKS <a href="https://localhost:44375/Sportsman/Sportsmen/Create">SIIN</a> </h2>
-            <p>
-
+        <div class="text-center" style="background:rgba(255,255,255,0.95)">
+            <h1 class="display-1" style="strong">SPORDIÜRITUSTELE REGISTREERIMINE</h1>
         </div>
-    
+        <div class="text-center" style="background: rgba(255, 255, 255, 0.8)">
+            <h5 class="display-4"> REGISTREERI END SPORTLASEKS <a href="https://localhost:44375/Sportsman/Sportsmen/Create">SIIN</a> </h5>
+            <h7 class="display-4">Otsi konkreetset üritust: </h7>
+            <form id="Otsing" class="table" method="get" action="/Event/Events">
+                <input class="search2" id="name" type="text" name="search" size="40" maxlength="255" />
+                <button type="submit" class="button btn-01">Otsi</button>
 
-    @*Mulle tundub, et ta omistab küll mingi fixedValue/Filter väärtuse, aga see pole piisav et midagi teha*@
-    
-
-    <form id="FixedFilter" class="table" method="get" action="/Event/Events" />
-        <input class="search2" id="name" type="text" name="search" size="10" maxlength="255" />
-    <button type="submit" class="button btn-01">Otsi</button>
-
-        <script type="text/javascript">
-            document.getElementById("FixedFilter").onsubmit = function () {
-                window.location = "https://localhost:44375/Event/Events/?fixedFilter=" + document.getElementById("name").value;
-                return false;
-            }
-        </script>
+                <script type="text/javascript">
+                    document.getElementById("Otsing").onsubmit = function () {
+                        window.location = "https://localhost:44375/Event/Events?FixedFilter=&FixedValue=&SearchString=" +
+                            document.getElementById("name").value;
+                        return false;
+                    }
+                </script>
+            </form>
+        </div>
     </body>
 
 

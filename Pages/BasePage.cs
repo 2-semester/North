@@ -60,9 +60,6 @@ namespace North.Pages {
             else { searchString = currentFilter; }
 
             return searchString;
-
         }
-
     }
-
 }

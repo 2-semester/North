@@ -28,9 +28,12 @@ namespace North.Facade.Event
         //dropdown list 5asja
         public string EventListId { get; set; }
 
+        [DisplayName("Asukoht")]
+        public string LocationId { get; set; }
+
         public string GetId()
         {
-            return $"{EventListId}.{OrganizationId}.{TypeId}.{SportCategoryId}";
+            return $"{EventListId}.{OrganizationId}.{TypeId}.{SportCategoryId}.{LocationId}";
         }
     }
 

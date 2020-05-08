@@ -15,6 +15,7 @@ using North.Data.SportCategoryType;
 using North.Data.Sportsman;
 using North.Data.SportsmanEvent;
 using North.Infra;
+using North.Tests.Aids;
 
 namespace North.Tests.Infra
 {
@@ -26,7 +27,6 @@ namespace North.Tests.Infra
 
         private class testClass : NorthDbContext
         {
-
             public testClass(DbContextOptions<NorthDbContext> o) : base(o) { }
 
             public ModelBuilder RunOnModelCreating()
@@ -57,7 +57,7 @@ namespace North.Tests.Infra
                 else
                     foreach (var v in values)
                     {
-                        var name = GetMember.Name(v);
+                        var name = GetMemberTests.Name(v);
                         Assert.IsNotNull(key.Properties.FirstOrDefault(x => x.Name == name));
                     }
             }

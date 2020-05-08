@@ -29,41 +29,41 @@ namespace North.Pages.Extensions
             return list;
         }
 
-        public static IHtmlContent TableRowFor(
-            this IHtmlHelper htmlHelper, string page, object index,
-            string fixedFilter, string fixedValue,
+        //public static IHtmlContent TableRowFor(
+        //    this IHtmlHelper htmlHelper, string page, object index,
+        //    string fixedFilter, string fixedValue,
 
-            params IHtmlContent[] values)
-        {
-            var s = htmlStrings(page, index, fixedFilter, fixedValue, values);
-            return new HtmlContentBuilder(s);
-        }
+        //    params IHtmlContent[] values)
+        //{
+        //    var s = htmlStrings(page, index, fixedFilter, fixedValue, values);
+        //    return new HtmlContentBuilder(s);
+        //}
 
-        private static List<object> htmlStrings(string page, object index, string fixedFilter, string fixedValue, IHtmlContent[] values)
-        {
-            var list = new List<object>();
-            foreach (var value in values) addValue(list, value);
-            list.Add(new HtmlString("<td>"));
-            list.Add(new HtmlString($"<a href=\"{page}/Edit?id={index}&fixedFilter={fixedFilter}&fixedValue={fixedValue}\">{Constants.EditLinkTitle}</a>"));
-            list.Add(" | ");
-            list.Add(new HtmlString($"<a href=\"{page}/Details?id={index}&fixedFilter={fixedFilter}&fixedValue={fixedValue}\">{Constants.DetailsLinkTitle}</a>"));
-            list.Add(" | ");
-            list.Add(new HtmlString($"<a href=\"{page}/Delete?id={index}&fixedFilter={fixedFilter}&fixedValue={fixedValue}\">{Constants.DeleteLinkTitle}</a>"));
-            list.Add(new HtmlString("</td>"));
+        //private static List<object> htmlStrings(string page, object index, string fixedFilter, string fixedValue, IHtmlContent[] values)
+        //{
+        //    var list = new List<object>();
+        //    foreach (var value in values) addValue(list, value);
+        //    list.Add(new HtmlString("<td>"));
+        //    list.Add(new HtmlString($"<a href=\"{page}/Edit?id={index}&fixedFilter={fixedFilter}&fixedValue={fixedValue}\">{Constants.EditLinkTitle}</a>"));
+        //    list.Add(" | ");
+        //    list.Add(new HtmlString($"<a href=\"{page}/Details?id={index}&fixedFilter={fixedFilter}&fixedValue={fixedValue}\">{Constants.DetailsLinkTitle}</a>"));
+        //    list.Add(" | ");
+        //    list.Add(new HtmlString($"<a href=\"{page}/Delete?id={index}&fixedFilter={fixedFilter}&fixedValue={fixedValue}\">{Constants.DeleteLinkTitle}</a>"));
+        //    list.Add(new HtmlString("</td>"));
 
-            return list;
-        }
+        //    return list;
+        //}
 
         public static IHtmlContent TableRowWithoutEditFor(
             this IHtmlHelper htmlHelper, string page, object index,
 
             params IHtmlContent[] values)
         {
-            var s = htmlStringsWithoutEditFor(page, index, values);
+            var s = htmlStringsWithoutEdit(page, index, values);
             return new HtmlContentBuilder(s);
         }
 
-        private static List<object> htmlStringsWithoutEditFor(string page, object index, IHtmlContent[] values)
+        private static List<object> htmlStringsWithoutEdit(string page, object index, IHtmlContent[] values)
         {
             var list = new List<object>();
             foreach (var value in values) addValue(list, value);
@@ -77,28 +77,28 @@ namespace North.Pages.Extensions
             return list;
         }
 
-        public static IHtmlContent TableRowWithOutEdit(
-            this IHtmlHelper htmlHelper, string page, object index,
-            string fixedFilter, string fixedValue,
+        //public static IHtmlContent TableRowWithoutEditFor(
+        //    this IHtmlHelper htmlHelper, string page, object index,
+        //    string fixedFilter, string fixedValue,
 
-            params IHtmlContent[] values)
-        {
-            var s = htmlStringsWithoutEdit(page, index, fixedFilter, fixedValue, values);
-            return new HtmlContentBuilder(s);
-        }
+        //    params IHtmlContent[] values)
+        //{
+        //    var s = htmlStringsWithoutEdit(page, index, fixedFilter, fixedValue, values);
+        //    return new HtmlContentBuilder(s);
+        //}
 
-        private static List<object> htmlStringsWithoutEdit(string page, object index, string fixedFilter, string fixedValue, IHtmlContent[] values)
-        {
-            var list = new List<object>();
-            foreach (var value in values) addValue(list, value);
-            list.Add(new HtmlString("<td>"));
-            list.Add(new HtmlString($"<a href=\"{page}/Details?id={index}&fixedFilter={fixedFilter}&fixedValue={fixedValue}\">{Constants.DetailsLinkTitle}</a>"));
-            list.Add(" | ");
-            list.Add(new HtmlString($"<a href=\"{page}/Delete?id={index}&fixedFilter={fixedFilter}&fixedValue={fixedValue}\">{Constants.DeleteLinkTitle}</a>"));
-            list.Add(new HtmlString("</td>"));
+        //private static List<object> htmlStringsWithoutEdit(string page, object index, string fixedFilter, string fixedValue, IHtmlContent[] values)
+        //{
+        //    var list = new List<object>();
+        //    foreach (var value in values) addValue(list, value);
+        //    list.Add(new HtmlString("<td>"));
+        //    list.Add(new HtmlString($"<a href=\"{page}/Details?id={index}&fixedFilter={fixedFilter}&fixedValue={fixedValue}\">{Constants.DetailsLinkTitle}</a>"));
+        //    list.Add(" | ");
+        //    list.Add(new HtmlString($"<a href=\"{page}/Delete?id={index}&fixedFilter={fixedFilter}&fixedValue={fixedValue}\">{Constants.DeleteLinkTitle}</a>"));
+        //    list.Add(new HtmlString("</td>"));
 
-            return list;
-        }
+        //    return list;
+        //}
 
         internal static void addValue(List<object> htmlStrings, IHtmlContent value)
         {
