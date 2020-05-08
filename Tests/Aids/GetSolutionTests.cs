@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Aids;
+using System.Reflection;
 
 namespace North.Tests.Aids {
 
@@ -65,11 +64,8 @@ namespace North.Tests.Aids {
                 Assert.IsTrue(actual.Contains(e.FullName));
         }
 
-        [TestMethod]
-        public void NameTest()
-        {
-            Assert.AreEqual(nameof(North), GetSolution.Name);
-        }
+        public static string Name =>
+            GetStringTests.Head(GetClassTests.Namespace(typeof(GetSolutionTests)));
     }
 
 }
