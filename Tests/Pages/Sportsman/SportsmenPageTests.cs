@@ -32,7 +32,7 @@ namespace North.Tests.Pages.Sportsman
         [TestMethod]
         public void ItemIdTest()
         {
-            var item = GetRandom.Object<SportsmanView>();
+            var item = GetRandomTests.Object<SportsmanView>();
             obj.Item = item;
             Assert.AreEqual(item.Id, obj.ItemId);
             obj.Item = null;
@@ -48,7 +48,7 @@ namespace North.Tests.Pages.Sportsman
         [TestMethod]
         public void ToObjectTest()
         {
-            var view = GetRandom.Object<SportsmanView>();
+            var view = GetRandomTests.Object<SportsmanView>();
             var o = obj.toObject(view);
             testArePropertyValuesEqual(view, o.Data);
         }
@@ -56,7 +56,7 @@ namespace North.Tests.Pages.Sportsman
         [TestMethod]
         public void ToViewTest()
         {
-            var data = GetRandom.Object<SportsmanData>();
+            var data = GetRandomTests.Object<SportsmanData>();
             var view = obj.toView(new SportsmanDomain(data));
             testArePropertyValuesEqual(view, data);
         }

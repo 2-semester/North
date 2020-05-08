@@ -31,13 +31,13 @@ namespace North.Pages.Extensions {
             return l;
         }
 
-        public static IHtmlContent HypertextLinkFor(
-            this IHtmlHelper htmlHelper, params Link[] items)
-        {
-            var s = htmlStrings(items);
+        //public static IHtmlContent HypertextLinkFor(
+        //    this IHtmlHelper htmlHelper, params Link[] items)
+        //{
+        //    var s = htmlStrings(items);
 
-            return new HtmlContentBuilder(s);
-        }
+        //    return new HtmlContentBuilder(s);
+        //}
 
         internal static List<object> htmlStrings(Link[] items)
         {

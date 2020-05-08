@@ -1,4 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Html;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using North.Aids;
+using North.Facade.Event;
 using North.Pages.Extensions;
 
 namespace North.Tests.Pages.Extensions
@@ -15,7 +19,13 @@ namespace North.Tests.Pages.Extensions
         [TestMethod]
         public void TableHeaderForTest()
         {
-            Assert.Inconclusive();
+            var obj = new htmlHelperMock<EventView>().TableHeaderFor(
+                GetRandomTests.Object<Link>(),
+                GetRandomTests.Object<Link>(),
+                GetRandomTests.Object<Link>(),
+                GetRandomTests.Object<Link>()
+            );
+            Assert.IsInstanceOfType(obj, typeof(HtmlContentBuilder));
         }
     }
 }

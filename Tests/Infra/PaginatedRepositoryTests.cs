@@ -36,7 +36,7 @@ namespace North.Tests.Infra
                 .Options;
             var c = new NorthDbContext(options);
             obj = new testClass(c, c.Events);
-            count = GetRandom.UInt8(20, 40);
+            count = GetRandomTests.UInt8(20, 40);
             foreach (var p in c.Events)
                 c.Entry(p).State = EntityState.Deleted;
             addItems();
@@ -67,7 +67,7 @@ namespace North.Tests.Infra
             }
             testNextPage(0, true);
             testNextPage(1, true);
-            testNextPage(GetRandom.Int32(2, obj.TotalPages - 1), true);
+            testNextPage(GetRandomTests.Int32(2, obj.TotalPages - 1), true);
             testNextPage(obj.TotalPages, false);
         }
 
@@ -83,7 +83,7 @@ namespace North.Tests.Infra
             testPreviousPage(0, false);
             testPreviousPage(1, false);
             testPreviousPage(2, true);
-            testPreviousPage(GetRandom.Int32(2, obj.TotalPages), true);
+            testPreviousPage(GetRandomTests.Int32(2, obj.TotalPages), true);
             testPreviousPage(obj.TotalPages, true);
         }
 
@@ -120,7 +120,7 @@ namespace North.Tests.Infra
         private void addItems()
         {
             for (var i = 0; i < count; i++)
-                obj.Add(new EventDomain(GetRandom.Object<EventData>())).GetAwaiter();
+                obj.Add(new EventDomain(GetRandomTests.Object<EventData>())).GetAwaiter();
         }
 
         [TestMethod]

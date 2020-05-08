@@ -89,11 +89,7 @@ namespace North.Soft.Migrations
                     Id = table.Column<string>(nullable: false),
                     ValidFrom = table.Column<DateTime>(nullable: true),
                     ValidTo = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(nullable: false),
-                    EventId = table.Column<string>(nullable: true),
-                    EventListId = table.Column<string>(nullable: true),
-                    County = table.Column<string>(nullable: true),
-                    City = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {

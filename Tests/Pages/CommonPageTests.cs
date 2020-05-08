@@ -20,7 +20,7 @@ namespace North.Tests.Pages {
         }
 
         [TestMethod] public void ItemIdTest() {
-            obj.Item = GetRandom.Object<EventView>();
+            obj.Item = GetRandomTests.Object<EventView>();
             Assert.AreEqual(obj.Item.GetId(), obj.ItemId);
         }
 

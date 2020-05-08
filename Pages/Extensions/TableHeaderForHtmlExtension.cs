@@ -6,16 +6,16 @@ namespace North.Pages.Extensions {
 
     public static class TableHeaderForHtmlExtension {
 
-        public static IHtmlContent TableHeaderFor(
-            this IHtmlHelper htmlHelper,
-            params string[] names) {
-            var htmlStrings = new List<object> {new HtmlString("<tr>")};
-            foreach (var name in names) addHeader(htmlStrings, name);
-            htmlStrings.Add(new HtmlString("<th></th>"));
-            htmlStrings.Add(new HtmlString("</tr>"));
+        //public static IHtmlContent TableHeaderFor(
+        //    this IHtmlHelper htmlHelper,
+        //    params string[] names) {
+        //    var htmlStrings = new List<object> {new HtmlString("<tr>")};
+        //    foreach (var name in names) addHeader(htmlStrings, name);
+        //    htmlStrings.Add(new HtmlString("<th></th>"));
+        //    htmlStrings.Add(new HtmlString("</tr>"));
 
-            return new HtmlContentBuilder(htmlStrings);
-        }
+        //    return new HtmlContentBuilder(htmlStrings);
+        //}
 
         public static IHtmlContent TableHeaderFor(
            this IHtmlHelper htmlHelper, 
@@ -28,13 +28,13 @@ namespace North.Pages.Extensions {
             return new HtmlContentBuilder(htmlStrings);
         }
 
-        internal static void addHeader(List<object> htmlStrings, string name) {
-            if (htmlStrings is null) return;
-            if (name is null) return;
-            htmlStrings.Add(new HtmlString("<th>"));
-            htmlStrings.Add(name);
-            htmlStrings.Add(new HtmlString("</th>"));
-        }
+        //internal static void addHeader(List<object> htmlStrings, string name) {
+        //    if (htmlStrings is null) return;
+        //    if (name is null) return;
+        //    htmlStrings.Add(new HtmlString("<th>"));
+        //    htmlStrings.Add(name);
+        //    htmlStrings.Add(new HtmlString("</th>"));
+        //}
         internal static void addLink(List<object> htmlStrings, Link link) {
             if (htmlStrings is null) return;
             if (link is null) return;

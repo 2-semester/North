@@ -58,7 +58,7 @@ namespace North.Tests
 
         public IHtmlContent LabelFor<TResult>(Expression<Func<TModel, TResult>> e,
             string labelText, object htmlAttributes)
-            => new htmlContentMock($"LabelFor{GetMember.Name(e)}");
+            => new htmlContentMock($"LabelFor{GetMemberTests.Name(e)}");
 
         public IHtmlContent ListBoxFor<TResult>(
             Expression<Func<TModel, TResult>> e, IEnumerable<SelectListItem> selectList, object htmlAttributes)

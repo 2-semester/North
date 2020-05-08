@@ -37,17 +37,17 @@ namespace North.Tests.Infra
                 .Options;
             var c = new NorthDbContext(options);
             obj = new testClass(c, c.Events);
-            data = GetRandom.Object<EventData>();
+            data = GetRandomTests.Object<EventData>();
         }
 
         [TestMethod]
         public void GetTest()
         {
-            var count = GetRandom.UInt8(15, 30);
+            var count = GetRandomTests.UInt8(15, 30);
             var countBefore = obj.Get().GetAwaiter().GetResult().Count;
             for (var i = 0; i < count; i++)
             {
-                data = GetRandom.Object<EventData>();
+                data = GetRandomTests.Object<EventData>();
                 AddTest();
             }
             Assert.AreEqual(count + countBefore, obj.Get().GetAwaiter().GetResult().Count);
@@ -84,7 +84,7 @@ namespace North.Tests.Infra
         public void UpdateTest()
         {
             AddTest();
-            var newData = GetRandom.Object<EventData>();
+            var newData = GetRandomTests.Object<EventData>();
             newData.Id = data.Id;
             obj.Update(new EventDomain(newData)).GetAwaiter();
             var expected = obj.Get(data.Id).GetAwaiter().GetResult();

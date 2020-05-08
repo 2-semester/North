@@ -22,7 +22,7 @@ namespace North.Tests.Domain.Common
         [TestMethod]
         public void DataTest()
         {
-            var d = GetRandom.Object<OrganizationData>();
+            var d = GetRandomTests.Object<OrganizationData>();
             Assert.AreNotSame(d,obj.Data);
             obj = new testClass(d);
             Assert.AreSame(d, obj.Data);
@@ -31,7 +31,7 @@ namespace North.Tests.Domain.Common
         [TestMethod]
         public void DataIsNullTest()
         {
-            var d = GetRandom.Object<OrganizationData>();
+            var d = GetRandomTests.Object<OrganizationData>();
             Assert.IsNull(obj.Data);
             obj.Data = d;
             Assert.AreSame(d, obj.Data);

@@ -23,7 +23,7 @@ namespace North.Tests.Facade.SportCategory
         [TestMethod]
         public void CreateObjectTest()
         {
-            var view = GetRandom.Object<SportCategoryView>();
+            var view = GetRandomTests.Object<SportCategoryView>();
             var data = SportCategoryViewFactory.Create(view).Data;
 
             testArePropertyValuesEqual(view, data);
@@ -32,7 +32,7 @@ namespace North.Tests.Facade.SportCategory
         [TestMethod]
         public void CreateViewTest()
         {
-            var data = GetRandom.Object<SportCategoryData>();
+            var data = GetRandomTests.Object<SportCategoryData>();
             var view = SportCategoryViewFactory.Create(new SportCategoryDomain(data));
 
             testArePropertyValuesEqual(view, data);

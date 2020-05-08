@@ -23,14 +23,14 @@ namespace North.Tests.Infra
         public virtual void TestInitialize()
         {
             type = typeof(TRepository);
-            data = GetRandom.Object<TData>();
-            count = GetRandom.UInt8(20, 40);
+            data = GetRandomTests.Object<TData>();
+            count = GetRandomTests.UInt8(20, 40);
             CleanDbSet();
             addItems();
         }
         protected void testGetList()
         {
-            obj.PageIndex = GetRandom.Int32(2, obj.TotalPages - 1);
+            obj.PageIndex = GetRandomTests.Int32(2, obj.TotalPages - 1);
             var l = obj.Get().GetAwaiter().GetResult();
             Assert.AreEqual(obj.PageSize, l.Count);
         }
@@ -47,7 +47,7 @@ namespace North.Tests.Infra
         protected void addItems()
         {
             for (var i = 0; i < count; i++)
-                obj.Add(getObject(GetRandom.Object<TData>())).GetAwaiter();
+                obj.Add(getObject(GetRandomTests.Object<TData>())).GetAwaiter();
         }
 
         [TestMethod]
@@ -95,7 +95,7 @@ namespace North.Tests.Infra
         {
             AddTest();
             var id = getId(data);
-            var newData = GetRandom.Object<TData>();
+            var newData = GetRandomTests.Object<TData>();
             setId(newData, id);
             obj.Update(getObject(newData)).GetAwaiter();
             var expected = obj.Get(id).GetAwaiter().GetResult();

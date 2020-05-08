@@ -17,7 +17,7 @@ namespace North.Tests
         public void IsTested()
         {
             if (type == null) Assert.Inconclusive(notSpecified);
-            var m = GetClass.Members(type, PublicBindingFlagsFor.DeclaredMembers);
+            var m = GetClassTests.Members(type, PublicBindingFlagsForTests.DeclaredMembers);
             members = m.Select(e => e.Name).ToList();
             removeTested();
 
@@ -49,6 +49,21 @@ namespace North.Tests
                 var actual = p.GetValue(obj2);
                 Assert.AreEqual(expected, actual, $"For property'{name}'.");
             }
+        }
+        protected static void testArePropertiesNotEqual(object obj1, object obj2)
+        {
+            foreach (var property in obj1.GetType().GetProperties())
+            {
+                var name = property.Name;
+                var p = obj2.GetType().GetProperty(name);
+                Assert.IsNotNull(p, $"No property with name '{name}' found.");
+                var expected = property.GetValue(obj1);
+                var actual = p.GetValue(obj2);
+
+                if (expected != actual) return;
+            }
+
+            Assert.Fail("All properties are same");
         }
     }
 }

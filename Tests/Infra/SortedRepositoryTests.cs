@@ -51,7 +51,7 @@ namespace North.Tests.Infra
         [TestMethod]
         public void DescendingStringTest()
         {
-            var propertyName = GetMember.Name<testClass>(x => x.DescendingString);
+            var propertyName = GetMemberTests.Name<testClass>(x => x.DescendingString);
             isReadOnlyProperty(obj, propertyName, "_desc");
         }
         [TestMethod]
@@ -79,33 +79,33 @@ namespace North.Tests.Infra
             IQueryable<EventData> data = obj.dbSet;
             obj.SortOrder = null;
             Assert.AreEqual(data, obj.addSorting(data));
-            test(data, GetMember.Name<EventData>(x => x.Definition));
-            test(data, GetMember.Name<EventData>(x => x.Name));
-            test(data, GetMember.Name<EventData>(x => x.Id));
+            test(data, GetMemberTests.Name<EventData>(x => x.Definition));
+            test(data, GetMemberTests.Name<EventData>(x => x.Name));
+            test(data, GetMemberTests.Name<EventData>(x => x.Id));
         }
 
         [TestMethod]
         public void CreateExpressionTest()
         {
             string s;
-            testCreateExpression(GetMember.Name<EventData>(x => x.Id));
-            testCreateExpression(GetMember.Name<EventData>(x => x.Name));
-            testCreateExpression(GetMember.Name<EventData>(x => x.Definition));
-            testCreateExpression(GetMember.Name<EventData>(x => x.EventDate));
-            testCreateExpression(GetMember.Name<EventData>(x => x.SportCategoryId));
-            testCreateExpression(GetMember.Name<EventData>(x => x.TypeId));
-            testCreateExpression(GetMember.Name<EventData>(x => x.OrganizationId));
-            testCreateExpression(GetMember.Name<EventData>(x => x.EventListId));
+            testCreateExpression(GetMemberTests.Name<EventData>(x => x.Id));
+            testCreateExpression(GetMemberTests.Name<EventData>(x => x.Name));
+            testCreateExpression(GetMemberTests.Name<EventData>(x => x.Definition));
+            testCreateExpression(GetMemberTests.Name<EventData>(x => x.EventDate));
+            testCreateExpression(GetMemberTests.Name<EventData>(x => x.SportCategoryId));
+            testCreateExpression(GetMemberTests.Name<EventData>(x => x.TypeId));
+            testCreateExpression(GetMemberTests.Name<EventData>(x => x.OrganizationId));
+            testCreateExpression(GetMemberTests.Name<EventData>(x => x.EventListId));
 
-            testCreateExpression(s = GetMember.Name<EventData>(x => x.Id), s + obj.DescendingString);
-            testCreateExpression(s = GetMember.Name<EventData>(x => x.Name), s + obj.DescendingString);
-            testCreateExpression(s = GetMember.Name<EventData>(x => x.Definition), s + obj.DescendingString);
-            testCreateExpression(s = GetMember.Name<EventData>(x => x.EventDate), s + obj.DescendingString);
-            testCreateExpression(s = GetMember.Name<EventData>(x => x.SportCategoryId), s + obj.DescendingString);
-            testCreateExpression(s = GetMember.Name<EventData>(x => x.TypeId), s + obj.DescendingString);
-            testCreateExpression(s = GetMember.Name<EventData>(x => x.OrganizationId), s + obj.DescendingString);
-            testCreateExpression(s = GetMember.Name<EventData>(x => x.EventListId), s + obj.DescendingString);
-            testNullExpression(GetRandom.String());
+            testCreateExpression(s = GetMemberTests.Name<EventData>(x => x.Id), s + obj.DescendingString);
+            testCreateExpression(s = GetMemberTests.Name<EventData>(x => x.Name), s + obj.DescendingString);
+            testCreateExpression(s = GetMemberTests.Name<EventData>(x => x.Definition), s + obj.DescendingString);
+            testCreateExpression(s = GetMemberTests.Name<EventData>(x => x.EventDate), s + obj.DescendingString);
+            testCreateExpression(s = GetMemberTests.Name<EventData>(x => x.SportCategoryId), s + obj.DescendingString);
+            testCreateExpression(s = GetMemberTests.Name<EventData>(x => x.TypeId), s + obj.DescendingString);
+            testCreateExpression(s = GetMemberTests.Name<EventData>(x => x.OrganizationId), s + obj.DescendingString);
+            testCreateExpression(s = GetMemberTests.Name<EventData>(x => x.EventListId), s + obj.DescendingString);
+            testNullExpression(GetRandomTests.String());
             testNullExpression(string.Empty);
             testNullExpression(null);
         }
@@ -130,7 +130,7 @@ namespace North.Tests.Infra
         [TestMethod]
         public void LambdaExpressionTest()
         {
-            var name = GetMember.Name<EventData>(x => x.EventDate);
+            var name = GetMemberTests.Name<EventData>(x => x.EventDate);
             var property = typeof(EventData).GetProperty(name);
             var lambda = obj.lambdaExpression(property);
             Assert.IsNotNull(lambda);
@@ -147,33 +147,33 @@ namespace North.Tests.Infra
                 obj.SortOrder = sortOrder;
                 Assert.AreEqual(expected, obj.findProperty());
             }
-            test(null, GetRandom.String());
+            test(null, GetRandomTests.String());
             test(null, null);
             test(null, string.Empty);
-            test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.Name)), s);
-            test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.EventDate)), s);
-            test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.SportCategoryId)), s);
-            test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.Definition)), s);
-            test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.TypeId)), s);
-            test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.Id)), s);
-            test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.OrganizationId)), s);
-            test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.EventListId)), s);
+            test(typeof(EventData).GetProperty(s = GetMemberTests.Name<EventData>(x => x.Name)), s);
+            test(typeof(EventData).GetProperty(s = GetMemberTests.Name<EventData>(x => x.EventDate)), s);
+            test(typeof(EventData).GetProperty(s = GetMemberTests.Name<EventData>(x => x.SportCategoryId)), s);
+            test(typeof(EventData).GetProperty(s = GetMemberTests.Name<EventData>(x => x.Definition)), s);
+            test(typeof(EventData).GetProperty(s = GetMemberTests.Name<EventData>(x => x.TypeId)), s);
+            test(typeof(EventData).GetProperty(s = GetMemberTests.Name<EventData>(x => x.Id)), s);
+            test(typeof(EventData).GetProperty(s = GetMemberTests.Name<EventData>(x => x.OrganizationId)), s);
+            test(typeof(EventData).GetProperty(s = GetMemberTests.Name<EventData>(x => x.EventListId)), s);
 
-            test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.Name)),
+            test(typeof(EventData).GetProperty(s = GetMemberTests.Name<EventData>(x => x.Name)),
                 s + obj.DescendingString);
-            test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.EventDate)),
+            test(typeof(EventData).GetProperty(s = GetMemberTests.Name<EventData>(x => x.EventDate)),
                 s + obj.DescendingString);
-            test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.SportCategoryId)),
+            test(typeof(EventData).GetProperty(s = GetMemberTests.Name<EventData>(x => x.SportCategoryId)),
                 s + obj.DescendingString);
-            test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.Definition)),
+            test(typeof(EventData).GetProperty(s = GetMemberTests.Name<EventData>(x => x.Definition)),
                 s + obj.DescendingString);
-            test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.TypeId)),
+            test(typeof(EventData).GetProperty(s = GetMemberTests.Name<EventData>(x => x.TypeId)),
                 s + obj.DescendingString);
-            test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.Id)),
+            test(typeof(EventData).GetProperty(s = GetMemberTests.Name<EventData>(x => x.Id)),
                 s + obj.DescendingString);
-            test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.OrganizationId)),
+            test(typeof(EventData).GetProperty(s = GetMemberTests.Name<EventData>(x => x.OrganizationId)),
                 s + obj.DescendingString);
-            test(typeof(EventData).GetProperty(s = GetMember.Name<EventData>(x => x.EventListId)),
+            test(typeof(EventData).GetProperty(s = GetMemberTests.Name<EventData>(x => x.EventListId)),
                 s + obj.DescendingString);
         }
 
@@ -186,8 +186,8 @@ namespace North.Tests.Infra
                 obj.SortOrder = sortOrder;
                 Assert.AreEqual(expected, obj.getName());
             }
-            test(s = GetRandom.String(), s);
-            test(s = GetRandom.String(), s + obj.DescendingString);
+            test(s = GetRandomTests.String(), s);
+            test(s = GetRandomTests.String(), s + obj.DescendingString);
             test(string.Empty, string.Empty);
             test(string.Empty, null);
         }
@@ -196,13 +196,13 @@ namespace North.Tests.Infra
         {
             void test(IQueryable<EventData> d, Expression<Func<EventData, object>> e, string expected)
             {
-                obj.SortOrder = GetRandom.String() + obj.DescendingString;
+                obj.SortOrder = GetRandomTests.String() + obj.DescendingString;
                 var set = obj.addOrderBy(d, e);
                 Assert.IsNotNull(set);
                 Assert.AreNotEqual(d, set); //data ja set ei ole võrdsed
                 Assert.IsTrue(set.Expression.ToString()
                     .Contains($"North.Data.Event.EventData]).OrderByDescending({expected})"));
-                obj.SortOrder = GetRandom.String();
+                obj.SortOrder = GetRandomTests.String();
                 set = obj.addOrderBy(d, e);
                 Assert.IsNotNull(set);
                 Assert.AreNotEqual(d, set); //data ja set ei ole võrdsed
@@ -230,8 +230,8 @@ namespace North.Tests.Infra
                 var actual = obj.isDecending();
                 Assert.AreEqual(expected, actual);
             }
-            test(GetRandom.String(), false);
-            test(GetRandom.String() + obj.DescendingString, true);
+            test(GetRandomTests.String(), false);
+            test(GetRandomTests.String() + obj.DescendingString, true);
             test(string.Empty, false);
             test(null, false);
         }

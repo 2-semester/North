@@ -32,7 +32,7 @@ namespace North.Tests.Pages.Organization
         [TestMethod]
         public void ItemIdTest()
         {
-            var item = GetRandom.Object<OrganizationView>();
+            var item = GetRandomTests.Object<OrganizationView>();
             obj.Item = item;
             Assert.AreEqual(item.Id, obj.ItemId);
             obj.Item = null;
@@ -48,7 +48,7 @@ namespace North.Tests.Pages.Organization
         [TestMethod]
         public void ToObjectTest()
         {
-            var view = GetRandom.Object<OrganizationView>();
+            var view = GetRandomTests.Object<OrganizationView>();
             var o = obj.toObject(view);
             testArePropertyValuesEqual(view, o.Data);
         }
@@ -56,7 +56,7 @@ namespace North.Tests.Pages.Organization
         [TestMethod]
         public void ToViewTest()
         {
-            var data = GetRandom.Object<OrganizationData>();
+            var data = GetRandomTests.Object<OrganizationData>();
             var view = obj.toView(new OrganizationDomain(data));
             testArePropertyValuesEqual(view, data);
         }

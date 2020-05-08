@@ -21,7 +21,7 @@ namespace North.Tests.Facade.Event
         [TestMethod]
         public void CreateObjectTest()
         {
-            var view = GetRandom.Object<EventView>();
+            var view = GetRandomTests.Object<EventView>();
             var data = EventViewFactory.Create(view).Data;
 
             testArePropertyValuesEqual(view, data);
@@ -30,7 +30,7 @@ namespace North.Tests.Facade.Event
         [TestMethod]
         public void CreateViewTest()
         {
-            var data = GetRandom.Object<EventData>();
+            var data = GetRandomTests.Object<EventData>();
             var view = EventViewFactory.Create(new EventDomain(data));
 
             testArePropertyValuesEqual(view, data);

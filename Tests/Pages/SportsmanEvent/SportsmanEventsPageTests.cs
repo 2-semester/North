@@ -51,7 +51,7 @@ namespace North.Tests.Pages.SportsmanEvent
             sportsmanEvents = new testSportsmanEventsRepository();
             sportsmen = new testSportmenRepository();
             events = new testEventRepository();
-            data = GetRandom.Object<SportsmanData>();
+            data = GetRandomTests.Object<SportsmanData>();
             var m = new SportsmanDomain(data);
             sportsmen.Add(m).GetAwaiter();
             obj = new testClass(sportsmanEvents,sportsmen,events);
@@ -60,7 +60,7 @@ namespace North.Tests.Pages.SportsmanEvent
         [TestMethod]
         public void ItemIdTest()
         {
-            var item = GetRandom.Object<SportsmanEventView>();
+            var item = GetRandomTests.Object<SportsmanEventView>();
             obj.Item = item;
             Assert.AreEqual(item.GetId(), obj.ItemId);
             obj.Item = null;
@@ -76,7 +76,7 @@ namespace North.Tests.Pages.SportsmanEvent
         [TestMethod]
         public void ToObjectTest()
         {
-            var view = GetRandom.Object<SportsmanEventView>();
+            var view = GetRandomTests.Object<SportsmanEventView>();
             var o = obj.toObject(view);
             testArePropertyValuesEqual(view, o.Data);
         }
@@ -84,7 +84,7 @@ namespace North.Tests.Pages.SportsmanEvent
         [TestMethod]
         public void ToViewTest()
         {
-            var d = GetRandom.Object<SportsmanEventData>();
+            var d = GetRandomTests.Object<SportsmanEventData>();
             var v = obj.toView(new SportsmanEventDomain(d));
             testArePropertyValuesEqual(v, d);
         }

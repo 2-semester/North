@@ -32,7 +32,7 @@ namespace North.Tests.Pages.EventList
         [TestMethod]
         public void ItemIdTest()
         {
-            var item = GetRandom.Object<EventListView>();
+            var item = GetRandomTests.Object<EventListView>();
             obj.Item = item;
             Assert.AreEqual(item.Id, obj.ItemId);
             obj.Item = null;
@@ -48,7 +48,7 @@ namespace North.Tests.Pages.EventList
         [TestMethod]
         public void ToObjectTest()
         {
-            var view = GetRandom.Object<EventListView>();
+            var view = GetRandomTests.Object<EventListView>();
             var o = obj.toObject(view);
             testArePropertyValuesEqual(view, o.Data);
         }
@@ -56,7 +56,7 @@ namespace North.Tests.Pages.EventList
         [TestMethod]
         public void ToViewTest()
         {
-            var data = GetRandom.Object<EventListData>();
+            var data = GetRandomTests.Object<EventListData>();
             var view = obj.toView(new EventListDomain(data));
             testArePropertyValuesEqual(view, data);
         }

@@ -50,7 +50,7 @@ namespace North.Tests.Pages.Event
             locations = new testLocationsRepository(); //kas see on siin vajalik? ilma selleta oli ka probleem
             organizations =new testOrganizationsRepository();
             eventLists =new testEventListsRepository();
-            data = GetRandom.Object<SportCategoryData>();
+            data = GetRandomTests.Object<SportCategoryData>();
             var m = new SportCategoryDomain(data);
             categories.Add(m).GetAwaiter();
             obj = new testClass(events,categories,organizations,eventLists,locations);
@@ -58,7 +58,7 @@ namespace North.Tests.Pages.Event
         [TestMethod]
         public void ItemIdTest()
         {
-            var item = GetRandom.Object<EventView>();
+            var item = GetRandomTests.Object<EventView>();
             obj.Item = item;
             Assert.AreEqual(item.GetId(), obj.ItemId);
             obj.Item = null;
@@ -74,7 +74,7 @@ namespace North.Tests.Pages.Event
         [TestMethod]
         public void ToObjectTest()
         {
-            var view = GetRandom.Object<EventView>();
+            var view = GetRandomTests.Object<EventView>();
             var o = obj.toObject(view);
             testArePropertyValuesEqual(view, o.Data);
         }
@@ -82,7 +82,7 @@ namespace North.Tests.Pages.Event
         [TestMethod]
         public void ToViewTest()
         {
-            var d= GetRandom.Object<EventData>();
+            var d= GetRandomTests.Object<EventData>();
             var view = obj.toView(new EventDomain(d));
             testArePropertyValuesEqual(view, d);
         }
