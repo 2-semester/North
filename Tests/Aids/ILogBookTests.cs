@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace North.Aids {
+namespace North.Tests.Aids {
 
     public interface ILogBookTests {
         void WriteEntry(string message);

@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
 using North.Facade.EventList;
 using North.Pages.Extensions;
+using North.Tests.Aids;
 
 namespace North.Tests.Pages.Extensions
 {

@@ -1,4 +1,4 @@
-﻿namespace North.Aids
+﻿namespace North.Tests.Aids
 {
     public static class ForDemoTests
     {

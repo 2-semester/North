@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace North.Aids {
+namespace North.Tests.Aids {
     public class UseCultureTests
     {
         public static CultureInfo Current => CultureInfo.CurrentCulture;

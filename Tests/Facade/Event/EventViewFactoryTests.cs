@@ -3,6 +3,7 @@ using North.Aids;
 using North.Data.Event;
 using North.Domain.Event;
 using North.Facade.Event;
+using North.Tests.Aids;
 
 namespace North.Tests.Facade.Event
 {

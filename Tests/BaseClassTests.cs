@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
+using North.Tests.Aids;
 
 namespace North.Tests
 {

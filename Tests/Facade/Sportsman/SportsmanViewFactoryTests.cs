@@ -3,6 +3,7 @@ using North.Aids;
 using North.Data.Sportsman;
 using North.Domain.Sportsman;
 using North.Facade.Sportsman;
+using North.Tests.Aids;
 
 namespace North.Tests.Facade.Sportsman
 {

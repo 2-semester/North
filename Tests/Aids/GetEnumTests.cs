@@ -5,7 +5,7 @@
 
 using System;
 
-namespace North.Aids {
+namespace North.Tests.Aids {
 
     public static class GetEnumTests {
         public static int Count<T>() {

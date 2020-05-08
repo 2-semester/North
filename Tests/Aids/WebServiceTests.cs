@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace North.Aids{
+namespace North.Tests.Aids{
     public static class WebServiceTests {
         public static string Load(string url) {
             var num = 0;

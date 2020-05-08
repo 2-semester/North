@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace North.Aids {
+namespace North.Tests.Aids {
     public static class SafeTests {
         private static readonly object key = new object();
         public static T Run<T>(Func<T> function, T valueOnExeption,

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
+using North.Tests.Aids;
 
 namespace North.Tests
 {

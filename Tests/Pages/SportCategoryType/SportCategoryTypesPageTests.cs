@@ -5,6 +5,7 @@ using North.Domain.SportCategoryType;
 using North.Facade.SportCategoryType;
 using North.Pages;
 using North.Pages.SportCategoryType;
+using North.Tests.Aids;
 
 namespace North.Tests.Pages.SportCategoryType
 {

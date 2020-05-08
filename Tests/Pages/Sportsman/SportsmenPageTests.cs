@@ -5,6 +5,7 @@ using North.Domain.Sportsman;
 using North.Facade.Sportsman;
 using North.Pages;
 using North.Pages.Sportsman;
+using North.Tests.Aids;
 
 namespace North.Tests.Pages.Sportsman
 {

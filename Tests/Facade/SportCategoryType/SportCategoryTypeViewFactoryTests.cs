@@ -3,6 +3,7 @@ using North.Aids;
 using North.Data.SportCategoryType;
 using North.Domain.SportCategoryType;
 using North.Facade.SportCategoryType;
+using North.Tests.Aids;
 
 namespace North.Tests.Facade.SportCategoryType
 {

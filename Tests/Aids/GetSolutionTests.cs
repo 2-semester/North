@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace North.Aids {
+namespace North.Tests.Aids {
 
     public static class GetSolutionTests {
 

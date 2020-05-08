@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
 using North.Data.Common;
 using North.Domain.Common;
+using North.Tests.Aids;
 
 namespace North.Tests.Infra
 {

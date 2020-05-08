@@ -5,6 +5,7 @@ using North.Domain.Organization;
 using North.Facade.Organization;
 using North.Pages;
 using North.Pages.Organization;
+using North.Tests.Aids;
 
 namespace North.Tests.Pages.Organization
 {

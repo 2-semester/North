@@ -3,6 +3,7 @@ using North.Aids;
 using North.Data.Organization;
 using North.Domain.Organization;
 using North.Facade.Organization;
+using North.Tests.Aids;
 
 namespace North.Tests.Facade.Organization
 {

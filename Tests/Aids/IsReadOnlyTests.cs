@@ -1,4 +1,4 @@
-﻿namespace North.Aids {
+﻿namespace North.Tests.Aids {
     public static class IsReadOnlyTests {
         public static bool Field<T>(string name) {
             return typeof(T).GetField(name)?.IsInitOnly ?? false;

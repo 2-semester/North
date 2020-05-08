@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace North.Aids {
+namespace North.Tests.Aids {
     public static class DecimalsTests {
         public static bool TryParse(string s, out decimal d) {
             return decimal.TryParse(s, NumberStyles.Any, UseCultureTests.Invariant, out d);

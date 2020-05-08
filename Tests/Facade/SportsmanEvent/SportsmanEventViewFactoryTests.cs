@@ -3,6 +3,7 @@ using North.Aids;
 using North.Data.SportsmanEvent;
 using North.Domain.SportsmanEvent;
 using North.Facade.SportsmanEvent;
+using North.Tests.Aids;
 
 namespace North.Tests.Facade.SportsmanEvent
 {

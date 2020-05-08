@@ -1,5 +1,5 @@
 ﻿
-namespace North.Aids {
+namespace North.Tests.Aids {
 
     public static class GetStringTests {
         public static string Head(string s, char seperator = '.') {

@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Linq;
 
-namespace North.Aids {
+namespace North.Tests.Aids {
 
     public static class SystemRegionInfoTests {
 

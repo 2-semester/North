@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace North.Aids {
+namespace North.Tests.Aids {
     public class GetMemberTests {
         public static string Name<T>(Expression<Func<T, object>> ex) {
             return SafeTests.Run(()=>name(ex.Body), string.Empty);

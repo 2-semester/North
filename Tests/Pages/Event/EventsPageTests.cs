@@ -14,6 +14,7 @@ using North.Domain.SportCategory;
 using North.Facade.Event;
 using North.Pages;
 using North.Pages.Event;
+using North.Tests.Aids;
 
 namespace North.Tests.Pages.Event
 {

@@ -2,6 +2,7 @@
 using North.Aids;
 using North.Data.Organization;
 using North.Domain.Common;
+using North.Tests.Aids;
 
 namespace North.Tests.Domain.Common
 {

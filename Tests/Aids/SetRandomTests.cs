@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Linq;
 
-namespace North.Aids {
+namespace North.Tests.Aids {
     public static class SetRandomTests {
         public static void Values(object o) {
             if (o is null) return;

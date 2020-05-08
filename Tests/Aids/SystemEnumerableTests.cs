@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace North.Aids {
+namespace North.Tests.Aids {
     public static class SystemEnumerableTests {
 
         public static IEnumerable<T> OrderBy<T>(IEnumerable<T> list, Func<T, string> func) {

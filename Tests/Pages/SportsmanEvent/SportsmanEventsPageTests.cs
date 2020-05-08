@@ -12,6 +12,7 @@ using North.Domain.SportsmanEvent;
 using North.Facade.SportsmanEvent;
 using North.Pages;
 using North.Pages.SportsmanEvent;
+using North.Tests.Aids;
 
 namespace North.Tests.Pages.SportsmanEvent
 {

@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace North.Aids {
+namespace North.Tests.Aids {
 
     public static class PublicBindingFlagsForTests {
         private const BindingFlags p = BindingFlags.Public;

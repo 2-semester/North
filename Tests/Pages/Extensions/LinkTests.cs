@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
 using North.Pages.Extensions;
+using North.Tests.Aids;
 
 namespace North.Tests.Pages.Extensions
 {

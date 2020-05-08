@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace North.Aids {
+namespace North.Tests.Aids {
     public static class GetClassTests {
         private const string g = "get_";
         private const string s = "set_";
