@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using North.Aids;
-using North.Tests.Aids;
 
 namespace North.Tests
 {
@@ -59,7 +58,7 @@ namespace North.Tests
 
         public IHtmlContent LabelFor<TResult>(Expression<Func<TModel, TResult>> e,
             string labelText, object htmlAttributes)
-            => new htmlContentMock($"LabelFor{GetMemberTests.Name(e)}");
+            => new htmlContentMock($"LabelFor{GetMember.Name(e)}");
 
         public IHtmlContent ListBoxFor<TResult>(
             Expression<Func<TModel, TResult>> e, IEnumerable<SelectListItem> selectList, object htmlAttributes)

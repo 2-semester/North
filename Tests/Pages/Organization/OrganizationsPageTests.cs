@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Abc.Aids.Random;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
 using North.Data.Organization;
 using North.Domain.Organization;
@@ -33,7 +34,7 @@ namespace North.Tests.Pages.Organization
         [TestMethod]
         public void ItemIdTest()
         {
-            var item = GetRandomTests.Object<OrganizationView>();
+            var item = GetRandom.Object<OrganizationView>();
             obj.Item = item;
             Assert.AreEqual(item.Id, obj.ItemId);
             obj.Item = null;
@@ -49,7 +50,7 @@ namespace North.Tests.Pages.Organization
         [TestMethod]
         public void ToObjectTest()
         {
-            var view = GetRandomTests.Object<OrganizationView>();
+            var view = GetRandom.Object<OrganizationView>();
             var o = obj.toObject(view);
             testArePropertyValuesEqual(view, o.Data);
         }
@@ -57,7 +58,7 @@ namespace North.Tests.Pages.Organization
         [TestMethod]
         public void ToViewTest()
         {
-            var data = GetRandomTests.Object<OrganizationData>();
+            var data = GetRandom.Object<OrganizationData>();
             var view = obj.toView(new OrganizationDomain(data));
             testArePropertyValuesEqual(view, data);
         }

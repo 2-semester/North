@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
+using North.Aids.Random;
 
 namespace North.Tests.Aids
 {
@@ -49,8 +50,8 @@ namespace North.Tests.Aids
 
         private class testClass2
         {
-            public int I { get; } = GetRandomTests.Int32();
-            public string S { get; } = GetRandomTests.String();
+            public int I { get; } = GetRandom.Int32();
+            public string S { get; } = GetRandom.String();
         }
     }
 }

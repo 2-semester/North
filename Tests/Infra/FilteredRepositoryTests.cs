@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Abc.Aids.Random;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
@@ -6,6 +7,7 @@ using North.Domain.Event;
 using North.Infra;
 using North.Data.Event;
 using North.Tests.Aids;
+using North.Tests.Aids.Reflection;
 
 namespace North.Tests.Infra
 {
@@ -63,9 +65,9 @@ namespace North.Tests.Infra
         public void AddFixedFilteringTest()
         {
             var sql = obj.createSqlQuery();
-            var fixedFilter = GetMemberTests.Name<EventData>(x => x.Definition);
+            var fixedFilter = GetMember.Name<EventData>(x => x.Definition);
             obj.FixedFilter = fixedFilter;
-            var fixedValue = GetRandomTests.String();
+            var fixedValue = GetRandom.String();
             obj.FixedValue = fixedValue;
             var sqlNew = obj.addFixedFiltering(sql);
             Assert.IsNotNull(sqlNew);
@@ -75,10 +77,10 @@ namespace North.Tests.Infra
         public void CreateFixedWhereExpressionTest()
         {
             var properties = typeof(EventData).GetProperties();
-            var idx = GetRandomTests.Int32(0, properties.Length);
+            var idx = GetRandom.Int32(0, properties.Length);
             var p = properties[idx];
             obj.FixedFilter = p.Name;
-            var fixedValue = GetRandomTests.String();
+            var fixedValue = GetRandom.String();
             obj.FixedValue = fixedValue;
             var e = obj.createFixedWhereExpression();
             Assert.IsNotNull(e);
@@ -95,8 +97,8 @@ namespace North.Tests.Infra
         public void CreateFixedWhereExpressionOnFixedFilterNullTest()
         {
             Assert.IsNull(obj.createFixedWhereExpression());
-            obj.FixedValue = GetRandomTests.String();
-            obj.FixedFilter = GetRandomTests.String();
+            obj.FixedValue = GetRandom.String();
+            obj.FixedFilter = GetRandom.String();
             Assert.IsNull(obj.createFixedWhereExpression());
         }
 
@@ -104,7 +106,7 @@ namespace North.Tests.Infra
         public void AddFilteringTest()
         {
             var sql = obj.createSqlQuery();
-            var searchString = GetRandomTests.String();
+            var searchString = GetRandom.String();
             obj.SearchString = searchString;
             var sqlNew = obj.addFiltering(sql);
             Assert.IsNotNull(sqlNew);
@@ -113,7 +115,7 @@ namespace North.Tests.Infra
         [TestMethod]
         public void CreateWhereExpressionTest()
         {
-            var searchString = GetRandomTests.String();
+            var searchString = GetRandom.String();
             obj.SearchString = searchString;
             var e = obj.createWhereExpression();
             Assert.IsNotNull(e);

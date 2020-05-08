@@ -57,7 +57,7 @@ namespace North.Tests.Infra
                 else
                     foreach (var v in values)
                     {
-                        var name = GetMemberTests.Name(v);
+                        var name = GetMember.Name(v);
                         Assert.IsNotNull(key.Properties.FirstOrDefault(x => x.Name == name));
                     }
             }

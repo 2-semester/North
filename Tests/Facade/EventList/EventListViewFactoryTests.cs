@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Abc.Aids.Random;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
 using North.Data.EventList;
 using North.Domain.EventList;
@@ -23,7 +24,7 @@ public class EventListViewFactoryTests : BaseTests
         [TestMethod]
         public void CreateObjectTest()
         {
-            var view = GetRandomTests.Object<EventListView>();
+            var view = GetRandom.Object<EventListView>();
             var data = EventListViewFactory.Create(view).Data;
 
             testArePropertyValuesEqual(view, data);
@@ -31,7 +32,7 @@ public class EventListViewFactoryTests : BaseTests
         [TestMethod]
         public void CreateViewTest()
         {
-            var data = GetRandomTests.Object<EventListData>();
+            var data = GetRandom.Object<EventListData>();
             var view = EventListViewFactory.Create(new EventListDomain(data));
 
             testArePropertyValuesEqual(view, data);

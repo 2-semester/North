@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Abc.Aids.Random;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
 using North.Data.Sportsman;
 using North.Domain.Sportsman;
@@ -33,7 +34,7 @@ namespace North.Tests.Pages.Sportsman
         [TestMethod]
         public void ItemIdTest()
         {
-            var item = GetRandomTests.Object<SportsmanView>();
+            var item = GetRandom.Object<SportsmanView>();
             obj.Item = item;
             Assert.AreEqual(item.Id, obj.ItemId);
             obj.Item = null;
@@ -49,7 +50,7 @@ namespace North.Tests.Pages.Sportsman
         [TestMethod]
         public void ToObjectTest()
         {
-            var view = GetRandomTests.Object<SportsmanView>();
+            var view = GetRandom.Object<SportsmanView>();
             var o = obj.toObject(view);
             testArePropertyValuesEqual(view, o.Data);
         }
@@ -57,7 +58,7 @@ namespace North.Tests.Pages.Sportsman
         [TestMethod]
         public void ToViewTest()
         {
-            var data = GetRandomTests.Object<SportsmanData>();
+            var data = GetRandom.Object<SportsmanData>();
             var view = obj.toView(new SportsmanDomain(data));
             testArePropertyValuesEqual(view, data);
         }

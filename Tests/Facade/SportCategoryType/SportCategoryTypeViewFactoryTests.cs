@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Abc.Aids.Random;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
 using North.Data.SportCategoryType;
 using North.Domain.SportCategoryType;
@@ -24,7 +25,7 @@ namespace North.Tests.Facade.SportCategoryType
         [TestMethod]
         public void CreateObjectTest()
         {
-            var view = GetRandomTests.Object<SportCategoryTypeView>();
+            var view = GetRandom.Object<SportCategoryTypeView>();
             var data = SportCategoryTypeViewFactory.Create(view).Data;
 
             testArePropertyValuesEqual(view, data);
@@ -33,7 +34,7 @@ namespace North.Tests.Facade.SportCategoryType
         [TestMethod]
         public void CreateViewTest()
         {
-            var data = GetRandomTests.Object<SportCategoryTypeData>();
+            var data = GetRandom.Object<SportCategoryTypeData>();
             var view = SportCategoryTypeViewFactory.Create(new SportCategoryTypeDomain(data));
 
             testArePropertyValuesEqual(view, data);

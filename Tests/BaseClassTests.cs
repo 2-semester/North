@@ -1,4 +1,5 @@
 ﻿using System;
+using Abc.Aids.Random;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
 using North.Tests.Aids;
@@ -31,7 +32,7 @@ namespace North.Tests
 
         protected static void isProperty<T>(Func<T> get, Action<T> set)
         {
-            var d = (T) GetRandomTests.Value(typeof(T));
+            var d = (T) GetRandom.Value(typeof(T));
             Assert.AreNotEqual(d, get());
             set(d);
             Assert.AreEqual(d, get());

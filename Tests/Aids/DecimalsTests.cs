@@ -1,69 +1,105 @@
-﻿using System;
-using System.Globalization;
+﻿using Abc.Aids.Random;
+using North.Aids;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using North.Tests;
 
-namespace North.Tests.Aids {
-    public static class DecimalsTests {
-        public static bool TryParse(string s, out decimal d) {
-            return decimal.TryParse(s, NumberStyles.Any, UseCultureTests.Invariant, out d);
+namespace North.Tests.Aids
+{
+
+    [TestClass]
+    public class DecimalsTests : BaseTests
+    {
+
+        private decimal d1;
+        private decimal absD1;
+        private decimal d2;
+        private const decimal min = decimal.MinValue;
+        private const decimal max = decimal.MaxValue;
+        private const decimal zero = decimal.Zero;
+
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            type = typeof(Decimals);
+            d1 = GetRandom.Decimal() / 2M;
+            d2 = GetRandom.Decimal() / 2M;
+            absD1 = System.Math.Abs(d1);
         }
-        public static decimal Add(decimal x, decimal y) {
-            try { return x + y; }
-            catch { return decimal.MaxValue; }
+
+        [TestMethod]
+        public void AddTest()
+        {
+            Assert.AreEqual(d1 + d2, d1.Add(d2));
+            Assert.AreEqual(0, (-d1).Add(d1));
+            Assert.AreEqual(0, min.Add(max));
+            Assert.AreEqual(max, max.Add(max));
+            Assert.AreEqual(max, min.Add(min));
+            Assert.AreEqual(max, max.Add(absD1));
+            Assert.AreEqual(max - absD1, max.Add(-absD1));
+            Assert.AreEqual(min + absD1, min.Add(absD1));
+            Assert.AreEqual(max, min.Add(-absD1));
         }
-        public static decimal Divide(decimal x, decimal y) {
-            try { return x / y; }
-            catch { return decimal.MaxValue; }
+
+        [TestMethod]
+        public void DivideTest()
+        {
+            Assert.AreEqual(d1 / d2, d1.Divide(d2));
+            Assert.AreEqual(0, zero.Divide(d1));
+            Assert.AreEqual(max, d1.Divide(zero));
         }
-        public static bool ToDecimal(object o, out decimal v) {
-            v = decimal.Zero;
-            var r = true;
-            if (o is string str) return TryParse(str, out v);
-            if (o is decimal m) v = m;
-            else if (o is double d) v = Convert.ToDecimal(d);
-            else if (o is float f) v = Convert.ToDecimal(f);
-            else if (o is long l) v = Convert.ToDecimal(l);
-            else if (o is int i) v = Convert.ToDecimal(i);
-            else if (o is short s) v = Convert.ToDecimal(s);
-            else if (o is sbyte sb) v = Convert.ToDecimal(sb);
-            else if (o is ulong ul) v = Convert.ToDecimal(ul);
-            else if (o is uint u) v = Convert.ToDecimal(u);
-            else if (o is ushort us) v = Convert.ToDecimal(us);
-            else if (o is byte b) v = Convert.ToDecimal(b);
-            else r = false;
-            return r;
+
+        [TestMethod]
+        public void OppositeTest()
+        {
+            Assert.AreEqual(-d1, d1.Opposite());
+            Assert.AreEqual(min, max.Opposite());
+            Assert.AreEqual(max, min.Opposite());
         }
-        public static decimal ToDecimal(object o) {
-            ToDecimal(o, out var d);
-            return d;
+
+        [TestMethod]
+        public void MultiplyTest()
+        {
+            Assert.AreEqual(zero, zero.Multiply(d1));
+            Assert.AreEqual(zero, d1.Multiply(zero));
+            Assert.AreEqual(max, d1.Multiply(max));
+            Assert.AreEqual(max, d1.Multiply(min));
+            Assert.AreEqual(d1 * 0.12345M, d1.Multiply(0.12345M));
         }
-        public static string ToString(decimal a) {
-            return a.ToString(UseCultureTests.Invariant);
+
+        [TestMethod]
+        public void InverseTest()
+        {
+            Assert.AreEqual(1 / d1, d1.Inverse());
+            Assert.AreEqual(0, max.Inverse());
+            Assert.AreEqual(0, min.Inverse());
+            Assert.AreEqual(max, zero.Inverse());
         }
-        public static decimal Subtract(decimal x, decimal y) {
-            try { return x - y; }
-            catch { return decimal.MaxValue; }
+
+        [TestMethod]
+        public void SubtractTest()
+        {
+            Assert.AreEqual(d1 - d2, d1.Subtract(d2));
+            Assert.AreEqual(0, d1.Subtract(d1));
+            Assert.AreEqual(0, max.Subtract(max));
+            Assert.AreEqual(0, min.Subtract(min));
+            Assert.AreEqual(max, min.Subtract(max));
+            Assert.AreEqual(max, max.Subtract(min));
         }
-        public static bool IsGreater(decimal x, decimal y) {
-            return x.CompareTo(y) > 0;
+
+        [TestMethod]
+        public void SquareTest()
+        {
+            static void test(decimal x)
+            {
+                Assert.AreEqual(x.Multiply(x), x.Square());
+            }
+
+            test(d1);
+            test(d2);
+            test(min);
+            test(max);
         }
-        public static bool IsLess(decimal x, decimal y) {
-            return x.CompareTo(y) < 0;
-        }
-        public static bool IsEqual(decimal x, decimal y) {
-            return x.CompareTo(y) == 0;
-        }
-        public static decimal Multiply(decimal x, decimal y) {
-            try { return x * y; }
-            catch { return decimal.MaxValue; }
-        }
-        public static decimal Inverse(decimal x) {
-            return Subtract(decimal.Zero, x);
-        }
-        public static decimal Reciprocal(decimal x) {
-            return Divide(decimal.One, x);
-        }
-        public static decimal Square(decimal x) {
-            return Multiply(x, x);
-        }
+
     }
+
 }

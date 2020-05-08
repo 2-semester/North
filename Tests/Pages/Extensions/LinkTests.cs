@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Abc.Aids.Random;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
 using North.Pages.Extensions;
 using North.Tests.Aids;
@@ -9,13 +10,12 @@ namespace North.Tests.Pages.Extensions
     public class LinkTests : BaseTests
     {
 
-
         [TestInitialize] public virtual void TestInitialize() => type = typeof(Link);
 
         [TestMethod]
         public void DisplayNameTest()
         {
-            var n = GetRandomTests.String();
+            var n = GetRandom.String();
             var o = new Link(n, null);
             Assert.AreEqual(n, o.DisplayName);
             Assert.IsNull(o.Url);
@@ -25,7 +25,7 @@ namespace North.Tests.Pages.Extensions
         [TestMethod]
         public void UrlTest()
         {
-            var n = GetRandomTests.String();
+            var n = GetRandom.String();
             var o = new Link(null, n);
             Assert.AreEqual(n, o.Url);
             Assert.IsNull(o.DisplayName);
@@ -35,7 +35,7 @@ namespace North.Tests.Pages.Extensions
         [TestMethod]
         public void PropertyNameTest()
         {
-            var n = GetRandomTests.String();
+            var n = GetRandom.String();
             var o = new Link(null, null, n);
             Assert.AreEqual(n, o.PropertyName);
             Assert.IsNull(o.Url);

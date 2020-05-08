@@ -24,7 +24,7 @@ namespace North.Tests.Facade.Organization
         [TestMethod]
         public void CreateObjectTest()
         {
-            var view = GetRandomTests.Object<OrganizationView>();
+            var view = GetRandom.Object<OrganizationView>();
             var data = OrganizationViewFactory.Create(view).Data;
 
             testArePropertyValuesEqual(view, data);
@@ -33,7 +33,7 @@ namespace North.Tests.Facade.Organization
         [TestMethod]
         public void CreateViewTest()
         {
-            var data = GetRandomTests.Object<OrganizationData>();
+            var data = GetRandom.Object<OrganizationData>();
             var view = OrganizationViewFactory.Create(new OrganizationDomain(data));
 
             testArePropertyValuesEqual(view, data);

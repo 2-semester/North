@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Abc.Aids.Random;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
 using North.Data.Event;
@@ -20,29 +21,29 @@ namespace North.Tests.Pages {
         }
 
         [TestMethod] public void FixedValueTest() {
-            var s = GetRandomTests.String();
+            var s = GetRandom.String();
             obj.FixedValue = s;
             Assert.AreEqual(s, db.FixedValue);
             Assert.AreEqual(s, obj.FixedValue);
         }
 
         [TestMethod] public void FixedFilterTest() {
-            var s = GetRandomTests.String();
+            var s = GetRandom.String();
             obj.FixedFilter = s;
             Assert.AreEqual(s, db.FixedFilter);
             Assert.AreEqual(s, obj.FixedFilter);
         }
 
         [TestMethod] public void SetFixedFilterTest() {
-            var filter = GetRandomTests.String();
-            var value = GetRandomTests.String();
+            var filter = GetRandom.String();
+            var value = GetRandom.String();
             obj.setFixedFilter(filter, value);
             Assert.AreEqual(filter, obj.FixedFilter);
             Assert.AreEqual(value, obj.FixedValue);
         }
 
         [TestMethod] public void SortOrderTest() {
-            var s = GetRandomTests.String();
+            var s = GetRandom.String();
             obj.SortOrder = s;
             Assert.AreEqual(s, db.SortOrder);
             Assert.AreEqual(s, obj.SortOrder);
@@ -55,15 +56,15 @@ namespace North.Tests.Pages {
                 var expected = isDesc ? name + "_desc" : name;
                 Assert.AreEqual(expected, actual);
             }
-            test(null, GetRandomTests.String(), false);
-            test(GetRandomTests.String(), GetRandomTests.String(), false);
-            var s = GetRandomTests.String();
+            test(null, GetRandom.String(), false);
+            test(GetRandom.String(), GetRandom.String(), false);
+            var s = GetRandom.String();
             test(s, s, true);
             test(s+"_desc", s, false);
         }
 
         [TestMethod] public void SearchStringTest() {
-            var s = GetRandomTests.String();
+            var s = GetRandom.String();
             obj.SearchString = s;
             Assert.AreEqual(s, db.SearchString);
             Assert.AreEqual(s, obj.SearchString);
@@ -88,8 +89,8 @@ namespace North.Tests.Pages {
                 Assert.AreEqual(expectedSearchString, actual);
                 Assert.AreEqual(expectedIndex, pageIndex);
             }
-            test(GetRandomTests.String(), GetRandomTests.String(), GetRandomTests.UInt8(3), true);
-            test(GetRandomTests.String(), null, GetRandomTests.UInt8(3), false);
+            test(GetRandom.String(), GetRandom.String(), GetRandom.UInt8(3), true);
+            test(GetRandom.String(), null, GetRandom.UInt8(3), false);
         }
 
 
