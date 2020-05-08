@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Html;
+﻿using Microsoft.AspNetCore.Html;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Aids;
+using North.Aids.Random;
 using North.Facade.Event;
 using North.Pages.Extensions;
-using North.Tests.Aids;
 
 namespace North.Tests.Pages.Extensions
 {
@@ -21,10 +19,10 @@ namespace North.Tests.Pages.Extensions
         public void TableHeaderForTest()
         {
             var obj = new htmlHelperMock<EventView>().TableHeaderFor(
-                GetRandomTests.Object<Link>(),
-                GetRandomTests.Object<Link>(),
-                GetRandomTests.Object<Link>(),
-                GetRandomTests.Object<Link>()
+                GetRandom.Object<Link>(),
+                GetRandom.Object<Link>(),
+                GetRandom.Object<Link>(),
+                GetRandom.Object<Link>()
             );
             Assert.IsInstanceOfType(obj, typeof(HtmlContentBuilder));
         }

@@ -1,18 +1,21 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using North.Aids;
 
 namespace North.Tests.Aids{
-    public static class WebServiceTests {
-        public static string Load(string url) {
-            var num = 0;
-            while (num <= 3) {
-                num++;
-                using (var client = new WebClient()) {
-                    try { return client.DownloadString(url); }
-                    catch (Exception e) { LogTests.Exception(e); }
-                }
-            }
-            return string.Empty;
+    [TestClass]
+    public class WebServiceTests : BaseTests
+    {
+        [TestInitialize] public void TestInitialize() => type = typeof(WebService);
+
+        [TestMethod]
+        public void LoadTest()
+        {
+            const string source1 = "https://docs.microsoft.com/";
+
+            var webpage = new WebClient();
+
+            Assert.AreEqual(webpage.DownloadString(source1), WebService.Load(source1));
         }
     }
 }

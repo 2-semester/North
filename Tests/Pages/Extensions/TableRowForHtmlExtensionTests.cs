@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Html;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Aids;
+using North.Aids.Random;
 using North.Facade.Event;
 using North.Pages.Extensions;
-using North.Tests.Aids;
 
 namespace North.Tests.Pages.Extensions
 {
@@ -17,7 +15,7 @@ namespace North.Tests.Pages.Extensions
         public virtual void TestInitialize()
         {
             type = typeof(TableRowForHtmlExtension);
-            s = GetRandomTests.String();
+            s = GetRandom.String();
         }
 
         [TestMethod]
@@ -25,9 +23,9 @@ namespace North.Tests.Pages.Extensions
         {
             var obj = new htmlHelperMock<EventView>().TableRowFor(
 
-                GetRandomTests.String(),
-                new htmlContentMock(GetRandomTests.String()),
-                new htmlContentMock(GetRandomTests.String()));
+                GetRandom.String(),
+                new htmlContentMock(GetRandom.String()),
+                new htmlContentMock(GetRandom.String()));
 
             Assert.IsInstanceOfType(obj, typeof(HtmlContentBuilder));
         }
@@ -37,9 +35,9 @@ namespace North.Tests.Pages.Extensions
         {
             var obj = new htmlHelperMock<EventView>().TableRowFor(
 
-                GetRandomTests.String(),
-                new htmlContentMock(GetRandomTests.String()),
-                new htmlContentMock(GetRandomTests.String()));
+                GetRandom.String(),
+                new htmlContentMock(GetRandom.String()),
+                new htmlContentMock(GetRandom.String()));
 
             Assert.IsInstanceOfType(obj, typeof(HtmlContentBuilder));
         }

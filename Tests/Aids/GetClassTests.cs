@@ -1,87 +1,107 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
 using System.Reflection;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using North.Aids;
+using North.Aids.Random;
+using North.Facade.Event;
 
-namespace North.Tests.Aids {
-    public static class GetClassTests {
-        private const string g = "get_";
-        private const string s = "set_";
-        private const string a = "add_";
-        private const string r = "remove_";
-        private const string c = ".ctor";
-        private const string v = "value__";
-        private const string t = "+TestClass";
-        public static string Namespace(Type type) {
-            return type is null ? string.Empty : type.Namespace;
+namespace North.Tests.Aids
+{
+
+    [TestClass]
+    public class GetClassTests : BaseTests
+    {
+
+        [TestInitialize] public void TestInitialize() => type = typeof(GetClass);
+
+        [TestMethod]
+        public void NamespaceTest()
+        {
+            var t = typeof(object);
+            Assert.AreEqual(t.Namespace, GetClass.Namespace(t));
+            Assert.AreEqual(string.Empty, GetClass.Namespace(null));
         }
-        public static List<MemberInfo> Members(Type type,
-            BindingFlags f = PublicBindingFlagsForTests.AllMembers,
-            bool clean = true) {
-            if (type is null) return new List<MemberInfo>();
-            var l = type.GetMembers(f).ToList();
-            if (clean) removeSurrogates(l);
-            return l;
+
+        [TestMethod]
+        public void MembersTest()
+        {
+            testMember(typeof(testClass));
+            testNull(null);
         }
-        public static List<PropertyInfo> Properties(Type type,
-            BindingFlags f = PublicBindingFlagsForTests.AllMembers) {
-            return type?.GetProperties(f).ToList() ?? new List<PropertyInfo>();
+
+        private static void testNull(Type t)
+        {
+            var a = GetClass.Members(t);
+            Assert.IsInstanceOfType(a, typeof(List<MemberInfo>));
+            Assert.AreEqual(0, a.Count);
         }
-        public static PropertyInfo Property<T>(string name) {
-            return SafeTests.Run(() => typeof(T).GetProperty(name), null);
+
+        private static void testMember(Type t)
+        {
+            var a = GetClass.Members(t, PublicBindingFlagsFor.AllMembers, false);
+            var e = t.GetMembers(PublicBindingFlagsFor.AllMembers);
+            Assert.AreEqual(e.Length, a.Count);
+            Assert.AreEqual(10, a.Count);
+            foreach (var v in e) Assert.IsTrue(a.Contains(v));
+            Assert.AreEqual(7, GetClass.Members(t).Count);
         }
-        public static PropertyInfo Property<T>(Expression<Func<T, object>> ex) {
-            var name = GetMemberTests.Name(ex);
-            return SafeTests.Run(() => typeof(T).GetProperty(name), null);
+
+        [TestMethod]
+        public void PropertiesTest()
+        {
+            var a = GetClass.Properties(typeof(testClass));
+            Assert.IsNotNull(a);
+            Assert.IsInstanceOfType(a, typeof(List<PropertyInfo>));
+            Assert.AreEqual(1, a.Count);
+            Assert.AreEqual("F", a[0].Name);
         }
-        private static void removeSurrogates(IList<MemberInfo> l) {
-            for (var i = l.Count; i > 0; i--) {
-                var m = l[i - 1];
-                if (!isSurrogate(m)) continue;
-                l.RemoveAt(i - 1);
-            }
+
+        [TestMethod]
+        public void ReadWritePropertyValuesTest()
+        {
+            var o = GetRandom.Object<testClass>();
+            var l = GetClass.ReadWritePropertyValues(o);
+            Assert.AreEqual(1, l.Count);
+            Assert.AreEqual(l[0], o.F);
         }
-        private static bool isSurrogate(MemberInfo m) {
-            var n = m.Name;
-            if (string.IsNullOrEmpty(n)) return false;
-            if (n.Contains(g)) return true;
-            if (n.Contains(s)) return true;
-            if (n.Contains(a)) return true;
-            if (n.Contains(r)) return true;
-            if (n.Contains(v)) return true;
-            return n.Contains(t) || n.Contains(c);
+
+        [TestMethod]
+        public void PropertyTest()
+        {
+            static void test(string name)
+                => Assert.AreEqual(name, GetClass.Property<EventView>(name).Name);
+
+            Assert.IsNull(GetClass.Property<EventView>((string)null));
+            Assert.IsNull(GetClass.Property<EventView>(string.Empty));
+            Assert.IsNull(GetClass.Property<EventView>("bla bla"));
+            test(GetMember.Name<EventView>(m => m.Definition));
+            test(GetMember.Name<EventView>(m => m.Name));
+            test(GetMember.Name<EventView>(m => m.ValidFrom));
+            test(GetMember.Name<EventView>(m => m.ValidTo));
         }
-        public static List<object> ReadWritePropertyValues(object obj) {
-            var l = new List<object>();
-            if (obj is null) return l;
-            foreach (var p in Properties(obj.GetType())) {
-                if (!p.CanWrite) continue;
-                addValue(p, obj, l);
-            }
-            return l;
+
+        internal class testBaseClass
+        {
+
+            public void Aaa() => bbb();
+
+            private void bbb() { }
+
+            public static void Ccc() => ddd();
+
+            private static void ddd() { }
+
         }
-        private static void addValue(PropertyInfo p, object o, List<object> l) {
-            var indexer = p.GetIndexParameters();
-            if (indexer.Length == 0 ) l.Add(p.GetValue(o));
-            else {
-                var i = 0;
-                while (true) {
-                    try {
-                        l.Add(p.GetValue(o, new object[] {i++}));
-                    }
-                    catch {
-                        l.Add(i);
-                        return;
-                    }
-                }
-            }
+
+        internal class testClass : testBaseClass
+        {
+
+            public int E = 0;
+            public string F { get; set; }
+
         }
 
     }
+
 }
-
-
-
-
-

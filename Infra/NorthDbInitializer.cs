@@ -84,6 +84,7 @@ namespace North.Infra
 
         internal static OrganizationData SEB = new OrganizationData
         {
+
             Id = "SEB",
             Name = "SEB",
             Definition = "Eesti innovatiivseim pank"

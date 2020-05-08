@@ -1,9 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Aids;
+using North.Aids.Random;
 using North.Data.Sportsman;
 using North.Domain.Sportsman;
 using North.Facade.Sportsman;
-using North.Tests.Aids;
 
 namespace North.Tests.Facade.Sportsman
 {
@@ -24,7 +23,7 @@ namespace North.Tests.Facade.Sportsman
         [TestMethod]
         public void CreateObjectTest()
         {
-            var view = GetRandomTests.Object<SportsmanView>();
+            var view = GetRandom.Object<SportsmanView>();
             var data = SportsmanViewFactory.Create(view).Data;
 
             testArePropertyValuesEqual(view, data);
@@ -33,7 +32,7 @@ namespace North.Tests.Facade.Sportsman
         [TestMethod]
         public void CreateViewTest()
         {
-            var data = GetRandomTests.Object<SportsmanData>();
+            var data = GetRandom.Object<SportsmanData>();
             var view = SportsmanViewFactory.Create(new SportsmanDomain(data));
 
             testArePropertyValuesEqual(view, data);

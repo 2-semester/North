@@ -1,10 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Aids;
+using North.Aids.Random;
 using North.Data.Common;
 using North.Domain.Common;
-using North.Tests.Aids;
 
 namespace North.Tests.Infra
 {
@@ -24,14 +23,14 @@ namespace North.Tests.Infra
         public virtual void TestInitialize()
         {
             type = typeof(TRepository);
-            data = GetRandomTests.Object<TData>();
-            count = GetRandomTests.UInt8(20, 40);
+            data = GetRandom.Object<TData>();
+            count = GetRandom.UInt8(20, 40);
             CleanDbSet();
             addItems();
         }
         protected void testGetList()
         {
-            obj.PageIndex = GetRandomTests.Int32(2, obj.TotalPages - 1);
+            obj.PageIndex = GetRandom.Int32(2, obj.TotalPages - 1);
             var l = obj.Get().GetAwaiter().GetResult();
             Assert.AreEqual(obj.PageSize, l.Count);
         }
@@ -48,7 +47,7 @@ namespace North.Tests.Infra
         protected void addItems()
         {
             for (var i = 0; i < count; i++)
-                obj.Add(getObject(GetRandomTests.Object<TData>())).GetAwaiter();
+                obj.Add(getObject(GetRandom.Object<TData>())).GetAwaiter();
         }
 
         [TestMethod]
@@ -96,7 +95,7 @@ namespace North.Tests.Infra
         {
             AddTest();
             var id = getId(data);
-            var newData = GetRandomTests.Object<TData>();
+            var newData = GetRandom.Object<TData>();
             setId(newData, id);
             obj.Update(getObject(newData)).GetAwaiter();
             var expected = obj.Get(id).GetAwaiter().GetResult();

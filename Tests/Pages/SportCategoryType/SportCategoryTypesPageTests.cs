@@ -1,11 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Aids;
+using North.Aids.Random;
 using North.Data.SportCategoryType;
 using North.Domain.SportCategoryType;
 using North.Facade.SportCategoryType;
 using North.Pages;
 using North.Pages.SportCategoryType;
-using North.Tests.Aids;
 
 namespace North.Tests.Pages.SportCategoryType
 {
@@ -33,7 +32,7 @@ namespace North.Tests.Pages.SportCategoryType
         [TestMethod]
         public void ItemIdTest()
         {
-            var item = GetRandomTests.Object<SportCategoryTypeView>();
+            var item = GetRandom.Object<SportCategoryTypeView>();
             obj.Item = item;
             Assert.AreEqual(item.Id, obj.ItemId);
             obj.Item = null;
@@ -49,7 +48,7 @@ namespace North.Tests.Pages.SportCategoryType
         [TestMethod]
         public void ToObjectTest()
         {
-            var view = GetRandomTests.Object<SportCategoryTypeView>();
+            var view = GetRandom.Object<SportCategoryTypeView>();
             var o = obj.toObject(view);
             testArePropertyValuesEqual(view, o.Data);
         }
@@ -57,7 +56,7 @@ namespace North.Tests.Pages.SportCategoryType
         [TestMethod]
         public void ToViewTest()
         {
-            var data = GetRandomTests.Object<SportCategoryTypeData>();
+            var data = GetRandom.Object<SportCategoryTypeData>();
             var view = obj.toView(new SportCategoryTypeDomain(data));
             testArePropertyValuesEqual(view, data);
         }

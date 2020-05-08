@@ -1,4 +1,7 @@
-﻿
+﻿using System;
+using System.Globalization;
+using System.Linq;
+
 namespace North.Aids {
 
     public static class GetString {
@@ -13,6 +16,24 @@ namespace North.Aids {
             var i = s.IndexOf(seperator);
             return i < 0 ? s : s.Substring(i + 1);
         }
+        public static string GetHead(this string s, char seperator = '.')
+            => Safe.Run(
+                () => {
+
+                    if (string.IsNullOrWhiteSpace(s)) return string.Empty;
+                    var i = s.IndexOf(seperator);
+
+                    return i < 0 ? s : s.Substring(0, i);
+                }, string.Empty);
+
+        public static string GetTail(this string s, char seperator = '.')
+            => Safe.Run(
+                () => {
+                    if (string.IsNullOrWhiteSpace(s)) return string.Empty;
+                    var i = s.IndexOf(seperator);
+
+                    return i < 0 ? s : s.Substring(i + 1);
+                }, string.Empty);
     }
 
 }

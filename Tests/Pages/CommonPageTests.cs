@@ -1,10 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Aids;
+using North.Aids.Random;
 using North.Data.Event;
 using North.Domain.Event;
 using North.Facade.Event;
 using North.Pages;
-using North.Tests.Aids;
 
 namespace North.Tests.Pages {
 
@@ -21,7 +20,7 @@ namespace North.Tests.Pages {
         }
 
         [TestMethod] public void ItemIdTest() {
-            obj.Item = GetRandomTests.Object<EventView>();
+            obj.Item = GetRandom.Object<EventView>();
             Assert.AreEqual(obj.Item.GetId(), obj.ItemId);
         }
 

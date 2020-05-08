@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Aids;
+using North.Aids.Random;
 using North.Data.Event;
 using North.Data.EventList;
 using North.Data.Location;
@@ -14,7 +14,6 @@ using North.Domain.SportCategory;
 using North.Facade.Event;
 using North.Pages;
 using North.Pages.Event;
-using North.Tests.Aids;
 
 namespace North.Tests.Pages.Event
 {
@@ -51,7 +50,7 @@ namespace North.Tests.Pages.Event
             locations = new testLocationsRepository(); //kas see on siin vajalik? ilma selleta oli ka probleem
             organizations =new testOrganizationsRepository();
             eventLists =new testEventListsRepository();
-            data = GetRandomTests.Object<SportCategoryData>();
+            data = GetRandom.Object<SportCategoryData>();
             var m = new SportCategoryDomain(data);
             categories.Add(m).GetAwaiter();
             obj = new testClass(events,categories,organizations,eventLists,locations);
@@ -59,7 +58,7 @@ namespace North.Tests.Pages.Event
         [TestMethod]
         public void ItemIdTest()
         {
-            var item = GetRandomTests.Object<EventView>();
+            var item = GetRandom.Object<EventView>();
             obj.Item = item;
             Assert.AreEqual(item.GetId(), obj.ItemId);
             obj.Item = null;
@@ -75,7 +74,7 @@ namespace North.Tests.Pages.Event
         [TestMethod]
         public void ToObjectTest()
         {
-            var view = GetRandomTests.Object<EventView>();
+            var view = GetRandom.Object<EventView>();
             var o = obj.toObject(view);
             testArePropertyValuesEqual(view, o.Data);
         }
@@ -83,7 +82,7 @@ namespace North.Tests.Pages.Event
         [TestMethod]
         public void ToViewTest()
         {
-            var d= GetRandomTests.Object<EventData>();
+            var d= GetRandom.Object<EventData>();
             var view = obj.toView(new EventDomain(d));
             testArePropertyValuesEqual(view, d);
         }

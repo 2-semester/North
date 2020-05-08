@@ -59,7 +59,7 @@ namespace North.Tests
 
         private static List<Type> getAssemblyClasses(string assemblyName)
         {
-            var l = GetSolutionTests.TypesForAssembly(assemblyName);
+            var l = GetSolution.TypesForAssembly(assemblyName);
             if (l.Count == 0) report(noClassesInAssembly, assemblyName);
 
             return l;
@@ -122,7 +122,7 @@ namespace North.Tests
         private List<string> getTestClasses()
         {
             var l = new List<string>();
-            var tests = GetSolutionTests.TypeNamesForAssembly(testAssembly);
+            var tests = GetSolution.TypeNamesForAssembly(testAssembly);
 
             foreach (var t in tests)
             {

@@ -4,34 +4,29 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
-namespace North.Aids
+namespace North.Aids.Random
 {
-    public class GetRandom
+
+    public static class GetRandom
     {
-        private static readonly Random r = new Random();
 
+        private static readonly System.Random r = new System.Random();
 
-        public static bool Bool()
-        {
-            return Int32() % 2 == 0;
-        }
+        public static bool Bool() => Int32() % 2 == 0;
 
         public static char Char(char min = char.MinValue, char max = char.MaxValue)
-        {
-            return (char)UInt16(min, max);
-        }
+            => (char)UInt16(min, max);
 
         public static Color Color()
-        {
-            return System.Drawing.Color.FromArgb(UInt8(), UInt8(), UInt8());
-        }
+            => System.Drawing.Color.FromArgb(UInt8(), UInt8(), UInt8());
 
-        public static DateTime DateTime(DateTime? minValue = null, DateTime? maxValue = null)
+        public static DateTime DateTime(DateTime? min = null, DateTime? max = null)
         {
-            var min = minValue ?? System.DateTime.MinValue;
-            var max = maxValue ?? System.DateTime.MaxValue;
-            var d = new DateTime(Int64(min.Ticks, max.Ticks));
+            var m = min ?? System.DateTime.MinValue;
+            var x = max ?? System.DateTime.MaxValue;
+            var d = new DateTime(Int64(m.Ticks, x.Ticks));
             if (d.Hour == 3) d = d.AddHours(UInt8(4, 22));
+
             return d;
         }
 
@@ -39,59 +34,56 @@ namespace North.Aids
             decimal max = decimal.MaxValue)
         {
             if (min == max) return min;
+
             return Safe.Run(() =>
-                Convert.ToDecimal(Double(Convert.ToDouble(min), Convert.ToDouble(max))),
+                    Convert.ToDecimal(Double(Convert.ToDouble(min), Convert.ToDouble(max))),
                 min);
         }
 
         public static double Double(double min = double.MinValue, double max = double.MaxValue)
         {
             if (min.CompareTo(max) == 0) return min;
-            Sort.Upwards(ref min, ref max);
+            Sort.Ascending(ref min, ref max);
             var d = r.NextDouble();
+
             if (max > 0) return min + d * max - d * min;
+
             return min - d * min + d * max;
         }
 
-        public static T Enum<T>()
-        {
-            return (T)Enum(typeof(T));
-        }
+        public static T Enum<T>() => (T)Enum(typeof(T));
 
-        private static object Enum(Type t)
+        public static object Enum(Type t)
         {
             var count = GetEnum.Count(t);
             var index = Int32(0, count);
+
             return GetEnum.Value(t, index);
         }
 
         public static float Float(float min = float.MinValue, float max = float.MaxValue)
-        {
-            return Convert.ToSingle(Double(min, max));
-        }
+            => Convert.ToSingle(Double(min, max));
 
         public static sbyte Int8(sbyte min = sbyte.MinValue, sbyte max = sbyte.MaxValue)
-        {
-            return (sbyte)Int32(min, max);
-        }
+            => (sbyte)Int32(min, max);
 
         public static short Int16(short min = short.MinValue, short max = short.MaxValue)
-        {
-            return (short)Int32(min, max);
-        }
+            => (short)Int32(min, max);
 
         public static int Int32(int min = int.MinValue, int max = int.MaxValue)
         {
             if (min.CompareTo(max) == 0) return min;
             if (min.CompareTo(max) > 0) return r.Next(max, min);
+
             return r.Next(min, max);
         }
 
         public static long Int64(long min = long.MinValue, long max = long.MaxValue)
         {
             if (min == max) return min;
+
             return Safe.Run(() =>
-                Convert.ToInt64(Double(Convert.ToDouble(min), Convert.ToDouble(max))),
+                    Convert.ToInt64(Double(Convert.ToDouble(min), Convert.ToDouble(max))),
                 min);
         }
 
@@ -100,34 +92,27 @@ namespace North.Aids
             var b = new StringBuilder();
             var size = UInt8(minLenght, maxLenght);
             for (var i = 0; i < size; i++) b.Append(Char('a', 'z'));
+
             return b.ToString();
         }
 
-        public static TimeSpan TimeSpan()
-        {
-            return new TimeSpan(Int64());
-        }
+        public static TimeSpan TimeSpan() => new TimeSpan(Int64());
 
         public static byte UInt8(byte min = byte.MinValue, byte max = byte.MaxValue)
-        {
-            return (byte)Int32(min, max);
-        }
+            => (byte)Int32(min, max);
 
         public static ushort UInt16(ushort min = ushort.MinValue, ushort max = ushort.MaxValue)
-        {
-            return (ushort)Int32(min, max);
-        }
+            => (ushort)Int32(min, max);
 
         public static uint UInt32(uint min = uint.MinValue, uint max = uint.MaxValue)
-        {
-            return Convert.ToUInt32(Double(min, max));
-        }
+            => Convert.ToUInt32(Double(min, max));
 
         public static ulong UInt64(ulong min = ulong.MinValue, ulong max = ulong.MaxValue)
         {
             if (min == max) return min;
+
             return Safe.Run(() =>
-               Convert.ToUInt64(Double(Convert.ToDouble(min), Convert.ToDouble(max))),
+                    Convert.ToUInt64(Double(Convert.ToDouble(min), Convert.ToDouble(max))),
                 min);
         }
 
@@ -135,6 +120,7 @@ namespace North.Aids
         {
             var x = Nullable.GetUnderlyingType(t);
             if (!(x is null)) t = x;
+
             if (t.IsArray) return Array(t.GetElementType());
             if (t.IsEnum) return Enum(t);
             if (t == typeof(string)) return String();
@@ -169,6 +155,8 @@ namespace North.Aids
             if (t == typeof(short?)) return Int16();
             if (t == typeof(int?)) return Int32();
             if (t == typeof(long?)) return Int64();
+            if (t == typeof(TimeSpan)) return TimeSpan();
+
             return Object(t);
         }
 
@@ -181,6 +169,7 @@ namespace North.Aids
             for (var i = 0; i < UInt8(3, 10); i++) list.Add(Value(t));
             var array = System.Array.CreateInstance(t, list.Count);
             list.CopyTo(array, 0);
+
             return array;
         }
 
@@ -188,29 +177,96 @@ namespace North.Aids
         {
             var o = CreateNew.Instance<T>();
             SetRandom.Values(o);
+
             return o;
         }
+
         public static object Object(Type t)
         {
             var o = CreateNew.Instance(t);
             SetRandom.Values(o);
+
             return o;
         }
+
         public static string Email()
-        {
-            return $"{String()}.{String()}@{String()}.{String()}";
-        }
+            => $"{String()}.{String()}@{String()}.{String()}";
+
         public static string Password()
-        {
-            return $"{String()}{Char('\x20', '\x2f')}{UInt32().ToString()}.{String().ToUpper()}";
-        }
+            => $"{String()}{Char('\x20', '\x2f')}{UInt32().ToString()}.{String().ToUpper()}";
 
         public static List<T> List<T>(Func<T> func)
         {
             var list = new List<T>();
-            for (var i = 0; i < UInt8(0, 10); i++) list.Add(func());
+            for (var i = 0; i < UInt8(2, 10); i++) list.Add(func());
+
             return list;
         }
 
+        public static object AnyDouble(byte minValue = 0, byte maxValue = 100)
+        {
+            var i = UInt8();
+
+            switch (i % 10)
+            {
+                case 0: return Int32(minValue, maxValue);
+                case 1: return UInt32(minValue, maxValue);
+                case 2: return Float(minValue, maxValue);
+                case 3: return Int8(0);
+                case 4: return UInt8(minValue, maxValue);
+                case 5: return Int16(minValue, maxValue);
+                case 6: return UInt16(minValue, maxValue);
+                case 7: return Int64(minValue, maxValue);
+                case 8: return UInt64(minValue, maxValue);
+                default: return Double(minValue, maxValue);
+            }
+        }
+
+        public static object AnyInt(byte minValue = 0, byte maxValue = 100)
+        {
+            var i = UInt8();
+
+            switch (i % 5)
+            {
+                case 0: return Int8(0);
+                case 1: return UInt8(minValue, maxValue);
+                case 2: return Int16(minValue, maxValue);
+                case 4: return UInt16(minValue, maxValue);
+                default: return Int32(minValue, maxValue);
+            }
+        }
+
+        public static object AnyValue()
+        {
+            var i = Int32();
+
+            switch (i % 10)
+            {
+                case 0: return DateTime();
+                case 1: return String();
+                case 2: return Char();
+                case 3: return Int32();
+                case 4: return Double();
+                case 5: return Decimal();
+                case 6: return UInt32();
+                case 7: return Float();
+                case 8: return Int8();
+                case 9: return UInt8();
+                case 10: return Int16();
+                case 11: return UInt16();
+                case 12: return Int64();
+                case 13: return UInt64();
+                default: return String();
+            }
+        }
+
     }
+
 }
+
+
+
+
+
+
+

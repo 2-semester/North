@@ -1,11 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Aids;
+using North.Aids.Random;
 using North.Data.EventList;
 using North.Domain.EventList;
 using North.Facade.EventList;
 using North.Pages;
 using North.Pages.EventList;
-using North.Tests.Aids;
 
 namespace North.Tests.Pages.EventList
 {
@@ -33,7 +32,7 @@ namespace North.Tests.Pages.EventList
         [TestMethod]
         public void ItemIdTest()
         {
-            var item = GetRandomTests.Object<EventListView>();
+            var item = GetRandom.Object<EventListView>();
             obj.Item = item;
             Assert.AreEqual(item.Id, obj.ItemId);
             obj.Item = null;
@@ -49,7 +48,7 @@ namespace North.Tests.Pages.EventList
         [TestMethod]
         public void ToObjectTest()
         {
-            var view = GetRandomTests.Object<EventListView>();
+            var view = GetRandom.Object<EventListView>();
             var o = obj.toObject(view);
             testArePropertyValuesEqual(view, o.Data);
         }
@@ -57,7 +56,7 @@ namespace North.Tests.Pages.EventList
         [TestMethod]
         public void ToViewTest()
         {
-            var data = GetRandomTests.Object<EventListData>();
+            var data = GetRandom.Object<EventListData>();
             var view = obj.toView(new EventListDomain(data));
             testArePropertyValuesEqual(view, data);
         }

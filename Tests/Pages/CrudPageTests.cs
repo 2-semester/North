@@ -1,10 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Aids;
+using North.Aids.Random;
 using North.Data.Event;
 using North.Domain.Event;
 using North.Facade.Event;
 using North.Pages;
-using North.Tests.Aids;
 
 namespace North.Tests.Pages {
 
@@ -21,8 +20,8 @@ namespace North.Tests.Pages {
         {
             base.TestInitialize();
             obj = new testClass(db);
-            fixedFilter = GetRandomTests.String();
-            fixedValue = GetRandomTests.String();
+            fixedFilter = GetRandom.String();
+            fixedValue = GetRandom.String();
             Assert.AreEqual(null, obj.FixedValue);
             Assert.AreEqual(null, obj.FixedFilter);
         }
@@ -37,7 +36,7 @@ namespace North.Tests.Pages {
         public void AddObjectTest()
         {
             var idx = db.list.Count;
-            obj.Item = GetRandomTests.Object<EventView>();
+            obj.Item = GetRandom.Object<EventView>();
             obj.addObject(fixedFilter, fixedValue).GetAwaiter();
             Assert.AreEqual(fixedFilter, obj.FixedFilter);
             Assert.AreEqual(fixedValue, obj.FixedValue);
@@ -48,9 +47,9 @@ namespace North.Tests.Pages {
         public void UpdateObjectTest()
         {
             GetObjectTest();
-            var idx = GetRandomTests.Int32(0, db.list.Count);
+            var idx = GetRandom.Int32(0, db.list.Count);
             var itemId = db.list[idx].Data.Id;
-            obj.Item = GetRandomTests.Object<EventView>();
+            obj.Item = GetRandom.Object<EventView>();
             obj.Item.Id = itemId;
             obj.updateObject(fixedFilter, fixedValue).GetAwaiter();
             testArePropertyValuesEqual(db.list[^1].Data, obj.Item);
@@ -59,8 +58,8 @@ namespace North.Tests.Pages {
         [TestMethod]
         public void GetObjectTest()
         {
-            var count = GetRandomTests.UInt8(5, 10);
-            var idx = GetRandomTests.UInt8(0, count);
+            var count = GetRandom.UInt8(5, 10);
+            var idx = GetRandom.UInt8(0, count);
             for (var i = 0; i < count; i++) AddObjectTest();
             var item = db.list[idx];
             obj.getObject(item.Data.Id, fixedFilter, fixedValue).GetAwaiter();
@@ -81,7 +80,7 @@ namespace North.Tests.Pages {
         [TestMethod]
         public void ToViewTest()
         {
-            var d = GetRandomTests.Object<EventData>();
+            var d = GetRandom.Object<EventData>();
             var v = obj.toView(new EventDomain(d));
             testArePropertyValuesEqual(d, v);
         }
@@ -89,7 +88,7 @@ namespace North.Tests.Pages {
         [TestMethod]
         public void ToObjectTest()
         {
-            var v = GetRandomTests.Object<EventView>();
+            var v = GetRandom.Object<EventView>();
             var o = obj.toObject(v);
             testArePropertyValuesEqual(v, o.Data);
         }

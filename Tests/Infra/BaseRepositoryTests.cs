@@ -1,11 +1,10 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Aids;
+using North.Aids.Random;
 using North.Domain.Event;
 using North.Infra;
 using North.Data.Event;
-using North.Tests.Aids;
 
 namespace North.Tests.Infra
 {
@@ -38,17 +37,17 @@ namespace North.Tests.Infra
                 .Options;
             var c = new NorthDbContext(options);
             obj = new testClass(c, c.Events);
-            data = GetRandomTests.Object<EventData>();
+            data = GetRandom.Object<EventData>();
         }
 
         [TestMethod]
         public void GetTest()
         {
-            var count = GetRandomTests.UInt8(15, 30);
+            var count = GetRandom.UInt8(15, 30);
             var countBefore = obj.Get().GetAwaiter().GetResult().Count;
             for (var i = 0; i < count; i++)
             {
-                data = GetRandomTests.Object<EventData>();
+                data = GetRandom.Object<EventData>();
                 AddTest();
             }
             Assert.AreEqual(count + countBefore, obj.Get().GetAwaiter().GetResult().Count);
@@ -85,7 +84,7 @@ namespace North.Tests.Infra
         public void UpdateTest()
         {
             AddTest();
-            var newData = GetRandomTests.Object<EventData>();
+            var newData = GetRandom.Object<EventData>();
             newData.Id = data.Id;
             obj.Update(new EventDomain(newData)).GetAwaiter();
             var expected = obj.Get(data.Id).GetAwaiter().GetResult();

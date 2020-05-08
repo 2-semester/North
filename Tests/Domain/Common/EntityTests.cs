@@ -1,8 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Aids;
+using North.Aids.Random;
 using North.Data.Organization;
 using North.Domain.Common;
-using North.Tests.Aids;
 
 namespace North.Tests.Domain.Common
 {
@@ -23,7 +22,7 @@ namespace North.Tests.Domain.Common
         [TestMethod]
         public void DataTest()
         {
-            var d = GetRandomTests.Object<OrganizationData>();
+            var d = GetRandom.Object<OrganizationData>();
             Assert.AreNotSame(d,obj.Data);
             obj = new testClass(d);
             Assert.AreSame(d, obj.Data);
@@ -32,7 +31,7 @@ namespace North.Tests.Domain.Common
         [TestMethod]
         public void DataIsNullTest()
         {
-            var d = GetRandomTests.Object<OrganizationData>();
+            var d = GetRandom.Object<OrganizationData>();
             Assert.IsNull(obj.Data);
             obj.Data = d;
             Assert.AreSame(d, obj.Data);

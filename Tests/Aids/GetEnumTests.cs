@@ -1,33 +1,47 @@
-﻿
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using North.Aids;
 
+namespace North.Tests.Aids.Reflection
+{
 
+    [TestClass]
+    public class GetEnumTests : BaseTests
+    {
 
+        [TestInitialize] public void TestInitialize() => type = typeof(GetEnum);
 
-using System;
-
-namespace North.Tests.Aids {
-
-    public static class GetEnumTests {
-        public static int Count<T>() {
-            return Count(typeof(T));
+        [TestMethod]
+        public void CountTest()
+        {
+            Assert.AreEqual(4, GetEnum.Count<IsoGender>());
+            Assert.AreEqual(-1, GetEnum.Count<object>());
         }
 
-        public static T Value<T>(int i) {
-            return SafeTests.Run(() => (T) Value(typeof(T), i), default(T));
+        [TestMethod]
+        public void CountByTypeTest()
+        {
+            Assert.AreEqual(4, GetEnum.Count(typeof(IsoGender)));
+            Assert.AreEqual(-1, GetEnum.Count(typeof(object)));
         }
 
-        public static int Count(Type type) {
-            return SafeTests.Run(() => Enum.GetValues(type).Length, -1);
+        [TestMethod]
+        public void ValueByTypeTest()
+        {
+            Assert.AreEqual(IsoGender.NotKnown, GetEnum.Value(typeof(IsoGender), 0));
+            Assert.AreEqual(IsoGender.Male, GetEnum.Value(typeof(IsoGender), 1));
+            Assert.AreEqual(IsoGender.Female, GetEnum.Value(typeof(IsoGender), 2));
+            Assert.AreEqual(IsoGender.NotApplicable, GetEnum.Value(typeof(IsoGender), 3));
         }
 
-        public static object Value(Type type, int i) {
-            return SafeTests.Run(() => {
-                var v = Enum.GetValues(type);
-                return v.GetValue(i);
-            }, null);
+        [TestMethod]
+        public void ValueTest()
+        {
+            Assert.AreEqual(IsoGender.NotKnown, GetEnum.Value<IsoGender>(0));
+            Assert.AreEqual(IsoGender.Male, GetEnum.Value<IsoGender>(1));
+            Assert.AreEqual(IsoGender.Female, GetEnum.Value<IsoGender>(2));
+            Assert.AreEqual(IsoGender.NotApplicable, GetEnum.Value<IsoGender>(3));
         }
+
     }
+
 }
-
-
-

@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Data.SportCategory;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace North.Tests.Infra
 {
