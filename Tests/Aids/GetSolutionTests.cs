@@ -1,38 +1,75 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using North.Aids;
 
 namespace North.Tests.Aids {
 
-    public static class GetSolutionTests {
+    [TestClass]
+    public class GetSolutionTests : BaseTests
+    {
 
-        public static AppDomain Domain => AppDomain.CurrentDomain;
+        private static string assemblyName = "North.Aids";
+        private const string dummyName = "bla-bla";
 
-        public static List<Assembly> Assemblies =>
-            SafeTests.Run(() => Domain.GetAssemblies().ToList(),
-                new List<Assembly>());
+        [TestInitialize] public void TestInitialize() => type = typeof(GetSolution);
 
-        public static Assembly AssemblyByName(string name) {
-            return SafeTests.Run(() => Assembly.Load(name), null);
+        [TestMethod]
+        public void DomainTest()
+        {
+            var expected = AppDomain.CurrentDomain;
+            var actual = GetSolution.Domain;
+            Assert.AreEqual(expected, actual);
         }
 
-        public static List<Type> TypesForAssembly(string assemblyName) {
-            return SafeTests.Run(() => {
-                var a = AssemblyByName(assemblyName);
-                return a.GetTypes().ToList();
-            }, new List<Type>());
+        [TestMethod]
+        public void AssembliesTest()
+        {
+            var expected = AppDomain.CurrentDomain.GetAssemblies().ToList();
+            var actual = GetSolution.Assemblies;
+            foreach (var e in expected) Assert.IsTrue(actual.Contains(e));
+            Assert.AreEqual(expected.Count, actual.Count);
         }
 
-        public static List<string> TypeNamesForAssembly(string assemblyName) {
-            return SafeTests.Run(() => {
-                var a = TypesForAssembly(assemblyName);
-                return a.Select(t => t.FullName).ToList();
-            }, new List<string>());
+        [TestMethod]
+        public void AssemblyByNameTest()
+        {
+            Assert.IsNull(GetSolution.AssemblyByName(dummyName));
+            var assembly = GetSolution.AssemblyByName(assemblyName);
+            Assert.IsTrue(assembly.FullName.StartsWith(assemblyName));
         }
 
-        public static string Name =>
-            GetStringTests.Head(GetClassTests.Namespace(typeof(GetSolutionTests)));
+        [TestMethod]
+        public void TypesForAssemblyTest()
+        {
+            var expected = GetSolution.AssemblyByName(assemblyName).GetTypes();
+            var actual = GetSolution.TypesForAssembly(dummyName);
+            Assert.AreEqual(0, actual.Count);
+            Assert.IsInstanceOfType(actual, typeof(List<Type>));
+            actual = GetSolution.TypesForAssembly(assemblyName);
+            Assert.AreEqual(expected.Length, actual.Count);
+            foreach (var e in expected) Assert.IsTrue(actual.Contains(e));
+        }
+
+        [TestMethod]
+        public void TypeNamesForAssemblyTest()
+        {
+            var expected = GetSolution.AssemblyByName(assemblyName).GetTypes();
+            var actual = GetSolution.TypeNamesForAssembly(dummyName);
+            Assert.AreEqual(0, actual.Count);
+            Assert.IsInstanceOfType(actual, typeof(List<string>));
+            actual = GetSolution.TypeNamesForAssembly(assemblyName);
+            Assert.AreEqual(expected.Length, actual.Count);
+            foreach (var e in expected)
+                Assert.IsTrue(actual.Contains(e.FullName));
+        }
+
+        [TestMethod]
+        public void NameTest()
+        {
+            Assert.AreEqual(nameof(North), GetSolution.Name);
+        }
     }
 
 }
