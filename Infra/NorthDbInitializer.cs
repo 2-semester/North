@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.Extensions.Logging;
 using North.Data.SportCategory;
 using North.Data.Event;
+using North.Data.EventList;
 using North.Data.Location;
 using North.Data.Organization;
 
@@ -225,9 +226,27 @@ namespace North.Infra
             County = "",
             City = ""
         };
+        internal static EventListData rattamaraton = new EventListData
+        {
+            Id = "Hawaii Express Estonian Cup",
+            Name = "Hawaii Express Estonian Cup",
+            EventId = "Ristna öösõit",
+          
+        };
+        internal static EventListData surfisari = new EventListData
+        {
+            Id = "Fun sari",
+            Name = "Fun sari",
+            EventId = "",
+
+        };
+        internal static List<EventListData> eventLists => new List<EventListData>
+        {
+         rattamaraton, surfisari
+        };
         internal static List<LocationData> counties => new List<LocationData>
         {
-            Harju,IdaViru, LääneViru, Lääne, Rapla, Jõgeva, Järva, Hiiu, Saare, Pärnu, Viljandi, Tartu, Põlva, Võru
+            Harju, IdaViru, LääneViru, Lääne, Rapla, Jõgeva, Järva, Hiiu, Saare, Pärnu, Viljandi, Tartu, Põlva, Võru
         };
         internal static List<SportCategoryData> sportCategories => new List<SportCategoryData>
         {
@@ -241,6 +260,12 @@ namespace North.Infra
         {
             SEB, sportland, puudub
         };
+        private static void InitializeEventLists(NorthDbContext db)
+        {
+            if (db.EventLists.Count() != 0) return;
+            db.EventLists.AddRange(eventLists);
+            db.SaveChanges();
+        }
         private static void InitializeLocations(NorthDbContext db)
         {
             if (db.Locations.Count() != 0) return;
@@ -272,6 +297,7 @@ namespace North.Infra
             InitializeEvents(db);
             InitializeOrganizations(db);
             InitializeLocations(db);
+            InitializeEventLists(db);
         }
 
     
