@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
-using North.Tests;
 
 namespace North.Tests.Aids.Reflection
 {

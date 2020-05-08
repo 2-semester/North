@@ -1,13 +1,11 @@
 ﻿using System.Threading.Tasks;
-using Abc.Aids.Random;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
+using North.Aids.Random;
 using North.Domain.Event;
 using North.Infra;
 using North.Data.Event;
-using North.Tests.Aids;
-using North.Tests.Aids.Reflection;
 
 namespace North.Tests.Infra
 {

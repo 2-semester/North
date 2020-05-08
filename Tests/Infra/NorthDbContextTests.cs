@@ -15,7 +15,6 @@ using North.Data.SportCategoryType;
 using North.Data.Sportsman;
 using North.Data.SportsmanEvent;
 using North.Infra;
-using North.Tests.Aids;
 
 namespace North.Tests.Infra
 {

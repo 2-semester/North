@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using Abc.Aids.Random;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
+using North.Aids.Random;
 using North.Facade.Event;
-using North.Tests;
 
 namespace North.Tests.Aids
 {

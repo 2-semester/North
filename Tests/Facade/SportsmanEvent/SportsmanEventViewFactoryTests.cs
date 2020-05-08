@@ -1,9 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Aids;
+using North.Aids.Random;
 using North.Data.SportsmanEvent;
 using North.Domain.SportsmanEvent;
 using North.Facade.SportsmanEvent;
-using North.Tests.Aids;
 
 namespace North.Tests.Facade.SportsmanEvent
 {

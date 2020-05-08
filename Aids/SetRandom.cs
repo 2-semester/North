@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
+using North.Aids.Random;
 
 namespace North.Aids {
     public static class SetRandom {

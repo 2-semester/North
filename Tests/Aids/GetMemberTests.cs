@@ -5,7 +5,6 @@ using North.Aids;
 using North.Data.Event;
 using North.Domain.Event;
 using North.Facade.Event;
-using North.Tests;
 
 namespace North.Tests.Aids.Reflection
 {
@@ -30,10 +29,10 @@ namespace North.Tests.Aids.Reflection
         public void DisplayNameTest()
         {
             Assert.AreEqual("Data", GetMember.DisplayName<EventDomain>(o => o.Data));
-            Assert.AreEqual("Valid from",
+            Assert.AreEqual("Alguskuupäev",
                 GetMember.DisplayName<EventView>(o => o.ValidFrom));
-            Assert.AreEqual("Name", GetMember.DisplayName<EventView>(o => o.Name));
-            Assert.AreEqual("Valid to", GetMember.DisplayName<EventView>(o => o.ValidTo));
+            Assert.AreEqual("Nimi", GetMember.DisplayName<EventView>(o => o.Name));
+            Assert.AreEqual("Lõppkuupäev", GetMember.DisplayName<EventView>(o => o.ValidTo));
             Assert.AreEqual(string.Empty, GetMember.DisplayName<EventView>(null));
             //Impossible to use for methods
             //Assert.AreEqual(string.Empty, GetMember.DisplayName<GetMemberTests>(o => o.NameTest()));

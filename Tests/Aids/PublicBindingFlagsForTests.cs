@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using North.Aids;
 
 namespace North.Tests.Aids {
 
@@ -11,7 +12,7 @@ namespace North.Tests.Aids {
         [TestInitialize]
         public void TestInitialize()
         {
-            type = typeof(PublicBindingFlagsForTests);
+            type = typeof(PublicBindingFlagsFor);
             testType = typeof(testClass);
         }
 
@@ -33,20 +34,20 @@ namespace North.Tests.Aids {
         }
 
         [TestMethod]
-        public void AllTest()
-            => testMembers(i | s | p, PublicBindingFlagsForTests.All, 7);
+        public void AllMembersTest()
+            => testMembers(i | s | p, PublicBindingFlagsFor.AllMembers, 7);
 
         [TestMethod]
-        public void InstanceTest()
-            => testMembers(i | p, PublicBindingFlagsForTests.Instance, 6);
+        public void InstanceMembersTest()
+            => testMembers(i | p, PublicBindingFlagsFor.InstanceMembers, 6);
 
         [TestMethod]
-        public void StaticTest()
-            => testMembers(s | p, PublicBindingFlagsForTests.Static, 1);
+        public void StaticMembersTest()
+            => testMembers(s | p, PublicBindingFlagsFor.StaticMembers, 1);
 
         [TestMethod]
-        public void DeclaredTest()
-            => testMembers(d | i | s | p, PublicBindingFlagsForTests.Declared, 3);
+        public void DeclaredMembersTest()
+            => testMembers(d | i | s | p, PublicBindingFlagsFor.DeclaredMembers, 3);
 
         private void testMembers(BindingFlags expected, BindingFlags actual,
             int membersCount)

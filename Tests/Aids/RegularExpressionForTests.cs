@@ -10,7 +10,7 @@ namespace North.Tests.Aids {
         [TestInitialize] public void TestInitialize() => type = typeof(RegularExpressionFor);
 
         [TestMethod]
-        public void CapitalsTest()
+        public void EnglishCapitalsOnlyTest()
         {
             var match = RegularExpressionFor.EnglishCapitalsOnly;
             Assert.IsTrue(Regex.IsMatch("ABC", match));
@@ -20,7 +20,7 @@ namespace North.Tests.Aids {
         }
 
         [TestMethod]
-        public void TextTest()
+        public void EnglishTextOnlyTest()
         {
             var match = RegularExpressionFor.EnglishTextOnly;
             Assert.IsTrue(Regex.IsMatch("ABC", match));
@@ -34,7 +34,7 @@ namespace North.Tests.Aids {
         }
 
         [TestMethod]
-        public void CapitalsAndNumbersTest()
+        public void EnglishCapitalsAndNumbersOnlyTest()
         {
             var match = RegularExpressionFor.EnglishCapitalsAndNumbersOnly;
             Assert.IsTrue(Regex.IsMatch("ABC", match));

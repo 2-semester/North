@@ -1,12 +1,10 @@
-﻿using Abc.Aids.Random;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Aids;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using North.Aids.Random;
 using North.Data.EventList;
 using North.Domain.EventList;
 using North.Facade.EventList;
 using North.Pages;
 using North.Pages.EventList;
-using North.Tests.Aids;
 
 namespace North.Tests.Pages.EventList
 {

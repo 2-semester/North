@@ -1,8 +1,6 @@
 ﻿using System;
-using Abc.Aids.Random;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Aids;
-using North.Tests.Aids;
+using North.Aids.Random;
 
 namespace North.Tests
 {

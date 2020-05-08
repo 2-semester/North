@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Abc.Aids.Random;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
+using North.Aids.Random;
 using North.Data.Event;
 
 namespace North.Tests.Aids

@@ -1,11 +1,9 @@
 ﻿using System;
-using Abc.Aids.Random;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Aids;
+using North.Aids.Random;
 using North.Data.Common;
 using North.Domain.Common;
-using North.Tests.Aids;
 
 namespace North.Tests.Infra
 {

@@ -1,10 +1,8 @@
-﻿using Abc.Aids.Random;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Aids;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using North.Aids.Random;
 using North.Data.Sportsman;
 using North.Domain.Sportsman;
 using North.Facade.Sportsman;
-using North.Tests.Aids;
 
 namespace North.Tests.Facade.Sportsman
 {

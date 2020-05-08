@@ -15,7 +15,7 @@ namespace North.Tests.Aids {
             type = typeof(SystemCultureInfo);
         }
         [TestMethod]
-        public void GetSpecificTest()
+        public void GetSpecificCulturesTest()
         {
             var expected =
                 CultureInfo.GetCultures(CultureTypes.SpecificCultures);

@@ -1,11 +1,8 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Html;
+﻿using Microsoft.AspNetCore.Html;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Aids;
 using North.Aids.Random;
 using North.Facade.Event;
 using North.Pages.Extensions;
-using North.Tests.Aids;
 
 namespace North.Tests.Pages.Extensions
 {

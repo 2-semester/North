@@ -1,4 +1,8 @@
-﻿namespace North.Aids {
+﻿using System;
+using System.Globalization;
+using System.Linq;
+
+namespace North.Aids {
 
     public static class GetString {
         public static string Head(string s, char seperator = '.') {

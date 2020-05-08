@@ -1,12 +1,10 @@
-﻿using Abc.Aids.Random;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Aids;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using North.Aids.Random;
 using North.Data.SportCategoryType;
 using North.Domain.SportCategoryType;
 using North.Facade.SportCategoryType;
 using North.Pages;
 using North.Pages.SportCategoryType;
-using North.Tests.Aids;
 
 namespace North.Tests.Pages.SportCategoryType
 {

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Globalization;
-
-namespace North.Aids
+﻿namespace North.Aids
 {
     public static class Decimals
     {

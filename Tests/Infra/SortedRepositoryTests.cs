@@ -3,14 +3,13 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Threading.Tasks;
-using Abc.Aids.Random;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
+using North.Aids.Random;
 using North.Domain.Event;
 using North.Infra;
 using North.Data.Event;
-using North.Tests.Aids;
 
 namespace North.Tests.Infra
 {

@@ -32,6 +32,24 @@ namespace North.Tests.Aids
             Assert.IsNotNull(o.D);
             Assert.IsNotNull(o.E);
         }
+        [TestMethod]
+        public void FieldTest()
+        {
+            Assert.IsFalse(IsReadOnly.Field<testClass>("A"));
+            Assert.IsTrue(IsReadOnly.Field<testClass>("B"));
+            Assert.IsFalse(IsReadOnly.Field<testClass>("C"));
+            Assert.IsFalse(IsReadOnly.Field<testClass>("D"));
+            Assert.IsFalse(IsReadOnly.Field<testClass>("E"));
+        }
+        [TestMethod]
+        public void PropertyTest()
+        {
+            Assert.IsFalse(IsReadOnly.Property<testClass>("A"));
+            Assert.IsFalse(IsReadOnly.Property<testClass>("B"));
+            Assert.IsFalse(IsReadOnly.Property<testClass>("C"));
+            Assert.IsTrue(IsReadOnly.Property<testClass>("D"));
+            Assert.IsFalse(IsReadOnly.Property<testClass>("E"));
+        }
     }
 }
 

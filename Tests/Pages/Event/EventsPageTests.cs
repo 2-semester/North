@@ -1,7 +1,6 @@
 ﻿using System.Linq;
-using Abc.Aids.Random;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Aids;
+using North.Aids.Random;
 using North.Data.Event;
 using North.Data.EventList;
 using North.Data.Location;
@@ -15,7 +14,6 @@ using North.Domain.SportCategory;
 using North.Facade.Event;
 using North.Pages;
 using North.Pages.Event;
-using North.Tests.Aids;
 
 namespace North.Tests.Pages.Event
 {
