@@ -9,7 +9,7 @@ namespace North.Pages.Organization
     {
         protected internal OrganizationsPage(IOrganizationsRepository r) : base(r)
         {
-            PageTitle = "Organisatsioonid";
+            PageTitle = "Korraldajad";
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;

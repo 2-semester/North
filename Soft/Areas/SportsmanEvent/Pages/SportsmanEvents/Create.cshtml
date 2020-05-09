@@ -4,10 +4,15 @@
 
 @{
     Layout = "_Create";
+    const string sportsman = "/Sportsman/Sportsmen";
 }
-    <body>
+<body>
 
-        @Html.EditControlsForDropDown(model => model.Item.SportsmanId, Model.Sportsmen)
+    @Html.EditControlsForDropDown(model => model.Item.SportsmanId, Model.Sportsmen)
     @Html.EditControlsForDropDown(model => model.Item.EventId, Model.Events)
 
-    </body>
+</body>
+<div>
+    @Html.HypertextLinkFor(string.Empty, new Link("Registreeri end sportlaseks!",
+        $"{sportsman}/Create"))
+</div>

@@ -60,7 +60,7 @@ namespace North.Infra
             SportCategoryId = "Discgolf",
             TypeId = "Karikasari",
             EventListId = "Puudub",
-            OrganizationId = "Puudub",
+            OrganizationId = "SEB",
             LocationId = "Pärnu maakond",
             Definition="Karikasarja avalöök 2020"
         };
@@ -72,7 +72,7 @@ namespace North.Infra
             SportCategoryId = "Jalgrattasõit",
             TypeId = "Maastikusõit",
             EventListId="Puudub",
-           OrganizationId = "SEB",
+           OrganizationId = "Eraisik",
            LocationId = "Hiiu maakond",
            Definition = "Rada kulgeb sarnases kohas, kus eelmisel aastal toimus Kaugeima neeme sõit," +
                         "kuid piiratud nähtavuse tõttu on sealt välja jäetud tehnilised singlid ja" +
@@ -93,10 +93,10 @@ namespace North.Infra
             Name = "Sportland",
             Definition = "Muuta noorte inimeste elu huvitavamaks, paremaks ja emotsionaalsemaks läbi pakutavate toodete ning teenuste."
         };
-        internal static OrganizationData puudub = new OrganizationData
+        internal static OrganizationData eraisik = new OrganizationData
         {
-            Id = "Puudub",
-            Name = "Puudub",
+            Id = "Eraisik",
+            Name = "Eraisik",
             Definition = ""
         };
         internal static LocationData Harju = new LocationData()
@@ -223,7 +223,7 @@ namespace North.Infra
         };
         internal static List<OrganizationData> organizations => new List<OrganizationData>
         {
-            SEB, sportland, puudub
+            SEB, sportland, eraisik
         }; 
         internal static List<EventListData> eventLists => new List<EventListData>
         {

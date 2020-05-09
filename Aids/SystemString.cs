@@ -1,15 +1,12 @@
-﻿
-
-namespace North.Aids {
+﻿namespace North.Aids {
 
     public static class SystemString {
 
-        public static bool StartsWithLetter(string s) {
+        public static bool StartsWithLetter(this string s) {
             if (string.IsNullOrWhiteSpace(s)) return false;
             return char.IsLetter(s[0]);
         }
-
-        public static string ToBackwards(string s) {
+        public static string ToBackwards(this string s) {
             if (string.IsNullOrEmpty(s)) return string.Empty;
 
             var x = s.Length - 1;
@@ -18,9 +15,7 @@ namespace North.Aids {
 
             return r;
         }
-
     }
-
 }
 
 

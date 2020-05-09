@@ -21,7 +21,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
+                    @*<partial name="_LoginPartial" />*@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Avaleht</a>
@@ -54,9 +54,10 @@
                             new Link("Tartu maakond", $"{eventSearch}Tartu maakond"),
                             new Link("Valga maakond", $"{eventSearch}Valga maakond"),
                             new Link("Võru maakond", $"{eventSearch}Võru maakond"))
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Kontakt</a>
-                        </li>
+                        @Html.DropDownNavigationMenuFor("Registreeri",
+                            new Link("Sportlaseks",$"/Sportsman/Sportsmen/Create"),
+                            new Link("Korraldajaks",$"/Organization/Organizations/Create"),
+                            new Link("Üritusele",$"/SportsmanEvent/SportsmanEvents/Create"))
                     </ul>
                 </div>
             </div>
