@@ -9,7 +9,7 @@ namespace North.Pages.Sportsman
     {
         protected internal SportsmenPage(ISportsmenRepository r): base(r)
         {
-            PageTitle = "Sportlane";
+            PageTitle = "Sportlased";
         }
 
         public override string ItemId => Item?.Id ?? string.Empty;

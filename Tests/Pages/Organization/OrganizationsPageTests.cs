@@ -40,7 +40,7 @@ namespace North.Tests.Pages.Organization
         }
 
         [TestMethod]
-        public void PageTitleTest() => Assert.AreEqual("Organisatsioonid", obj.PageTitle);
+        public void PageTitleTest() => Assert.AreEqual("Korraldajad", obj.PageTitle);
 
         [TestMethod]
         public void PageUrlTest() => Assert.AreEqual("/Organization/Organizations", obj.PageUrl);

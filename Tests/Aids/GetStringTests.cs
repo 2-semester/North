@@ -24,7 +24,23 @@ namespace North.Tests.Aids
             Assert.AreEqual(x, (str() + '.' + x).GetTail());
             Assert.AreEqual(string.Empty, ((string)null).GetTail());
         }
-       
-    }
 
+        [TestMethod]
+        public void GetHeadTest()
+        {
+            static string str() => GetRandom.String();
+            var x = GetRandom.String();
+            Assert.AreEqual(x, (x + '.' + str() + '.' + str()).GetHead());
+            Assert.AreEqual(string.Empty, ((string)null).GetHead());
+        }
+
+        [TestMethod]
+        public void GetTailTest()
+        {
+            static string str() => GetRandom.String();
+            var x = str() + '.' + str() + '.' + str();
+            Assert.AreEqual(x, (str() + '.' + x).GetTail());
+            Assert.AreEqual(string.Empty, ((string)null).GetTail());
+        }
+    }
 }
