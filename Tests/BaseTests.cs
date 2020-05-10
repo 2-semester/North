@@ -13,9 +13,19 @@ namespace North.Tests
         private const string notSpecified = "Class is not specified";
         private List<string> members { get; set; }
         protected Type type;
+        protected string typeName => getName();
+
+        private string getName()
+        {
+            var s = type.Name;
+            var index = s.IndexOf("`", StringComparison.Ordinal);
+            if (index > -1) s = s.Substring(0, index);
+
+            return s;
+        }
 
         [TestMethod]
-        public void IsTested()
+        public virtual void IsTested()
         {
             if (type == null) Assert.Inconclusive(notSpecified);
             var m = GetClass.Members(type, PublicBindingFlagsFor.DeclaredMembers);
@@ -24,6 +34,13 @@ namespace North.Tests
 
             if (members.Count == 0) return;
             Assert.Fail(notTested, members[0]);
+        }
+        [TestMethod]
+        public virtual void IsSpecifiedClassTested()
+        {
+            if (type == null) Assert.Inconclusive(notSpecified);
+            var className = GetType().Name;
+            Assert.IsTrue(className.StartsWith(typeName));
         }
 
         private void removeTested()
