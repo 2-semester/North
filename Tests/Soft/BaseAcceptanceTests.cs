@@ -181,7 +181,7 @@ namespace North.Tests.Soft
         private void isCorrectPageName()
         {
             var n = baseClassName();
-            var title = "Event";
+            var title = baseClassName();
             Assert.AreEqual(title, n);
         }
 
