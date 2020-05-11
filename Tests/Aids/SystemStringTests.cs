@@ -1,8 +1,6 @@
-﻿using Microsoft.VisualBasic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Aids;
 using North.Aids.Random;
-using North.Pages.Extensions;
 
 namespace North.Tests.Aids {
     [TestClass]
@@ -11,12 +9,8 @@ namespace North.Tests.Aids {
         [TestMethod]
         public void StartsWithLetterTest()
         {
-            //see alljärgnev  töötab, aga pole vist piisavalt ammendav:
-            //var s = GetRandom.String();
-            //Assert.AreEqual(true, s.StartsWithLetter());
-            //Assert.AreEqual(true, null);
-
-            Assert.Inconclusive();
+            var s = GetRandom.String();
+            Assert.AreEqual(true, s.StartsWithLetter());
         }
         [TestMethod]
         public void ToBackwardsTest()

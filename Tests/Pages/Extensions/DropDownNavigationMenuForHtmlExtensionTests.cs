@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Html;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using North.Facade.Event;
-using North.Facade.EventList;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using North.Pages.Extensions;
 
 namespace North.Tests.Pages.Extensions

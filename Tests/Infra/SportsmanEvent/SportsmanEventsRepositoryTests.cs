@@ -6,7 +6,6 @@ using North.Data.SportsmanEvent;
 using North.Domain.SportsmanEvent;
 using North.Infra;
 using North.Infra.SportsmanEvent;
-using North.Tests.Aids;
 
 namespace North.Tests.Infra.SportsmanEvent
 {

@@ -30,11 +30,4 @@
     <ProjectReference Include="..\Soft\Soft.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Soft\Areas\EventList\Pages\EventLists\" />
-    <Folder Include="Soft\Areas\Organization\Pages\Organizations\" />
-    <Folder Include="Soft\Areas\SportsmanEvent\Pages\SportsmanEvents\" />
-    <Folder Include="Soft\Areas\Sportsman\Pages\Sportsmen\" />
-  </ItemGroup>
-
 </Project>
